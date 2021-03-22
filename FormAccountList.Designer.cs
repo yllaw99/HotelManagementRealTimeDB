@@ -226,6 +226,7 @@
             this.button_acc_update.TabIndex = 3;
             this.button_acc_update.Text = "Cập nhật";
             this.button_acc_update.UseVisualStyleBackColor = true;
+            this.button_acc_update.Click += new System.EventHandler(this.button_acc_update_Click);
             // 
             // button_acc_del
             // 

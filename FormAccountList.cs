@@ -30,15 +30,7 @@ namespace HotelManagement_FireBase
         IFirebaseClient client;
         #endregion
 
-        #region Add Account
-        private void button_add_account_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormRegistration fr = new FormRegistration();
-            fr.ShowDialog();
-            this.Show();
-        }
-        #endregion
+
 
         #region Form Load
         private void FormAccountList_Load(object sender, EventArgs e)
@@ -92,18 +84,90 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
+        #region CRUD
+        #region Add Account
+        private void button_add_account_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+        #endregion
+        #region Delete Account
         private void button_acc_del_Click(object sender, EventArgs e)
         {
-            string username = this.dataGridView_accInfo.CurrentRow.Cells[1].Value.ToString();
-            var data = client.Get(@"/Users");
-            var converted_data = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
-            var us = converted_data.Single(t => t.Value.username.Equals(username));
+            Delete();
+        }
+        #endregion
+        #region Update Account
+        private void button_acc_update_Click(object sender, EventArgs e)
+        {
+            Update_acc();
+        }
+        #endregion
 
+        #region ClassDeclare User
+        private User Declare()
+        {
+            User user = new User()
+            {
+                username = textBox_accInfo_username.Text,
+                pwd = textBox_accInfo_pwd.Text,
+                fullname = textBox_accInfo_fullname.Text,
+                phoneNum = textBox_accInfo_phonenum.Text,
+                gender = textBox_accInfo_gender.Text
+            };
+            return user;
+        }
+        #endregion
+        #region ClassDelete
+        private void Delete()
+        {
+            Declare();
             DialogResult dr = MessageBox.Show("Bạn có chắc muốn xoá?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                //User user = us.Value.username.Single => t.Value.username.Equals(username));
+                var dlt = client.Delete(@"Users/" + textBox_accInfo_username.Text);
+                if(dlt.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được xoá thành công!", "Thông báo!");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xoá tài khoản" + textBox_accInfo_username.Text, "Thông báo!");
+                }
             }
         }
+        #endregion
+        #region ClassAdd
+        private void Add()
+        {
+            Declare();
+            DialogResult dr = MessageBox.Show("Xác nhận thêm tài khoản?", "Thông báo!", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                SetResponse set = client.Set(@"Users/" + textBox_accInfo_username.Text, this.Declare());
+                if (set.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được tạo thành công!", "Thông báo!");
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi tạo tài khoản [" + textBox_accInfo_username.Text + "]", "Thông báo!");
+                }
+            }
+        }
+        #endregion
+        #region ClassUpdate
+        private void Update_acc()
+        {
+            Declare();
+            DialogResult dr = MessageBox.Show("Xác nhận cập nhật tài khoản?", "Thông báo!", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                var update = client.Update(@"Users/" + textBox_accInfo_username, this.Declare());
+                
+            }
+        }
+        #endregion
+        #endregion
     }
 }
