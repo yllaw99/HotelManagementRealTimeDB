@@ -67,8 +67,8 @@ namespace HotelManagement_FireBase
             if (User.IsEqual(ResUser, CurUser))
             {
                 this.Hide();
-                FormManager fm = new FormManager();
-                fm.ShowDialog();
+                FormRoom fr = new FormRoom();
+                fr.ShowDialog();
                 this.Show();
                 this.textBox_signin_pwd.Clear();
             }

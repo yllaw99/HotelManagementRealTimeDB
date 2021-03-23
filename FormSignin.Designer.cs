@@ -64,7 +64,7 @@
             this.button_signin.Location = new System.Drawing.Point(208, 303);
             this.button_signin.Name = "button_signin";
             this.button_signin.Size = new System.Drawing.Size(81, 40);
-            this.button_signin.TabIndex = 4;
+            this.button_signin.TabIndex = 3;
             this.button_signin.Text = "Đăng nhập";
             this.button_signin.UseVisualStyleBackColor = true;
             this.button_signin.Click += new System.EventHandler(this.button_signin_Click);
@@ -76,7 +76,7 @@
             this.panel_signin_pwd.Location = new System.Drawing.Point(28, 220);
             this.panel_signin_pwd.Name = "panel_signin_pwd";
             this.panel_signin_pwd.Size = new System.Drawing.Size(442, 41);
-            this.panel_signin_pwd.TabIndex = 6;
+            this.panel_signin_pwd.TabIndex = 2;
             // 
             // textBox_signin_pwd
             // 
@@ -103,7 +103,7 @@
             this.panel_signin_username.Location = new System.Drawing.Point(28, 148);
             this.panel_signin_username.Name = "panel_signin_username";
             this.panel_signin_username.Size = new System.Drawing.Size(442, 41);
-            this.panel_signin_username.TabIndex = 5;
+            this.panel_signin_username.TabIndex = 1;
             // 
             // textBox_signin_username
             // 

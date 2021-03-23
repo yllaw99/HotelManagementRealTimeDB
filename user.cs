@@ -9,15 +9,14 @@ namespace HotelManagement_FireBase
     public class User
     {
         #region Declaration
-        //public int ID { get; set; }
         public string username { get; set; }
         public string pwd { get; set; }
         public string gender { get; set; }
         public string fullname { get; set; }
         public string phoneNum { get; set; }
-        Random rmd = new Random();
+        public string role { get; set; }
         #endregion
-        
+
         public static string error = "Username does not exist!";
 
         #region Show Error
@@ -43,7 +42,6 @@ namespace HotelManagement_FireBase
                 error = "Username and password does not match!";
                 return false;
             }
-
             return true;
         }
         #endregion

@@ -45,3 +45,4 @@ D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormRegistration.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.Properties.Resources.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.csproj.GenerateResource.Cache
+D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormRoom.resources

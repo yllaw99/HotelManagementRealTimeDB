@@ -30,10 +30,15 @@ namespace HotelManagement_FireBase
         IFirebaseClient client;
         #endregion
 
-
-
         #region Form Load
         private void FormAccountList_Load(object sender, EventArgs e)
+        {
+            DataGridView_LoadContent();
+        }
+        #endregion
+
+        #region Load Content to DataGridView
+        private void DataGridView_LoadContent()
         {
             #region Connect
             try
@@ -48,7 +53,8 @@ namespace HotelManagement_FireBase
             #endregion
             var data = client.Get("/Users");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
-            var listNumber = mList.Select(tk => new { 
+            var listNumber = mList.Select(tk => new
+            {
                 name = tk.Value.fullname,
                 username = tk.Value.username
             }).ToList();
@@ -66,7 +72,7 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region Display AccInfo
+        #region Display AccInfo in TextBox
         private void dataGridView_accInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string usernameLocal = this.dataGridView_accInfo.CurrentRow.Cells[1].Value.ToString();
@@ -80,6 +86,7 @@ namespace HotelManagement_FireBase
             this.textBox_accInfo_pwd.Text = us.Value.pwd.ToString();
             this.textBox_accInfo_phonenum.Text = us.Value.phoneNum.ToString();
             this.textBox_accInfo_gender.Text = us.Value.gender.ToString();
+            this.textBox_accInfo_role.Text = us.Value.role.ToString();
             #endregion
         }
         #endregion
@@ -89,18 +96,21 @@ namespace HotelManagement_FireBase
         private void button_add_account_Click(object sender, EventArgs e)
         {
             Add();
+            DataGridView_LoadContent();
         }
         #endregion
         #region Delete Account
         private void button_acc_del_Click(object sender, EventArgs e)
         {
             Delete();
+            DataGridView_LoadContent();
         }
         #endregion
         #region Update Account
         private void button_acc_update_Click(object sender, EventArgs e)
         {
             Update_acc();
+            DataGridView_LoadContent();
         }
         #endregion
 
@@ -113,11 +123,13 @@ namespace HotelManagement_FireBase
                 pwd = textBox_accInfo_pwd.Text,
                 fullname = textBox_accInfo_fullname.Text,
                 phoneNum = textBox_accInfo_phonenum.Text,
-                gender = textBox_accInfo_gender.Text
+                gender = textBox_accInfo_gender.Text,
+                role = textBox_accInfo_role.Text
             };
             return user;
         }
         #endregion
+
         #region ClassDelete
         private void Delete()
         {
