@@ -20,6 +20,7 @@ namespace HotelManagement_FireBase
         {
             InitializeComponent();
         }
+
         #region IFirebase Config
         IFirebaseConfig ifc = new FirebaseConfig
         {
@@ -45,6 +46,7 @@ namespace HotelManagement_FireBase
         }
         #endregion Form Load
 
+
         #region Sign In
         private void button_signin_Click(object sender, EventArgs e)
         {
@@ -57,6 +59,7 @@ namespace HotelManagement_FireBase
             }
             #endregion
 
+            // check if username & pwd are correct
             FirebaseResponse res = client.Get(@"Users/" + textBox_signin_username.Text);
             User ResUser = res.ResultAs<User>();
             User CurUser = new User()
@@ -64,6 +67,7 @@ namespace HotelManagement_FireBase
                 username = textBox_signin_username.Text,
                 pwd = textBox_signin_pwd.Text
             };
+
             if (User.IsEqual(ResUser, CurUser))
             {
                 this.Hide();
@@ -78,6 +82,5 @@ namespace HotelManagement_FireBase
             }
         }
         #endregion
-
     }
 }

@@ -85,8 +85,8 @@ namespace HotelManagement_FireBase
             this.textBox_accInfo_username.Text = us.Value.username.ToString();
             this.textBox_accInfo_pwd.Text = us.Value.pwd.ToString();
             this.textBox_accInfo_phonenum.Text = us.Value.phoneNum.ToString();
-            this.textBox_accInfo_gender.Text = us.Value.gender.ToString();
-            this.textBox_accInfo_role.Text = us.Value.role.ToString();
+            this.comboBox_accInfo_gender.Text = us.Value.gender.ToString();
+            this.comboBox_accInfo_role.Text = us.Value.role.ToString();
             #endregion
         }
         #endregion
@@ -95,22 +95,33 @@ namespace HotelManagement_FireBase
         #region Add Account
         private void button_add_account_Click(object sender, EventArgs e)
         {
-            Add();
-            DataGridView_LoadContent();
+            // Checking if user has already been existed
+            FirebaseResponse res = client.Get(@"Users/" + textBox_accInfo_username.Text);
+            User ResUser = res.ResultAs<User>();
+            User CurUser = new User()
+            {
+                username = textBox_accInfo_username.Text
+            };
+            if (User.compare(ResUser, CurUser))
+            {
+                MessageBox.Show("Tài khoản đã tồn tại, xin vui lòng nhập username khác!", "Thông báo");
+            }
+            else
+            {
+                Add();
+            }
         }
         #endregion
         #region Delete Account
         private void button_acc_del_Click(object sender, EventArgs e)
         {
-            Delete();
-            DataGridView_LoadContent();
+            Delete();            
         }
         #endregion
         #region Update Account
         private void button_acc_update_Click(object sender, EventArgs e)
         {
             Update_acc();
-            DataGridView_LoadContent();
         }
         #endregion
 
@@ -123,8 +134,8 @@ namespace HotelManagement_FireBase
                 pwd = textBox_accInfo_pwd.Text,
                 fullname = textBox_accInfo_fullname.Text,
                 phoneNum = textBox_accInfo_phonenum.Text,
-                gender = textBox_accInfo_gender.Text,
-                role = textBox_accInfo_role.Text
+                gender = comboBox_accInfo_gender.Text,
+                role = comboBox_accInfo_role.Text
             };
             return user;
         }
@@ -146,6 +157,7 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi xoá tài khoản" + textBox_accInfo_username.Text, "Thông báo!");
                 }
+                DataGridView_LoadContent();
             }
         }
         #endregion
@@ -156,7 +168,7 @@ namespace HotelManagement_FireBase
             DialogResult dr = MessageBox.Show("Xác nhận thêm tài khoản?", "Thông báo!", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                SetResponse set = client.Set(@"Users/" + textBox_accInfo_username.Text, this.Declare());
+                SetResponse set = client.Set(@"Users/" + textBox_accInfo_username.Text, Declare());
                 if (set.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được tạo thành công!", "Thông báo!");
@@ -165,21 +177,35 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi tạo tài khoản [" + textBox_accInfo_username.Text + "]", "Thông báo!");
                 }
+                DataGridView_LoadContent();
             }
         }
         #endregion
         #region ClassUpdate
         private void Update_acc()
         {
-            Declare();
-            DialogResult dr = MessageBox.Show("Xác nhận cập nhật tài khoản?", "Thông báo!", MessageBoxButtons.YesNo);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
+            try
             {
-                var update = client.Update(@"Users/" + textBox_accInfo_username, this.Declare());
-                
+                Declare();
+                DialogResult dr = MessageBox.Show("Xác nhận cập nhật tài khoản?", "Thông báo!", MessageBoxButtons.YesNo);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
+                {
+                    var update = client.Update(@"Users/" + textBox_accInfo_username.Text, Declare());
+                    if (update.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được cập nhật thành công!", "Thông báo!");
+                        DataGridView_LoadContent();
+                    }
+                    
+                }                
+            }
+            catch
+            {
+                MessageBox.Show("Loi khi cap nhat tai khoan");
             }
         }
         #endregion
+
         #endregion
     }
 }

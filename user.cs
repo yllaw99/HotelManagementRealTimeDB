@@ -26,8 +26,8 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region Sign in Checking
-        public static bool IsEqual(User user1, User user2)
+        #region Check if user & pwd are correct
+        public static bool IsEqual(User user1, User user2)//input = current user, user in database)
         {
             if (user1 == null || user2 == null) { return false; }
 
@@ -40,6 +40,20 @@ namespace HotelManagement_FireBase
             else if (user1.pwd != user2.pwd)
             {
                 error = "Username and password does not match!";
+                return false;
+            }
+            return true;
+        }
+        #endregion
+
+        #region check if user is already existed!
+        public static bool compare(User user1, User user2)
+        {
+            if (user1 == null || user2 == null) { return false; }
+
+            if (user1.username != user2.username)
+            {
+                error = "Username does not exist!";
                 return false;
             }
             return true;

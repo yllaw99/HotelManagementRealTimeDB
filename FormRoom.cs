@@ -20,6 +20,7 @@ namespace HotelManagement_FireBase
         #region Button Account Manager
         private void button_accManager_Click(object sender, EventArgs e)
         {
+
             FormAccountList fal = new FormAccountList();
             fal.ShowDialog();
         }

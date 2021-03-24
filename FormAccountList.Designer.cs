@@ -31,6 +31,8 @@
             this.dataGridView_accInfo = new System.Windows.Forms.DataGridView();
             this.button_acc_add = new System.Windows.Forms.Button();
             this.panel_acc_info = new System.Windows.Forms.Panel();
+            this.panel_accInfo_role = new System.Windows.Forms.Panel();
+            this.label_accInfo_role = new System.Windows.Forms.Label();
             this.panel_accInfo_phonenum = new System.Windows.Forms.Panel();
             this.textBox_accInfo_phonenum = new System.Windows.Forms.TextBox();
             this.label_accInfo_phonenum = new System.Windows.Forms.Label();
@@ -38,7 +40,6 @@
             this.textBox_accInfo_fullname = new System.Windows.Forms.TextBox();
             this.label_accInfo_fullname = new System.Windows.Forms.Label();
             this.panel_accInfo_gender = new System.Windows.Forms.Panel();
-            this.textBox_accInfo_gender = new System.Windows.Forms.TextBox();
             this.label_accInfo_gender = new System.Windows.Forms.Label();
             this.panel_accInfo_pwd = new System.Windows.Forms.Panel();
             this.textBox_accInfo_pwd = new System.Windows.Forms.TextBox();
@@ -46,21 +47,21 @@
             this.panel_accInfo_username = new System.Windows.Forms.Panel();
             this.textBox_accInfo_username = new System.Windows.Forms.TextBox();
             this.label_accInfo_username = new System.Windows.Forms.Label();
-            this.button_acc_update = new System.Windows.Forms.Button();
             this.button_acc_del = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_accInfo_role = new System.Windows.Forms.Panel();
-            this.textBox_accInfo_role = new System.Windows.Forms.TextBox();
-            this.label_accInfo_role = new System.Windows.Forms.Label();
+            this.button_acc_update = new System.Windows.Forms.Button();
+            this.comboBox_accInfo_role = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_accInfo_gender = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_accInfo)).BeginInit();
             this.panel_acc_info.SuspendLayout();
+            this.panel_accInfo_role.SuspendLayout();
             this.panel_accInfo_phonenum.SuspendLayout();
             this.panel_accInfo_fullname.SuspendLayout();
             this.panel_accInfo_gender.SuspendLayout();
             this.panel_accInfo_pwd.SuspendLayout();
             this.panel_accInfo_username.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel_accInfo_role.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView_accInfo
@@ -78,7 +79,7 @@
             this.button_acc_add.Dock = System.Windows.Forms.DockStyle.Left;
             this.button_acc_add.Location = new System.Drawing.Point(0, 0);
             this.button_acc_add.Name = "button_acc_add";
-            this.button_acc_add.Size = new System.Drawing.Size(75, 42);
+            this.button_acc_add.Size = new System.Drawing.Size(102, 42);
             this.button_acc_add.TabIndex = 1;
             this.button_acc_add.Text = "Thêm";
             this.button_acc_add.UseVisualStyleBackColor = true;
@@ -97,6 +98,27 @@
             this.panel_acc_info.Name = "panel_acc_info";
             this.panel_acc_info.Size = new System.Drawing.Size(362, 261);
             this.panel_acc_info.TabIndex = 2;
+            // 
+            // panel_accInfo_role
+            // 
+            this.panel_accInfo_role.Controls.Add(this.comboBox_accInfo_role);
+            this.panel_accInfo_role.Controls.Add(this.comboBox2);
+            this.panel_accInfo_role.Controls.Add(this.label_accInfo_role);
+            this.panel_accInfo_role.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_accInfo_role.Location = new System.Drawing.Point(0, 205);
+            this.panel_accInfo_role.Name = "panel_accInfo_role";
+            this.panel_accInfo_role.Size = new System.Drawing.Size(362, 41);
+            this.panel_accInfo_role.TabIndex = 11;
+            // 
+            // label_accInfo_role
+            // 
+            this.label_accInfo_role.AutoSize = true;
+            this.label_accInfo_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_accInfo_role.Location = new System.Drawing.Point(3, 11);
+            this.label_accInfo_role.Name = "label_accInfo_role";
+            this.label_accInfo_role.Size = new System.Drawing.Size(62, 16);
+            this.label_accInfo_role.TabIndex = 0;
+            this.label_accInfo_role.Text = "Chức vụ";
             // 
             // panel_accInfo_phonenum
             // 
@@ -154,20 +176,13 @@
             // 
             // panel_accInfo_gender
             // 
-            this.panel_accInfo_gender.Controls.Add(this.textBox_accInfo_gender);
+            this.panel_accInfo_gender.Controls.Add(this.comboBox_accInfo_gender);
             this.panel_accInfo_gender.Controls.Add(this.label_accInfo_gender);
             this.panel_accInfo_gender.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_accInfo_gender.Location = new System.Drawing.Point(0, 82);
             this.panel_accInfo_gender.Name = "panel_accInfo_gender";
             this.panel_accInfo_gender.Size = new System.Drawing.Size(362, 41);
             this.panel_accInfo_gender.TabIndex = 8;
-            // 
-            // textBox_accInfo_gender
-            // 
-            this.textBox_accInfo_gender.Location = new System.Drawing.Point(121, 10);
-            this.textBox_accInfo_gender.Name = "textBox_accInfo_gender";
-            this.textBox_accInfo_gender.Size = new System.Drawing.Size(203, 20);
-            this.textBox_accInfo_gender.TabIndex = 2;
             // 
             // label_accInfo_gender
             // 
@@ -233,23 +248,12 @@
             this.label_accInfo_username.TabIndex = 0;
             this.label_accInfo_username.Text = "Tên đăng nhập";
             // 
-            // button_acc_update
-            // 
-            this.button_acc_update.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_acc_update.Location = new System.Drawing.Point(75, 0);
-            this.button_acc_update.Name = "button_acc_update";
-            this.button_acc_update.Size = new System.Drawing.Size(214, 42);
-            this.button_acc_update.TabIndex = 3;
-            this.button_acc_update.Text = "Cập nhật";
-            this.button_acc_update.UseVisualStyleBackColor = true;
-            this.button_acc_update.Click += new System.EventHandler(this.button_acc_update_Click);
-            // 
             // button_acc_del
             // 
-            this.button_acc_del.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_acc_del.Location = new System.Drawing.Point(289, 0);
+            this.button_acc_del.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_acc_del.Location = new System.Drawing.Point(260, 0);
             this.button_acc_del.Name = "button_acc_del";
-            this.button_acc_del.Size = new System.Drawing.Size(75, 42);
+            this.button_acc_del.Size = new System.Drawing.Size(102, 42);
             this.button_acc_del.TabIndex = 4;
             this.button_acc_del.Text = "Xoá";
             this.button_acc_del.UseVisualStyleBackColor = true;
@@ -257,8 +261,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button_acc_del);
             this.panel1.Controls.Add(this.button_acc_update);
+            this.panel1.Controls.Add(this.button_acc_del);
             this.panel1.Controls.Add(this.button_acc_add);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(282, 261);
@@ -266,32 +270,57 @@
             this.panel1.Size = new System.Drawing.Size(362, 42);
             this.panel1.TabIndex = 5;
             // 
-            // panel_accInfo_role
+            // button_acc_update
             // 
-            this.panel_accInfo_role.Controls.Add(this.textBox_accInfo_role);
-            this.panel_accInfo_role.Controls.Add(this.label_accInfo_role);
-            this.panel_accInfo_role.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_accInfo_role.Location = new System.Drawing.Point(0, 205);
-            this.panel_accInfo_role.Name = "panel_accInfo_role";
-            this.panel_accInfo_role.Size = new System.Drawing.Size(362, 41);
-            this.panel_accInfo_role.TabIndex = 11;
+            this.button_acc_update.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_acc_update.Location = new System.Drawing.Point(102, 0);
+            this.button_acc_update.Name = "button_acc_update";
+            this.button_acc_update.Size = new System.Drawing.Size(158, 42);
+            this.button_acc_update.TabIndex = 5;
+            this.button_acc_update.Text = "Cập nhật";
+            this.button_acc_update.UseVisualStyleBackColor = true;
+            this.button_acc_update.Click += new System.EventHandler(this.button_acc_update_Click);
             // 
-            // textBox_accInfo_role
+            // comboBox_accInfo_role
             // 
-            this.textBox_accInfo_role.Location = new System.Drawing.Point(121, 11);
-            this.textBox_accInfo_role.Name = "textBox_accInfo_role";
-            this.textBox_accInfo_role.Size = new System.Drawing.Size(203, 20);
-            this.textBox_accInfo_role.TabIndex = 1;
+            this.comboBox_accInfo_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_accInfo_role.FormattingEnabled = true;
+            this.comboBox_accInfo_role.Items.AddRange(new object[] {
+            "Admin",
+            "Nhân viên"});
+            this.comboBox_accInfo_role.Location = new System.Drawing.Point(121, 10);
+            this.comboBox_accInfo_role.MaxDropDownItems = 2;
+            this.comboBox_accInfo_role.Name = "comboBox_accInfo_role";
+            this.comboBox_accInfo_role.Size = new System.Drawing.Size(203, 21);
+            this.comboBox_accInfo_role.TabIndex = 3;
             // 
-            // label_accInfo_role
+            // comboBox2
             // 
-            this.label_accInfo_role.AutoSize = true;
-            this.label_accInfo_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_accInfo_role.Location = new System.Drawing.Point(3, 11);
-            this.label_accInfo_role.Name = "label_accInfo_role";
-            this.label_accInfo_role.Size = new System.Drawing.Size(62, 16);
-            this.label_accInfo_role.TabIndex = 0;
-            this.label_accInfo_role.Text = "Chức vụ";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.comboBox2.Location = new System.Drawing.Point(121, 10);
+            this.comboBox2.MaxDropDownItems = 3;
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(203, 21);
+            this.comboBox2.TabIndex = 4;
+            // 
+            // comboBox_accInfo_gender
+            // 
+            this.comboBox_accInfo_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_accInfo_gender.FormattingEnabled = true;
+            this.comboBox_accInfo_gender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.comboBox_accInfo_gender.Location = new System.Drawing.Point(121, 10);
+            this.comboBox_accInfo_gender.MaxDropDownItems = 2;
+            this.comboBox_accInfo_gender.Name = "comboBox_accInfo_gender";
+            this.comboBox_accInfo_gender.Size = new System.Drawing.Size(203, 21);
+            this.comboBox_accInfo_gender.TabIndex = 4;
             // 
             // FormAccountList
             // 
@@ -307,6 +336,8 @@
             this.Load += new System.EventHandler(this.FormAccountList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_accInfo)).EndInit();
             this.panel_acc_info.ResumeLayout(false);
+            this.panel_accInfo_role.ResumeLayout(false);
+            this.panel_accInfo_role.PerformLayout();
             this.panel_accInfo_phonenum.ResumeLayout(false);
             this.panel_accInfo_phonenum.PerformLayout();
             this.panel_accInfo_fullname.ResumeLayout(false);
@@ -318,8 +349,6 @@
             this.panel_accInfo_username.ResumeLayout(false);
             this.panel_accInfo_username.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel_accInfo_role.ResumeLayout(false);
-            this.panel_accInfo_role.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,7 +365,6 @@
         private System.Windows.Forms.TextBox textBox_accInfo_fullname;
         private System.Windows.Forms.Label label_accInfo_fullname;
         private System.Windows.Forms.Panel panel_accInfo_gender;
-        private System.Windows.Forms.TextBox textBox_accInfo_gender;
         private System.Windows.Forms.Label label_accInfo_gender;
         private System.Windows.Forms.Panel panel_accInfo_pwd;
         private System.Windows.Forms.TextBox textBox_accInfo_pwd;
@@ -344,11 +372,13 @@
         private System.Windows.Forms.Panel panel_accInfo_username;
         private System.Windows.Forms.TextBox textBox_accInfo_username;
         private System.Windows.Forms.Label label_accInfo_username;
-        private System.Windows.Forms.Button button_acc_update;
         private System.Windows.Forms.Button button_acc_del;
         private System.Windows.Forms.Panel panel_accInfo_role;
-        private System.Windows.Forms.TextBox textBox_accInfo_role;
         private System.Windows.Forms.Label label_accInfo_role;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button_acc_update;
+        private System.Windows.Forms.ComboBox comboBox_accInfo_role;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_accInfo_gender;
     }
 }
