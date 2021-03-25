@@ -53,7 +53,19 @@ namespace HotelManagement_FireBase
 
             if (user1.username != user2.username)
             {
-                error = "Username does not exist!";
+                return false;
+            }
+            return true;
+        }
+        #endregion
+
+        #region role check
+        public static bool RoleCheck(User user1, User user2)
+        {
+            if (user1 == null || user2 == null) { return false; }
+
+            if (user1.role != user2.role)
+            {
                 return false;
             }
             return true;

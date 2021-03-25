@@ -11,6 +11,7 @@ using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
 using Newtonsoft.Json;
+using HotelManagement_FireBase.DAO;
 
 namespace HotelManagement_FireBase
 {
@@ -21,57 +22,44 @@ namespace HotelManagement_FireBase
             InitializeComponent();
         }
 
-        #region IFirebase Config
-        IFirebaseConfig ifc = new FirebaseConfig
+    #region connect to db
+        DataProvider provider = new DataProvider();
+        IFirebaseClient client = DataProvider.Instance.connect();
+    #endregion
+
+
+        public string getUsername()
         {
-            AuthSecret = "ajFr4H1tKZefLtJPRja8HyG1uc58m9DhQr8sO8MO",
-            BasePath = "https://hotelmanagement-dd391-default-rtdb.firebaseio.com/"
-        };
-
-        IFirebaseClient client;
-        #endregion
-
-        #region Form Load
-        private void form_signin_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                client = new FireSharp.FirebaseClient(ifc);
-            }
-
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối", "Cảnh báo!");
-            }
+            return textBox_signin_username.Text;
         }
-        #endregion Form Load
 
 
-        #region Sign In
+
+    #region Sign In
         private void button_signin_Click(object sender, EventArgs e)
         {
-            #region Null Checking
+        #region Null Checking
             if (string.IsNullOrWhiteSpace(textBox_signin_username.Text) &&
                string.IsNullOrWhiteSpace(textBox_signin_pwd.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
                 return;
             }
-            #endregion
+        #endregion
 
             // check if username & pwd are correct
-            FirebaseResponse res = client.Get(@"Users/" + textBox_signin_username.Text);
+            FirebaseResponse res = client.Get(@"Users/" + getUsername());
             User ResUser = res.ResultAs<User>();
             User CurUser = new User()
             {
-                username = textBox_signin_username.Text,
+                username = getUsername(),
                 pwd = textBox_signin_pwd.Text
             };
 
             if (User.IsEqual(ResUser, CurUser))
             {
                 this.Hide();
-                FormRoom fr = new FormRoom();
+                FormRoom fr = new FormRoom(this);
                 fr.ShowDialog();
                 this.Show();
                 this.textBox_signin_pwd.Clear();
@@ -82,5 +70,7 @@ namespace HotelManagement_FireBase
             }
         }
         #endregion
+
+
     }
 }
