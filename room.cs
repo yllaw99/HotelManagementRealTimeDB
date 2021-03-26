@@ -6,13 +6,25 @@ using System.Threading.Tasks;
 
 namespace HotelManagement_FireBase
 {
-    class room
+    class Room
     {
         #region Declaration
         public string ID { get; set; }
         public string type { get; set; }
         public string status { get; set; }
         public string price { get; set; }
+        #endregion
+        #region compare
+        public static bool compare(Room room1, Room room2)
+        {
+            if (room1 == null || room2 == null) { return false; }
+
+            if (room1.ID != room2.ID)
+            {
+                return false;
+            }
+            return true;
+        }
         #endregion
     }
 }

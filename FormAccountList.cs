@@ -11,6 +11,7 @@ using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
 using Newtonsoft.Json;
+using HotelManagement_FireBase.DAO;
 
 namespace HotelManagement_FireBase
 {
@@ -20,37 +21,21 @@ namespace HotelManagement_FireBase
         {
             InitializeComponent();
         }
-        #region IFirebase Config
-        IFirebaseConfig ifc = new FirebaseConfig
-        {
-            AuthSecret = "ajFr4H1tKZefLtJPRja8HyG1uc58m9DhQr8sO8MO",
-            BasePath = "https://hotelmanagement-dd391-default-rtdb.firebaseio.com/"
-        };
-
-        IFirebaseClient client;
+        #region connect to db
+        DataProvider provider = new DataProvider();
+        IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
 
         #region Form Load
         private void FormAccountList_Load(object sender, EventArgs e)
         {
-            DataGridView_LoadContent();
+            Reload();
         }
         #endregion
 
-        #region Load Content to DataGridView
-        private void DataGridView_LoadContent()
+        #region Reload DataGridView
+        private void Reload()
         {
-            #region Connect
-            try
-            {
-                client = new FireSharp.FirebaseClient(ifc);
-            }
-
-            catch
-            {
-                MessageBox.Show("Lỗi kết nối", "Cảnh báo!");
-            }
-            #endregion
             var data = client.Get("/Users");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
             var listNumber = mList.Select(tk => new
@@ -62,7 +47,7 @@ namespace HotelManagement_FireBase
             dataGridView_accInfo.AutoResizeColumns();
             if (dataGridView_accInfo != null)
             {
-                for (int count = 0; (count <= (dataGridView_accInfo.Rows.Count - 2)); count++)
+                for (int count = 0; (count <= (dataGridView_accInfo.Rows.Count - 1)); count++)
                 {
                     dataGridView_accInfo.Rows[count].HeaderCell.Value = string.Format((count + 1).ToString(), "0");
                 }
@@ -157,7 +142,7 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi xoá tài khoản" + textBox_accInfo_username.Text, "Thông báo!");
                 }
-                DataGridView_LoadContent();
+                Reload();
             }
         }
         #endregion
@@ -177,7 +162,7 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi tạo tài khoản [" + textBox_accInfo_username.Text + "]", "Thông báo!");
                 }
-                DataGridView_LoadContent();
+                Reload();
             }
         }
         #endregion
@@ -194,7 +179,7 @@ namespace HotelManagement_FireBase
                     if (update.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được cập nhật thành công!", "Thông báo!");
-                        DataGridView_LoadContent();
+                        Reload();
                     }
                     
                 }                

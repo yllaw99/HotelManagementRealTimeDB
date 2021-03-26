@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
+            this.button_customers = new System.Windows.Forms.Button();
             this.button_accManager = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.button_modifyRoom = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -91,26 +91,27 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button20);
+            this.panel1.Controls.Add(this.button_customers);
             this.panel1.Controls.Add(this.button_accManager);
             this.panel1.Controls.Add(this.button18);
             this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button16);
+            this.panel1.Controls.Add(this.button_modifyRoom);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1016, 35);
             this.panel1.TabIndex = 0;
             // 
-            // button20
+            // button_customers
             // 
-            this.button20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button20.Location = new System.Drawing.Point(300, 0);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 35);
-            this.button20.TabIndex = 4;
-            this.button20.Text = "button20";
-            this.button20.UseVisualStyleBackColor = true;
+            this.button_customers.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_customers.Location = new System.Drawing.Point(300, 0);
+            this.button_customers.Name = "button_customers";
+            this.button_customers.Size = new System.Drawing.Size(87, 35);
+            this.button_customers.TabIndex = 4;
+            this.button_customers.Text = "KHÁCH HÀNG";
+            this.button_customers.UseVisualStyleBackColor = true;
+            this.button_customers.Click += new System.EventHandler(this.button_customers_Click);
             // 
             // button_accManager
             // 
@@ -143,15 +144,16 @@
             this.button17.Text = "button17";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // button_modifyRoom
             // 
-            this.button16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button16.Location = new System.Drawing.Point(0, 0);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 35);
-            this.button16.TabIndex = 0;
-            this.button16.Text = "PHÒNG";
-            this.button16.UseVisualStyleBackColor = true;
+            this.button_modifyRoom.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_modifyRoom.Location = new System.Drawing.Point(0, 0);
+            this.button_modifyRoom.Name = "button_modifyRoom";
+            this.button_modifyRoom.Size = new System.Drawing.Size(75, 35);
+            this.button_modifyRoom.TabIndex = 0;
+            this.button_modifyRoom.Text = "PHÒNG";
+            this.button_modifyRoom.UseVisualStyleBackColor = true;
+            this.button_modifyRoom.Click += new System.EventHandler(this.button_modifyRoom_Click);
             // 
             // panel2
             // 
@@ -646,11 +648,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button_customers;
         private System.Windows.Forms.Button button_accManager;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button_modifyRoom;
 
     }
 }

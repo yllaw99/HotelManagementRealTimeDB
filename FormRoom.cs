@@ -47,5 +47,30 @@ namespace HotelManagement_FireBase
             
         }
     #endregion
+
+        private void button_modifyRoom_Click(object sender, EventArgs e)
+        {
+                        string name = fs.getUsername();
+            FirebaseResponse res = client.Get(@"Users/" + name);
+            User ResUser = res.ResultAs<User>();
+            if (ResUser.role == "Admin")
+            {
+                Form_ModifyRoom fm = new Form_ModifyRoom();
+                fm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Chỉ admin mới có quyền xem", "Thông báo");
+            }
+        }
+
+        #region Customers
+        private void button_customers_Click(object sender, EventArgs e)
+        {
+            Form_Customers fs = new Form_Customers();
+            fs.ShowDialog();
+        }
+        #endregion
+
     }
 }
