@@ -32,7 +32,6 @@
             this.button_customers = new System.Windows.Forms.Button();
             this.button_accManager = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.button_modifyRoom = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,7 +56,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel_singleRoom = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -80,7 +79,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.panel_singleRoom.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -94,18 +93,17 @@
             this.panel1.Controls.Add(this.button_customers);
             this.panel1.Controls.Add(this.button_accManager);
             this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button17);
             this.panel1.Controls.Add(this.button_modifyRoom);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 35);
+            this.panel1.Size = new System.Drawing.Size(1012, 35);
             this.panel1.TabIndex = 0;
             // 
             // button_customers
             // 
             this.button_customers.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_customers.Location = new System.Drawing.Point(300, 0);
+            this.button_customers.Location = new System.Drawing.Point(225, 0);
             this.button_customers.Name = "button_customers";
             this.button_customers.Size = new System.Drawing.Size(87, 35);
             this.button_customers.TabIndex = 4;
@@ -116,7 +114,7 @@
             // button_accManager
             // 
             this.button_accManager.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_accManager.Location = new System.Drawing.Point(225, 0);
+            this.button_accManager.Location = new System.Drawing.Point(150, 0);
             this.button_accManager.Name = "button_accManager";
             this.button_accManager.Size = new System.Drawing.Size(75, 35);
             this.button_accManager.TabIndex = 3;
@@ -127,22 +125,12 @@
             // button18
             // 
             this.button18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button18.Location = new System.Drawing.Point(150, 0);
+            this.button18.Location = new System.Drawing.Point(75, 0);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 35);
             this.button18.TabIndex = 2;
             this.button18.Text = "button18";
             this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button17.Location = new System.Drawing.Point(75, 0);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 35);
-            this.button17.TabIndex = 1;
-            this.button17.Text = "button17";
-            this.button17.UseVisualStyleBackColor = true;
             // 
             // button_modifyRoom
             // 
@@ -160,7 +148,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1016, 36);
+            this.panel2.Size = new System.Drawing.Size(1012, 36);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -370,9 +358,9 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.Controls.Add(this.panel9);
-            this.panel4.Controls.Add(this.panel8);
+            this.panel4.Controls.Add(this.panel_singleRoom);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(206, 71);
+            this.panel4.Location = new System.Drawing.Point(202, 71);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(810, 411);
             this.panel4.TabIndex = 3;
@@ -398,17 +386,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Double";
             // 
-            // panel8
+            // panel_singleRoom
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Controls.Add(this.panel11);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.label1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(810, 151);
-            this.panel8.TabIndex = 0;
+            this.panel_singleRoom.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel_singleRoom.Controls.Add(this.panel11);
+            this.panel_singleRoom.Controls.Add(this.panel10);
+            this.panel_singleRoom.Controls.Add(this.label1);
+            this.panel_singleRoom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_singleRoom.Location = new System.Drawing.Point(0, 0);
+            this.panel_singleRoom.Name = "panel_singleRoom";
+            this.panel_singleRoom.Size = new System.Drawing.Size(810, 151);
+            this.panel_singleRoom.TabIndex = 0;
             // 
             // panel11
             // 
@@ -572,7 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 482);
+            this.ClientSize = new System.Drawing.Size(1012, 482);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -588,8 +576,8 @@
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.panel_singleRoom.ResumeLayout(false);
+            this.panel_singleRoom.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -630,7 +618,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel_singleRoom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label2;
@@ -651,7 +639,6 @@
         private System.Windows.Forms.Button button_customers;
         private System.Windows.Forms.Button button_accManager;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button_modifyRoom;
 
     }

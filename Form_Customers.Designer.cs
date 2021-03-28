@@ -52,6 +52,12 @@
             this.panel_customerName = new System.Windows.Forms.Panel();
             this.textBox_customerName = new System.Windows.Forms.TextBox();
             this.label_customerName = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox_reason = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox_blackList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerView)).BeginInit();
             this.panel_customer.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -61,6 +67,8 @@
             this.panel_dOb.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_customerName.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView_customerView
@@ -71,9 +79,12 @@
             this.dataGridView_customerView.Name = "dataGridView_customerView";
             this.dataGridView_customerView.Size = new System.Drawing.Size(552, 513);
             this.dataGridView_customerView.TabIndex = 1;
+            this.dataGridView_customerView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerView_CellClick);
             // 
             // panel_customer
             // 
+            this.panel_customer.Controls.Add(this.panel7);
+            this.panel_customer.Controls.Add(this.panel6);
             this.panel_customer.Controls.Add(this.panel5);
             this.panel_customer.Controls.Add(this.panel4);
             this.panel_customer.Controls.Add(this.panel3);
@@ -100,6 +111,10 @@
             // 
             // textBox_customer_nationality
             // 
+            this.textBox_customer_nationality.AutoCompleteCustomSource.AddRange(new string[] {
+            "Việt Nam"});
+            this.textBox_customer_nationality.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox_customer_nationality.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.textBox_customer_nationality.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox_customer_nationality.Location = new System.Drawing.Point(86, 10);
             this.textBox_customer_nationality.Name = "textBox_customer_nationality";
@@ -320,6 +335,73 @@
             this.label_customerName.TabIndex = 0;
             this.label_customerName.Text = "Tên KH";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.comboBox_blackList);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 264);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel6.Size = new System.Drawing.Size(381, 44);
+            this.panel6.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 10);
+            this.label6.MinimumSize = new System.Drawing.Size(86, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Black List";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBox_reason);
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 308);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel7.Size = new System.Drawing.Size(381, 44);
+            this.panel7.TabIndex = 17;
+            // 
+            // textBox_reason
+            // 
+            this.textBox_reason.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox_reason.Location = new System.Drawing.Point(86, 10);
+            this.textBox_reason.Name = "textBox_reason";
+            this.textBox_reason.Size = new System.Drawing.Size(276, 20);
+            this.textBox_reason.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(0, 10);
+            this.label7.MinimumSize = new System.Drawing.Size(86, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Lí do";
+            // 
+            // comboBox_blackList
+            // 
+            this.comboBox_blackList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.comboBox_blackList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_blackList.FormattingEnabled = true;
+            this.comboBox_blackList.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.comboBox_blackList.Location = new System.Drawing.Point(86, 10);
+            this.comboBox_blackList.Name = "comboBox_blackList";
+            this.comboBox_blackList.Size = new System.Drawing.Size(43, 21);
+            this.comboBox_blackList.TabIndex = 1;
+            // 
             // Form_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +428,10 @@
             this.panel1.ResumeLayout(false);
             this.panel_customerName.ResumeLayout(false);
             this.panel_customerName.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -376,5 +462,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox_customer_address;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBox_reason;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox_blackList;
     }
 }
