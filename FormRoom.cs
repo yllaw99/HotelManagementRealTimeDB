@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region Import things
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ using FireSharp.Response;
 using FireSharp.Interfaces;
 using Newtonsoft.Json;
 using HotelManagement_FireBase.DAO;
+#endregion
 
 namespace HotelManagement_FireBase
 {
@@ -22,9 +24,22 @@ namespace HotelManagement_FireBase
         {
             InitializeComponent();
             this.fs = fsin;
+            LoadRoom();
         }
-     
-    #region IFirebase Config
+
+        #region Method
+        roomDAO rDAO = new roomDAO();
+        public void LoadRoom()
+        {
+            int count = rDAO.RoomCounter();
+            for (int i = 1; i <= count; i++)
+            {
+                Button btn = new Button() { Width = roomDAO.width, Height = roomDAO.height };
+                flowLayoutPanel1.Controls.Add(btn);
+            }
+        }
+        #endregion
+        #region IFirebase Config
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
     #endregion
@@ -48,6 +63,7 @@ namespace HotelManagement_FireBase
         }
     #endregion
 
+        #region Button modify click
         private void button_modifyRoom_Click(object sender, EventArgs e)
         {
             string name = fs.getUsername();
@@ -63,6 +79,7 @@ namespace HotelManagement_FireBase
                 MessageBox.Show("Chỉ admin mới có quyền xem", "Thông báo");
             }
         }
+        #endregion
 
         #region Customers
         private void button_customers_Click(object sender, EventArgs e)

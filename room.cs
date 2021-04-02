@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement_FireBase
 {
-    class Room
+    public class Room
     {
         #region Declaration
         public string ID { get; set; }

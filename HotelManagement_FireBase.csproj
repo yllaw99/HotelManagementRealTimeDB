@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="customer.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\roomDAO.cs" />
     <Compile Include="FormAccountList.cs">
       <SubType>Form</SubType>
     </Compile>

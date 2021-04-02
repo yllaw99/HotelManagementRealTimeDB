@@ -14,6 +14,8 @@ namespace HotelManagement_FireBase
         public string CMND { get; set; }
         public string phoneNum { get; set; }
         public string nationality { get; set; }
+        public string ban { get; set; }
+        public string reason { get; set; }
 
         #region compare
         public static bool compare(customer cus1, customer cus2)

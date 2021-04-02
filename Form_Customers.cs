@@ -41,7 +41,9 @@ namespace HotelManagement_FireBase
                 address = textBox_customer_address.Text,
                 CMND = textBox_customer_CMND.Text,
                 phoneNum = textBox_customer_phoneNum.Text,
-                nationality = textBox_customer_nationality.Text
+                nationality = textBox_customer_nationality.Text,
+                ban = comboBox_blackList.Text,
+                reason = textBox_reason.Text
             };
             return customer;
         }
@@ -50,7 +52,7 @@ namespace HotelManagement_FireBase
         #region Reload DataGridView
         private void Reload()
         {
-            var data = client.Get("/Customers");
+            var data = client.Get("Customers");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, customer>>(data.Body);
             var listCus = mList.Select(cus => new
             {
@@ -61,7 +63,7 @@ namespace HotelManagement_FireBase
                 phone =  cus.Value.phoneNum
             }).ToList();
             dataGridView_customerView.DataSource = listCus;
-            dataGridView_customerView.AutoResizeColumns();
+            //dataGridView_customerView.AutoResizeColumns();
             if (dataGridView_customerView != null)
             {
                 for (int count = 0; (count <= (dataGridView_customerView.Rows.Count - 1)); count++)
@@ -194,6 +196,8 @@ namespace HotelManagement_FireBase
             this.textBox_customer_address.Text = r.Value.address.ToString();
             this.textBox_customer_phoneNum.Text = r.Value.phoneNum.ToString();
             this.textBox_customer_nationality.Text = r.Value.nationality.ToString();
+            this.comboBox_blackList.Text = r.Value.ban.ToString();
+            this.textBox_reason.Text = r.Value.reason.ToString();
             #endregion
         }
         #endregion
