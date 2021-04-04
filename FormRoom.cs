@@ -27,28 +27,61 @@ namespace HotelManagement_FireBase
             LoadRoom();
         }
 
-        #region Method
+        #region btn_click_event
+        void btn_Click(object sender, EventArgs e)
+        {
+            //if()
+            show_reservation();
+        }
+
+        void show_reservation()
+        {
+            FormReservation fr = new FormReservation();
+            fr.ShowDialog();
+        }
+
+        void show_bill()
+        {
+            FormBill fb = new FormBill();
+            fb.ShowDialog();
+        }
+        #endregion
+
+        #region Display rooms
         roomDAO rDAO = new roomDAO();
         public void LoadRoom()
         {
-            int count = rDAO.RoomCounter();
-            for (int i = 1; i <= count; i++)
+            FirebaseResponse response = client.Get("Rooms/");
+            IDictionary<string, Room> rList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(response.Body);
+
+            foreach (var r in rList)
             {
                 Button btn = new Button() { Width = roomDAO.width, Height = roomDAO.height };
                 flowLayoutPanel1.Controls.Add(btn);
-            }
+                btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
+                btn.Click += btn_Click;
+                switch (r.Value.status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.AntiqueWhite;
+                        break;
+                }
+            }            
         }
         #endregion
         #region IFirebase Config
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
-    #endregion
+        #endregion
 
-    #region Button Account Manager
+        #region Button Account Manager
         private void button_accManager_Click(object sender, EventArgs e)
         {
             string name = fs.getUsername();
-            FirebaseResponse res = client.Get(@"Users/" + name);
+            FirebaseResponse res = client.Get("Users/" + name);
             User ResUser = res.ResultAs<User>();
             if (ResUser.role == "Admin")
             {

@@ -82,7 +82,6 @@ namespace HotelManagement_FireBase
             #endregion
 
         #endregion
-
         #region CRUD
 
         #region CLASS
@@ -140,7 +139,7 @@ namespace HotelManagement_FireBase
         #region add
         private void button_addRoom_Click(object sender, EventArgs e)
         {
-            FirebaseResponse res = client.Get(@"Customers/" + textBox_customerName.Text);
+            FirebaseResponse res = client.Get("Customers/" + textBox_customerName.Text);
             customer ResCus = res.ResultAs<customer>();
             customer CurCus = new customer()
             {

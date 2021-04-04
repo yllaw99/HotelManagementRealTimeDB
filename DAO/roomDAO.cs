@@ -15,8 +15,8 @@ namespace HotelManagement_FireBase.DAO
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
-        public static int width = 50;
-        public static int height = 50;
+        public static int width = 160;
+        public static int height = 90;
         private static roomDAO instance;
 
         internal static roomDAO Instance
@@ -24,27 +24,22 @@ namespace HotelManagement_FireBase.DAO
             get { if (instance == null) instance = new roomDAO(); return roomDAO.instance; }
             private set { roomDAO.instance = value; }
         }
+
         public roomDAO() { }
 
         public int RoomCounter()
         {
-            
             List<Room> roomList = new List<Room>();
             var data = client.Get("/Rooms");
             var dList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
-            var lRoom = dList.Select(r => new
-            {
-                id = r.Value.ID,
-                type = r.Value.type,
-                stt = r.Value.status,
-                price = r.Value.price
-            }).ToList();
             int roomCount = 0;
-            foreach (var item in lRoom)
+            foreach (var item in dList)
             {
                 roomCount += 1;
             }
             return roomCount;
         }
+
+
     }
 }

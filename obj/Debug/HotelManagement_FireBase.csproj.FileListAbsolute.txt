@@ -46,3 +46,5 @@ D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormRoom.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.Form_ModifyRoom.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.Form_Customers.resources
+D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormBill.resources
+D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormReservation.resources
