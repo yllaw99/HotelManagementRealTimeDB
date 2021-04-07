@@ -19,7 +19,7 @@ namespace HotelManagement_FireBase
 {
     public partial class FormRoom : Form
     {
-        form_signin fs;
+        form_signin fs;        
         public FormRoom(form_signin fsin)
         {
             InitializeComponent();
@@ -30,8 +30,16 @@ namespace HotelManagement_FireBase
         #region btn_click_event
         void btn_Click(object sender, EventArgs e)
         {
-            //if()
-            show_reservation();
+            string roomStatus = (sender as Button).Tag.ToString();
+            if (roomStatus == "Trống")
+            {
+                show_reservation();
+            }
+            else
+            {
+                show_bill();
+            }
+            
         }
 
         void show_reservation()
@@ -60,6 +68,7 @@ namespace HotelManagement_FireBase
                 flowLayoutPanel1.Controls.Add(btn);
                 btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
                 btn.Click += btn_Click;
+                btn.Tag = r.Value.status.ToString();
                 switch (r.Value.status)
                 {
                     case "Trống":

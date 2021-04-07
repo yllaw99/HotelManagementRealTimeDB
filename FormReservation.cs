@@ -16,5 +16,10 @@ namespace HotelManagement_FireBase
         {
             InitializeComponent();
         }
+
+        private void button_quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

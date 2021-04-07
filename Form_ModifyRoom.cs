@@ -137,7 +137,7 @@ namespace HotelManagement_FireBase
         }
         #endregion
         #region ClassUpdate
-        private void Update()
+        private void Update_()
         {
             try
             {
@@ -149,7 +149,6 @@ namespace HotelManagement_FireBase
                     if (update.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được cập nhật thành công!", "Thông báo!");
-                        //dataGridView_roomView();
                     }
 
                 }
@@ -187,7 +186,7 @@ namespace HotelManagement_FireBase
         #region Update room
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
-            Update();
+            Update_();
             DataGridView_LoadContent();
         }
         #endregion
@@ -206,6 +205,11 @@ namespace HotelManagement_FireBase
 
         #endregion
 
-
+        #region get room status
+        public string getRoomStatus()
+        {
+            return comboBox_roomStt.Text;
+        }
+        #endregion
     }
 }
