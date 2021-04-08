@@ -59,15 +59,5 @@ namespace HotelManagement_FireBase.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap quach_thai_cong_8_1202 {
-            get {
-                object obj = ResourceManager.GetObject("quach-thai-cong-8-1202", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

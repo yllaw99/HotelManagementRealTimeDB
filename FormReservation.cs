@@ -21,5 +21,10 @@ namespace HotelManagement_FireBase
         {
             this.Close();
         }
+
+        private void FormReservation_Load(object sender, EventArgs e)
+        {
+            //this.textBox_roomID.Text = ;
+        }
     }
 }

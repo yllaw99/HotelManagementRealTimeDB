@@ -54,7 +54,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_updateRoom = new System.Windows.Forms.Button();
             this.button_deleteRoom = new System.Windows.Forms.Button();
-            this.button_addRoom = new System.Windows.Forms.Button();
+            this.button_addCus = new System.Windows.Forms.Button();
             this.panel_customerName = new System.Windows.Forms.Panel();
             this.textBox_customerName = new System.Windows.Forms.TextBox();
             this.label_customerName = new System.Windows.Forms.Label();
@@ -332,7 +332,7 @@
             // 
             this.panel1.Controls.Add(this.button_updateRoom);
             this.panel1.Controls.Add(this.button_deleteRoom);
-            this.panel1.Controls.Add(this.button_addRoom);
+            this.panel1.Controls.Add(this.button_addCus);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 471);
             this.panel1.Name = "panel1";
@@ -361,16 +361,16 @@
             this.button_deleteRoom.UseVisualStyleBackColor = true;
             this.button_deleteRoom.Click += new System.EventHandler(this.button_deleteRoom_Click);
             // 
-            // button_addRoom
+            // button_addCus
             // 
-            this.button_addRoom.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_addRoom.Location = new System.Drawing.Point(0, 0);
-            this.button_addRoom.Name = "button_addRoom";
-            this.button_addRoom.Size = new System.Drawing.Size(102, 42);
-            this.button_addRoom.TabIndex = 3;
-            this.button_addRoom.Text = "Thêm";
-            this.button_addRoom.UseVisualStyleBackColor = true;
-            this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
+            this.button_addCus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_addCus.Location = new System.Drawing.Point(0, 0);
+            this.button_addCus.Name = "button_addCus";
+            this.button_addCus.Size = new System.Drawing.Size(102, 42);
+            this.button_addCus.TabIndex = 3;
+            this.button_addCus.Text = "Thêm";
+            this.button_addCus.UseVisualStyleBackColor = true;
+            this.button_addCus.Click += new System.EventHandler(this.button_addCus_Click);
             // 
             // panel_customerName
             // 
@@ -446,7 +446,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_updateRoom;
         private System.Windows.Forms.Button button_deleteRoom;
-        private System.Windows.Forms.Button button_addRoom;
+        private System.Windows.Forms.Button button_addCus;
         private System.Windows.Forms.Panel panel_customerName;
         private System.Windows.Forms.Label label_customerName;
         private System.Windows.Forms.TextBox textBox_customerName;

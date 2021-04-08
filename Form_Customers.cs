@@ -95,7 +95,8 @@ namespace HotelManagement_FireBase
                 SetResponse set = client.Set("Customers/" + textBox_customer_CMND.Text, Customer());
                 if (set.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được thêm thành công!!", "Thông báo!");                
+                    MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được thêm thành công!!", "Thông báo!");
+                    Reload();
                 }
                 else
                 {
@@ -112,6 +113,7 @@ namespace HotelManagement_FireBase
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 var update = client.Update("Customers/" + textBox_customer_CMND.Text, Customer());
+                Reload();
             }
         }
         #endregion
@@ -126,6 +128,7 @@ namespace HotelManagement_FireBase
                 if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được xoá thành công!", "Thông báo!");
+                    Reload();
                 }
                 else
                 {
@@ -137,9 +140,9 @@ namespace HotelManagement_FireBase
         #endregion
 
         #region add
-        private void button_addRoom_Click(object sender, EventArgs e)
+        private void button_addCus_Click(object sender, EventArgs e)
         {
-            FirebaseResponse res = client.Get("Customers/" + textBox_customerName.Text);
+            FirebaseResponse res = client.Get("Customers/" + textBox_customer_CMND.Text);
             customer ResCus = res.ResultAs<customer>();
             customer CurCus = new customer()
             {
@@ -152,22 +155,19 @@ namespace HotelManagement_FireBase
             else
             {
                 Add();
-                Reload();
             }
         }
         #endregion
         #region update
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
-            Update_Cus();
-            Reload();
+            Update_Cus();            
         }
         #endregion
         #region delete
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {
             Delete();
-            Reload();
         }
         #endregion
 

@@ -69,7 +69,7 @@
             this.button_signin.TabIndex = 2;
             this.button_signin.Text = "Đăng nhập";
             this.button_signin.UseVisualStyleBackColor = true;
-            this.button_signin.Click += new System.EventHandler(this.button_signin_Click);
+            this.button_signin.Enter += new System.EventHandler(this.button_signin_Click);
             // 
             // pictureBox1
             // 

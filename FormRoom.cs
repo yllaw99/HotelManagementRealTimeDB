@@ -31,6 +31,7 @@ namespace HotelManagement_FireBase
         void btn_Click(object sender, EventArgs e)
         {
             string roomStatus = (sender as Button).Tag.ToString();
+            //string roomID = (sender as Button).Tag.ToString();
             if (roomStatus == "Trống")
             {
                 show_reservation();
@@ -42,7 +43,7 @@ namespace HotelManagement_FireBase
             
         }
 
-        void show_reservation()
+        void show_reservation()//string id)
         {
             FormReservation fr = new FormReservation();
             fr.ShowDialog();
@@ -115,6 +116,8 @@ namespace HotelManagement_FireBase
             {
                 Form_ModifyRoom fm = new Form_ModifyRoom();
                 fm.ShowDialog();
+                flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
+                LoadRoom();
             }
             else
             {

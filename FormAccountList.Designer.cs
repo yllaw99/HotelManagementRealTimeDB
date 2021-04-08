@@ -298,6 +298,7 @@
             this.button_acc_update.TabIndex = 5;
             this.button_acc_update.Text = "Cập nhật";
             this.button_acc_update.UseVisualStyleBackColor = true;
+            this.button_acc_update.Click += new System.EventHandler(this.button_acc_update_Click);
             // 
             // button_acc_del
             // 
@@ -308,6 +309,7 @@
             this.button_acc_del.TabIndex = 4;
             this.button_acc_del.Text = "Xoá";
             this.button_acc_del.UseVisualStyleBackColor = true;
+            this.button_acc_del.Click += new System.EventHandler(this.button_acc_del_Click);
             // 
             // button_acc_add
             // 
@@ -318,6 +320,7 @@
             this.button_acc_add.TabIndex = 1;
             this.button_acc_add.Text = "Thêm";
             this.button_acc_add.UseVisualStyleBackColor = true;
+            this.button_acc_add.Click += new System.EventHandler(this.button_add_account_Click);
             // 
             // FormAccountList
             // 
