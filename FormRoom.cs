@@ -27,37 +27,15 @@ namespace HotelManagement_FireBase
             LoadRoom();
         }
 
-        #region btn_click_event
-        void btn_Click(object sender, EventArgs e)
-        {
-            string roomStatus = (sender as Button).Tag.ToString();
-            //string roomID = (sender as Button).Tag.ToString();
-            if (roomStatus == "Trống")
-            {
-                show_reservation();
-            }
-            else
-            {
-                show_bill();
-            }
-            
-        }
-
-        void show_reservation()//string id)
-        {
-            FormReservation fr = new FormReservation();
-            fr.ShowDialog();
-        }
-
-        void show_bill()
-        {
-            FormBill fb = new FormBill();
-            fb.ShowDialog();
-        }
+        #region IFirebase Config
+        DataProvider provider = new DataProvider();
+        IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
 
         #region Display rooms
         roomDAO rDAO = new roomDAO();
+
+        public string rID;
         public void LoadRoom()
         {
             FirebaseResponse response = client.Get("Rooms/");
@@ -67,10 +45,11 @@ namespace HotelManagement_FireBase
             {
                 Button btn = new Button() { Width = roomDAO.width, Height = roomDAO.height };
                 flowLayoutPanel1.Controls.Add(btn);
-                btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
+                btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.Status.ToString();
                 btn.Click += btn_Click;
-                btn.Tag = r.Value.status.ToString();
-                switch (r.Value.status)
+                btn.Tag = r.Key.ToString();
+                rID = btn.Tag.ToString();
+                switch (r.Value.Status)
                 {
                     case "Trống":
                         btn.BackColor = Color.Aqua;
@@ -79,14 +58,34 @@ namespace HotelManagement_FireBase
                         btn.BackColor = Color.AntiqueWhite;
                         break;
                 }
-            }            
+            }
         }
         #endregion
-        #region IFirebase Config
-        DataProvider provider = new DataProvider();
-        IFirebaseClient client = DataProvider.Instance.connect();
+
+        #region btn_click_event
+        private void btn_Click(object sender, EventArgs e)
+        {
+            //string RoomID = getRoomID(sender, e);
+            rID = (sender as Button).Tag.ToString();
+            //MessageBox.Show(rID);
+            show_reservation();
+        }
         #endregion
 
+        #region Bill & Reservation
+        void show_reservation()
+        {
+            FormReservation fr = new FormReservation(this);
+            fr.ShowDialog();
+        }
+
+        void show_bill()
+        {
+            FormBill fb = new FormBill();
+            fb.ShowDialog();
+        }
+        #endregion
+       
         #region Button Account Manager
         private void button_accManager_Click(object sender, EventArgs e)
         {
@@ -97,6 +96,8 @@ namespace HotelManagement_FireBase
             {
                 FormAccountList fal = new FormAccountList();
                 fal.ShowDialog();
+                flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
+                LoadRoom();
             }
             else
             {
@@ -131,6 +132,8 @@ namespace HotelManagement_FireBase
         {
             Form_Customers fs = new Form_Customers();
             fs.ShowDialog();
+            flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
+            LoadRoom();
         }
         #endregion
 

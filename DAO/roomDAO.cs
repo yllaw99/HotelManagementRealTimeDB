@@ -19,7 +19,7 @@ namespace HotelManagement_FireBase.DAO
         public static int height = 90;
         private static roomDAO instance;
 
-        internal static roomDAO Instance
+        public static roomDAO Instance
         {
             get { if (instance == null) instance = new roomDAO(); return roomDAO.instance; }
             private set { roomDAO.instance = value; }

@@ -38,13 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_fullname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker_checkIn = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker_checkOut = new System.Windows.Forms.DateTimePicker();
             this.button_quit = new System.Windows.Forms.Button();
             this.button_booking = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_Address = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,14 +54,14 @@
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel1.Location = new System.Drawing.Point(12, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 458);
+            this.panel1.Size = new System.Drawing.Size(231, 458);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(308, 0);
+            this.panel2.Location = new System.Drawing.Point(255, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(407, 458);
             this.panel2.TabIndex = 1;
@@ -78,13 +78,13 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox_fullname, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker_checkIn, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker_checkOut, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.button_quit, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.button_booking, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Address, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -175,17 +175,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "CMND";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label5.Location = new System.Drawing.Point(206, 242);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "CHECK OUT";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -203,13 +192,6 @@
             this.dateTimePicker_checkIn.Name = "dateTimePicker_checkIn";
             this.dateTimePicker_checkIn.Size = new System.Drawing.Size(197, 20);
             this.dateTimePicker_checkIn.TabIndex = 21;
-            // 
-            // dateTimePicker_checkOut
-            // 
-            this.dateTimePicker_checkOut.Location = new System.Drawing.Point(206, 265);
-            this.dateTimePicker_checkOut.Name = "dateTimePicker_checkOut";
-            this.dateTimePicker_checkOut.Size = new System.Drawing.Size(197, 20);
-            this.dateTimePicker_checkOut.TabIndex = 22;
             // 
             // button_quit
             // 
@@ -243,11 +225,30 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "PHÒNG";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label5.Location = new System.Drawing.Point(206, 242);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "ĐỊA CHỈ";
+            // 
+            // textBox_Address
+            // 
+            this.textBox_Address.Location = new System.Drawing.Point(206, 265);
+            this.textBox_Address.Multiline = true;
+            this.textBox_Address.Name = "textBox_Address";
+            this.textBox_Address.Size = new System.Drawing.Size(198, 46);
+            this.textBox_Address.TabIndex = 28;
+            // 
             // FormReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 458);
+            this.ClientSize = new System.Drawing.Size(662, 458);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -273,14 +274,14 @@
         private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_cmnd;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker_checkIn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_checkOut;
         private System.Windows.Forms.Button button_quit;
         private System.Windows.Forms.Button button_booking;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_roomID;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_Address;
 
     }
 }

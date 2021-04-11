@@ -12,9 +12,11 @@ namespace HotelManagement_FireBase
 {
     public partial class FormReservation : Form
     {
-        public FormReservation()
+        FormRoom fr;
+        public FormReservation(FormRoom frm)
         {
             InitializeComponent();
+            this.fr = frm;
         }
 
         private void button_quit_Click(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace HotelManagement_FireBase
 
         private void FormReservation_Load(object sender, EventArgs e)
         {
-            //this.textBox_roomID.Text = ;
+            this.textBox_roomID.Text = fr.rID;            
         }
     }
 }

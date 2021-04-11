@@ -1,5 +1,7 @@
 ﻿using FireSharp.Interfaces;
 using FireSharp.Config;
+using FireSharp.Response;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,15 @@ namespace HotelManagement_FireBase.DAO
             IFirebaseClient client;
             client = new FireSharp.FirebaseClient(ifc);
             return client;
+        }
+
+        public string GetIDBill(string rID)
+        {
+            IFirebaseClient client = this.connect();
+            FirebaseResponse res = client.Get("/Bills" + rID);
+            IDictionary<string, Bill> Bill_List = JsonConvert.DeserializeObject<IDictionary<string, Bill>>(res.Body);
+            string billID = Bill_List.Select(b => new { bID = b.Value.BillID }).ToString();
+            return billID;
         }
     }
 }

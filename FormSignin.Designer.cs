@@ -113,12 +113,14 @@
             // 
             // textBox_signin_username
             // 
+            this.textBox_signin_username.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.textBox_signin_username.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBox_signin_username.Location = new System.Drawing.Point(167, 241);
             this.textBox_signin_username.MaximumSize = new System.Drawing.Size(250, 20);
             this.textBox_signin_username.Name = "textBox_signin_username";
             this.textBox_signin_username.Size = new System.Drawing.Size(250, 20);
             this.textBox_signin_username.TabIndex = 0;
+            this.textBox_signin_username.Text = "t";
             // 
             // textBox_signin_pwd
             // 
@@ -128,6 +130,7 @@
             this.textBox_signin_pwd.Name = "textBox_signin_pwd";
             this.textBox_signin_pwd.Size = new System.Drawing.Size(250, 20);
             this.textBox_signin_pwd.TabIndex = 1;
+            this.textBox_signin_pwd.Text = "1";
             this.textBox_signin_pwd.UseSystemPasswordChar = true;
             // 
             // label_signup_pwd

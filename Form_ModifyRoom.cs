@@ -31,12 +31,12 @@ namespace HotelManagement_FireBase
         #region Declare Room
         private Room Declare_room()
         {
-            Room room = new Room
+            Room room = new Room()
             {
                 ID = textBox_roomID.Text,
-                type = comboBox_roomType.Text,
-                price = textBox_roomPrice.Text,
-                status = comboBox_roomStt.Text
+                Type = comboBox_roomType.Text,
+                Price = textBox_roomPrice.Text,
+                Status = comboBox_roomStt.Text
             };
             return room;
         }
@@ -59,9 +59,9 @@ namespace HotelManagement_FireBase
 
             #region Show
             this.textBox_roomID.Text = r.Value.ID.ToString();
-            this.textBox_roomPrice.Text = r.Value.price.ToString();
-            this.comboBox_roomType.Text = r.Value.type.ToString();
-            this.comboBox_roomStt.Text = r.Value.status.ToString();
+            this.textBox_roomPrice.Text = r.Value.Price.ToString();
+            this.comboBox_roomType.Text = r.Value.Type.ToString();
+            this.comboBox_roomStt.Text = r.Value.Status.ToString();
         }
         #endregion
     
@@ -73,9 +73,9 @@ namespace HotelManagement_FireBase
             var listNumber = mList.Select(r => new
             {
                 ID = r.Value.ID,
-                Type = r.Value.type,
-                Price = r.Value.price,
-                Status = r.Value.status
+                Type = r.Value.Type,
+                Price = r.Value.Price,
+                Status = r.Value.Status
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
             dataGridView_roomView.AutoResizeColumns();
@@ -107,6 +107,7 @@ namespace HotelManagement_FireBase
                 if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được xoá thành công!", "Thông báo!");
+                    DataGridView_LoadContent();
                 }
                 else
                 {
@@ -149,6 +150,7 @@ namespace HotelManagement_FireBase
                     if (update.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được cập nhật thành công!", "Thông báo!");
+                        DataGridView_LoadContent();
                     }
 
                 }
@@ -187,7 +189,6 @@ namespace HotelManagement_FireBase
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
             Update_();
-            DataGridView_LoadContent();
         }
         #endregion
 
@@ -195,7 +196,6 @@ namespace HotelManagement_FireBase
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {
             Delete();
-            DataGridView_LoadContent();
         }
         #endregion
 
