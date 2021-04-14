@@ -65,10 +65,13 @@ namespace HotelManagement_FireBase
         #region btn_click_event
         private void btn_Click(object sender, EventArgs e)
         {
-            //string RoomID = getRoomID(sender, e);
             rID = (sender as Button).Tag.ToString();
-            //MessageBox.Show(rID);
-            show_reservation();
+            string stt = sender.ToString();
+            if (stt.Substring(stt.Length - 5, 5) == "Trống")
+            {
+                show_reservation();
+            }
+            else show_bill();
         }
         #endregion
 

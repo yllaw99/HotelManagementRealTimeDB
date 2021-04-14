@@ -35,7 +35,6 @@ namespace HotelManagement_FireBase
             {
                 ID = textBox_roomID.Text,
                 Type = comboBox_roomType.Text,
-                Price = textBox_roomPrice.Text,
                 Status = comboBox_roomStt.Text
             };
             return room;
@@ -59,7 +58,6 @@ namespace HotelManagement_FireBase
 
             #region Show
             this.textBox_roomID.Text = r.Value.ID.ToString();
-            this.textBox_roomPrice.Text = r.Value.Price.ToString();
             this.comboBox_roomType.Text = r.Value.Type.ToString();
             this.comboBox_roomStt.Text = r.Value.Status.ToString();
         }
@@ -74,7 +72,6 @@ namespace HotelManagement_FireBase
             {
                 ID = r.Value.ID,
                 Type = r.Value.Type,
-                Price = r.Value.Price,
                 Status = r.Value.Status
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
@@ -88,8 +85,7 @@ namespace HotelManagement_FireBase
             }
             this.dataGridView_roomView.Columns[0].HeaderText = "ID";
             this.dataGridView_roomView.Columns[1].HeaderText = "Loại phòng";
-            this.dataGridView_roomView.Columns[2].HeaderText = "Giá phòng";
-            this.dataGridView_roomView.Columns[3].HeaderText = "Trạng thái";
+            this.dataGridView_roomView.Columns[2].HeaderText = "Trạng thái";
         }
         #endregion
 
@@ -146,7 +142,7 @@ namespace HotelManagement_FireBase
                 DialogResult dr = MessageBox.Show("Xác nhận cập nhật phòng?", "Thông báo!", MessageBoxButtons.YesNo);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    var update = client.Update(@"Rooms/" + textBox_roomID.Text, Declare_room());
+                    var update = client.Update("Rooms/" + textBox_roomID.Text, Declare_room());
                     if (update.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được cập nhật thành công!", "Thông báo!");

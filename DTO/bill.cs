@@ -8,13 +8,38 @@ namespace HotelManagement_FireBase
 {
     class Bill
     {
-        public Bill(string roomID, string dateCheckIn, string dateCheckOut, string stt, string bID)
+        //public Bill(string roomID, string dateCheckIn, string dateCheckOut, string stt, string bID, string Cusname)
+        //{
+        //    this.RoomID = roomID;
+        //    this.DCheckIn = dateCheckIn;
+        //    this.DCheckOut = dateCheckOut;
+        //    this.Status = stt;
+        //    this.BillID = bID;
+        //    this.CusName = CusName;
+        //}
+
+        private string address;
+
+        public string Address
         {
-            this.RoomID = roomID;
-            this.DCheckIn = dateCheckIn;
-            this.DCheckOut = dateCheckOut;
-            this.Status = stt;
-            this.BillID = bID;
+            get { return address; }
+            set { address = value; }
+        }
+
+        private string cMND;
+
+        public string CMND
+        {
+            get { return cMND; }
+            set { cMND = value; }
+        }
+
+        private string cusName;
+
+        public string CusName
+        {
+            get { return cusName; }
+            set { cusName = value; }
         }
 
         private string billID;

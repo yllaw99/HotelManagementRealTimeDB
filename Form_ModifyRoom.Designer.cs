@@ -37,9 +37,6 @@
             this.button_updateRoom = new System.Windows.Forms.Button();
             this.button_deleteRoom = new System.Windows.Forms.Button();
             this.button_addRoom = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox_roomPrice = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel_roomType = new System.Windows.Forms.Panel();
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.label_roomType = new System.Windows.Forms.Label();
@@ -50,7 +47,6 @@
             this.panel_modifyRoom.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel_roomType.SuspendLayout();
             this.panel_RoomID.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +65,6 @@
             // 
             this.panel_modifyRoom.Controls.Add(this.panel3);
             this.panel_modifyRoom.Controls.Add(this.panel1);
-            this.panel_modifyRoom.Controls.Add(this.panel2);
             this.panel_modifyRoom.Controls.Add(this.panel_roomType);
             this.panel_modifyRoom.Controls.Add(this.panel_RoomID);
             this.panel_modifyRoom.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -83,7 +78,7 @@
             this.panel3.Controls.Add(this.comboBox_roomStt);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 132);
+            this.panel3.Location = new System.Drawing.Point(0, 88);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.panel3.Size = new System.Drawing.Size(362, 44);
@@ -156,37 +151,6 @@
             this.button_addRoom.Text = "Thêm";
             this.button_addRoom.UseVisualStyleBackColor = true;
             this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.textBox_roomPrice);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 88);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(362, 44);
-            this.panel2.TabIndex = 9;
-            // 
-            // textBox_roomPrice
-            // 
-            this.textBox_roomPrice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox_roomPrice.Location = new System.Drawing.Point(86, 10);
-            this.textBox_roomPrice.Name = "textBox_roomPrice";
-            this.textBox_roomPrice.Size = new System.Drawing.Size(276, 20);
-            this.textBox_roomPrice.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 10);
-            this.label2.MinimumSize = new System.Drawing.Size(86, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Giá";
             // 
             // panel_roomType
             // 
@@ -272,8 +236,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel_roomType.ResumeLayout(false);
             this.panel_roomType.PerformLayout();
             this.panel_RoomID.ResumeLayout(false);
@@ -291,9 +253,6 @@
         private System.Windows.Forms.Panel panel_RoomID;
         private System.Windows.Forms.TextBox textBox_roomID;
         private System.Windows.Forms.Label label_RoomID;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox_roomPrice;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button_updateRoom;
         private System.Windows.Forms.Button button_deleteRoom;

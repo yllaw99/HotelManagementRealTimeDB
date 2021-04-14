@@ -70,5 +70,10 @@ namespace HotelManagement_FireBase
             }
         }
         #endregion
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
