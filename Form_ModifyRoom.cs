@@ -34,8 +34,8 @@ namespace HotelManagement_FireBase
             Room room = new Room()
             {
                 ID = textBox_roomID.Text,
-                Type = comboBox_roomType.Text,
-                Status = comboBox_roomStt.Text
+                type = comboBox_roomType.Text,
+                status = comboBox_roomStt.Text
             };
             return room;
         }
@@ -58,8 +58,8 @@ namespace HotelManagement_FireBase
 
             #region Show
             this.textBox_roomID.Text = r.Value.ID.ToString();
-            this.comboBox_roomType.Text = r.Value.Type.ToString();
-            this.comboBox_roomStt.Text = r.Value.Status.ToString();
+            this.comboBox_roomType.Text = r.Value.type.ToString();
+            this.comboBox_roomStt.Text = r.Value.status.ToString();
         }
         #endregion
     
@@ -71,8 +71,8 @@ namespace HotelManagement_FireBase
             var listNumber = mList.Select(r => new
             {
                 ID = r.Value.ID,
-                Type = r.Value.Type,
-                Status = r.Value.Status
+                Type = r.Value.type,
+                Status = r.Value.status
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
             dataGridView_roomView.AutoResizeColumns();
@@ -207,5 +207,6 @@ namespace HotelManagement_FireBase
             return comboBox_roomStt.Text;
         }
         #endregion
+
     }
 }

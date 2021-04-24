@@ -19,12 +19,7 @@ namespace HotelManagement_FireBase
 
         private void FormBill_Load(object sender, EventArgs e)
         {
-            label_bill_id.Text = "";
-            label_customer_name.Text = "";
-            label_address.Text = "";
-            label_phoneNum.Text = "";
-            label_dateCheckIn.Text = "";
-            label_dateCheckOut.Text = "";
+           
         }
     }
 }

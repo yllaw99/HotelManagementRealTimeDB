@@ -38,6 +38,7 @@ namespace HotelManagement_FireBase
         public string rID;
         public void LoadRoom()
         {
+            flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
             FirebaseResponse response = client.Get("Rooms/");
             IDictionary<string, Room> rList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(response.Body);
 
@@ -45,11 +46,11 @@ namespace HotelManagement_FireBase
             {
                 Button btn = new Button() { Width = roomDAO.width, Height = roomDAO.height };
                 flowLayoutPanel1.Controls.Add(btn);
-                btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.Status.ToString();
+                btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
                 btn.Click += btn_Click;
                 btn.Tag = r.Key.ToString();
                 rID = btn.Tag.ToString();
-                switch (r.Value.Status)
+                switch (r.Value.status)
                 {
                     case "Trống":
                         btn.BackColor = Color.Aqua;
@@ -70,8 +71,10 @@ namespace HotelManagement_FireBase
             if (stt.Substring(stt.Length - 5, 5) == "Trống")
             {
                 show_reservation();
+                LoadRoom();
             }
             else show_bill();
+            LoadRoom();
         }
         #endregion
 
@@ -99,7 +102,6 @@ namespace HotelManagement_FireBase
             {
                 FormAccountList fal = new FormAccountList();
                 fal.ShowDialog();
-                flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
                 LoadRoom();
             }
             else
@@ -120,7 +122,6 @@ namespace HotelManagement_FireBase
             {
                 Form_ModifyRoom fm = new Form_ModifyRoom();
                 fm.ShowDialog();
-                flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
                 LoadRoom();
             }
             else
@@ -135,7 +136,6 @@ namespace HotelManagement_FireBase
         {
             Form_Customers fs = new Form_Customers();
             fs.ShowDialog();
-            flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
             LoadRoom();
         }
         #endregion

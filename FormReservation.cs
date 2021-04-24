@@ -51,15 +51,39 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region
+        #region function
         void Booking()
         {
-
+            DialogResult dr = MessageBox.Show("Bạn có muốn đặt phòng?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                SetResponse se = client.Set("Bills/" + textBox_roomID.Text, Declare_Bill());
+                if (se.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var update = client.Update("Rooms/" + textBox_roomID.Text, Declare_Room());
+                    MessageBox.Show("Đặt phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi tạo tài khoản", "Thông báo", MessageBoxButtons.OK);
+                }
+            }
         }
 
         #endregion
 
         #region Declare
+        private Room Declare_Room()
+        {
+            Room r = new Room()
+            {
+                ID = this.textBox_roomID.Text,
+                status = "Có người"
+            };
+
+            return r;
+        }
+
         private Bill Declare_Bill()
         {
             Bill bill = new Bill()

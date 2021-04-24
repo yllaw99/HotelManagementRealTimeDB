@@ -9,7 +9,7 @@ namespace HotelManagement_FireBase
     class Room
     {
         #region Declaration
-        public string iD { get; set; }
+        public string ID { get; set; }
         public string type { get; set; }
         public string status { get; set; }
         #endregion
@@ -18,7 +18,7 @@ namespace HotelManagement_FireBase
         {
             if (room1 == null || room2 == null) { return false; }
 
-            if (room1.iD != room2.iD)
+            if (room1.ID != room2.ID)
             {
                 return false;
             }
