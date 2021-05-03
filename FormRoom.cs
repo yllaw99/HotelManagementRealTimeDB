@@ -49,7 +49,7 @@ namespace HotelManagement_FireBase
                 btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
                 btn.Click += btn_Click;
                 btn.Tag = r.Key.ToString();
-                rID = btn.Tag.ToString();
+                rID = btn.Tag.ToString();                
                 switch (r.Value.status)
                 {
                     case "Trống":

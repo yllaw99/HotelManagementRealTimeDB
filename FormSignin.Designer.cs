@@ -171,7 +171,7 @@
             this.button_cancel.Location = new System.Drawing.Point(200, 3);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(192, 40);
-            this.button_cancel.TabIndex = 4;
+            this.button_cancel.TabIndex = 3;
             this.button_cancel.Text = "Thoát";
             this.button_cancel.UseVisualStyleBackColor = false;
             this.button_cancel.Click += new System.EventHandler(this.button_cancel_Click);
@@ -184,13 +184,14 @@
             this.button_signin.Location = new System.Drawing.Point(3, 3);
             this.button_signin.Name = "button_signin";
             this.button_signin.Size = new System.Drawing.Size(191, 40);
-            this.button_signin.TabIndex = 5;
+            this.button_signin.TabIndex = 2;
             this.button_signin.Text = "Đăng nhập";
             this.button_signin.UseVisualStyleBackColor = false;
             this.button_signin.Click += new System.EventHandler(this.button_signin_Click);
             // 
             // form_signin
             // 
+            this.AcceptButton = this.button_signin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 532);

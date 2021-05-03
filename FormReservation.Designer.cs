@@ -31,14 +31,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox_roomID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_fullname = new System.Windows.Forms.TextBox();
-            this.dateTimePicker_checkIn = new System.Windows.Forms.DateTimePicker();
-            this.button_quit = new System.Windows.Forms.Button();
             this.button_booking = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button_quit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker_checkIn = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_roomID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_roomType = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +75,8 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker_checkIn, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.textBox_roomID, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_roomType, 0, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -91,14 +95,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(407, 458);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // textBox_roomID
-            // 
-            this.textBox_roomID.Enabled = false;
-            this.textBox_roomID.Location = new System.Drawing.Point(206, 193);
-            this.textBox_roomID.Name = "textBox_roomID";
-            this.textBox_roomID.Size = new System.Drawing.Size(197, 20);
-            this.textBox_roomID.TabIndex = 26;
             // 
             // label1
             // 
@@ -120,12 +116,16 @@
             this.textBox_fullname.Size = new System.Drawing.Size(401, 20);
             this.textBox_fullname.TabIndex = 14;
             // 
-            // dateTimePicker_checkIn
+            // button_booking
             // 
-            this.dateTimePicker_checkIn.Location = new System.Drawing.Point(3, 193);
-            this.dateTimePicker_checkIn.Name = "dateTimePicker_checkIn";
-            this.dateTimePicker_checkIn.Size = new System.Drawing.Size(197, 20);
-            this.dateTimePicker_checkIn.TabIndex = 21;
+            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_booking.Location = new System.Drawing.Point(3, 337);
+            this.button_booking.Name = "button_booking";
+            this.button_booking.Size = new System.Drawing.Size(197, 40);
+            this.button_booking.TabIndex = 23;
+            this.button_booking.Text = "ĐẶT PHÒNG";
+            this.button_booking.UseVisualStyleBackColor = true;
+            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
             // 
             // button_quit
             // 
@@ -138,16 +138,23 @@
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
-            // button_booking
+            // label4
             // 
-            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_booking.Location = new System.Drawing.Point(3, 337);
-            this.button_booking.Name = "button_booking";
-            this.button_booking.Size = new System.Drawing.Size(197, 40);
-            this.button_booking.TabIndex = 23;
-            this.button_booking.Text = "ĐẶT PHÒNG";
-            this.button_booking.UseVisualStyleBackColor = true;
-            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label4.Location = new System.Drawing.Point(3, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "CHECK IN";
+            // 
+            // dateTimePicker_checkIn
+            // 
+            this.dateTimePicker_checkIn.Location = new System.Drawing.Point(3, 193);
+            this.dateTimePicker_checkIn.Name = "dateTimePicker_checkIn";
+            this.dateTimePicker_checkIn.Size = new System.Drawing.Size(197, 20);
+            this.dateTimePicker_checkIn.TabIndex = 21;
             // 
             // label6
             // 
@@ -160,16 +167,34 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "PHÒNG";
             // 
-            // label4
+            // textBox_roomID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(3, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "CHECK IN";
+            this.textBox_roomID.Enabled = false;
+            this.textBox_roomID.Location = new System.Drawing.Point(206, 193);
+            this.textBox_roomID.Name = "textBox_roomID";
+            this.textBox_roomID.Size = new System.Drawing.Size(197, 20);
+            this.textBox_roomID.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(3, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "LOẠI PHÒNG";
+            // 
+            // textBox_roomType
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBox_roomType, 2);
+            this.textBox_roomType.Enabled = false;
+            this.textBox_roomType.Location = new System.Drawing.Point(3, 265);
+            this.textBox_roomType.Name = "textBox_roomType";
+            this.textBox_roomType.Size = new System.Drawing.Size(401, 20);
+            this.textBox_roomType.TabIndex = 28;
             // 
             // FormReservation
             // 
@@ -203,6 +228,8 @@
         private System.Windows.Forms.Button button_booking;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_roomID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_roomType;
 
     }
 }

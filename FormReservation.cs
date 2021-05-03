@@ -34,14 +34,13 @@ namespace HotelManagement_FireBase
         #region Form Load
         private void FormReservation_Load(object sender, EventArgs e)
         {
-            this.textBox_roomID.Text = fr.rID;            
+            this.textBox_roomID.Text = fr.rID;
         }
         #endregion
 
         #region Event Click
         private void button_booking_Click(object sender, EventArgs e)
         {
-            FirebaseResponse res = client.Get(@"Rooms/" + textBox_roomID.Text);
             Booking();
         }
 
@@ -57,10 +56,10 @@ namespace HotelManagement_FireBase
             DialogResult dr = MessageBox.Show("Bạn có muốn đặt phòng?", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                SetResponse se = client.Set("Bills/" + textBox_roomID.Text, Declare_Bill());
+                FirebaseResponse se = client.Update("Bills/" + textBox_roomID.Text, Declare_Bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var update = client.Update("Rooms/" + textBox_roomID.Text, Declare_Room());
+                    FirebaseResponse update = client.Set("Rooms/" + textBox_roomID.Text + "/status", "Có người");
                     MessageBox.Show("Đặt phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
                 }
                 else
@@ -69,7 +68,6 @@ namespace HotelManagement_FireBase
                 }
             }
         }
-
         #endregion
 
         #region Declare
@@ -77,7 +75,6 @@ namespace HotelManagement_FireBase
         {
             Room r = new Room()
             {
-                ID = this.textBox_roomID.Text,
                 status = "Có người"
             };
 
@@ -89,7 +86,6 @@ namespace HotelManagement_FireBase
             Bill bill = new Bill()
             {
                 RoomID = this.textBox_roomID.Text,
-
                 DCheckIn = this.dateTimePicker_checkIn.Text,
 
             };

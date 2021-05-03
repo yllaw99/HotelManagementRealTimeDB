@@ -57,7 +57,7 @@ namespace HotelManagement_FireBase
             var r = converted_data.Single(t => t.Value.ID.Equals(ID));
 
             #region Show
-            this.textBox_roomID.Text = r.Value.ID.ToString();
+            this.textBox_roomID.Text = r.Key.ToString();
             this.comboBox_roomType.Text = r.Value.type.ToString();
             this.comboBox_roomStt.Text = r.Value.status.ToString();
         }
@@ -194,10 +194,6 @@ namespace HotelManagement_FireBase
             Delete();
         }
         #endregion
-
-        
-
-
 
         #endregion
 
