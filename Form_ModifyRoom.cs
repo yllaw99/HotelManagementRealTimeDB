@@ -33,7 +33,6 @@ namespace HotelManagement_FireBase
         {
             Room room = new Room()
             {
-                ID = textBox_roomID.Text,
                 type = comboBox_roomType.Text,
                 status = comboBox_roomStt.Text
             };
@@ -52,25 +51,25 @@ namespace HotelManagement_FireBase
         private void dataGridView_roomView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string ID = this.dataGridView_roomView.CurrentRow.Cells[0].Value.ToString();
-            var data = client.Get(@"/Rooms");
+            var data = client.Get("Rooms/");
             var converted_data = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
-            var r = converted_data.Single(t => t.Value.ID.Equals(ID));
+            var r = converted_data.Single(t => t.Key.Equals(ID));
 
             #region Show
-            this.textBox_roomID.Text = r.Key.ToString();
-            this.comboBox_roomType.Text = r.Value.type.ToString();
-            this.comboBox_roomStt.Text = r.Value.status.ToString();
+            this.textBox_roomID.Text = r.Key;
+            this.comboBox_roomType.Text = r.Value.type;
+            this.comboBox_roomStt.Text = r.Value.status;
         }
         #endregion
     
         #region Load Content to DataGridView CLASS
         private void DataGridView_LoadContent()
         {
-            var data = client.Get("/Rooms");
+            var data = client.Get("Rooms/");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
             var listNumber = mList.Select(r => new
             {
-                ID = r.Value.ID,
+                ID = r.Key,
                 Type = r.Value.type,
                 Status = r.Value.status
             }).ToList();

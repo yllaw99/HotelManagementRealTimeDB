@@ -87,7 +87,7 @@ namespace HotelManagement_FireBase
 
         void show_bill()
         {
-            FormBill fb = new FormBill();
+            FormBill fb = new FormBill(this);
             fb.ShowDialog();
         }
         #endregion
@@ -116,7 +116,7 @@ namespace HotelManagement_FireBase
         private void button_modifyRoom_Click(object sender, EventArgs e)
         {
             string name = fs.getUsername();
-            FirebaseResponse res = client.Get(@"Users/" + name);
+            FirebaseResponse res = client.Get("Users/" + name);
             User ResUser = res.ResultAs<User>();
             if (ResUser.role == "Admin")
             {

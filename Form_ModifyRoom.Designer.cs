@@ -148,9 +148,9 @@
             this.comboBox_roomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_roomType.FormattingEnabled = true;
             this.comboBox_roomType.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple",
+            "Single Bed",
+            "Double Bed",
+            "Triple Bed",
             "Family"});
             this.comboBox_roomType.Location = new System.Drawing.Point(86, 10);
             this.comboBox_roomType.Name = "comboBox_roomType";
