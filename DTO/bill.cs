@@ -19,7 +19,6 @@ namespace HotelManagement_FireBase
         //}
 
         private string address;
-
         public string Address
         {
             get { return address; }
@@ -27,7 +26,6 @@ namespace HotelManagement_FireBase
         }
 
         private string cMND;
-
         public string CMND
         {
             get { return cMND; }
@@ -35,7 +33,6 @@ namespace HotelManagement_FireBase
         }
 
         private string cusName;
-
         public string CusName
         {
             get { return cusName; }
@@ -43,7 +40,6 @@ namespace HotelManagement_FireBase
         }
 
         private string billID;
-
         public string BillID
         {
             get { return billID; }
@@ -51,7 +47,6 @@ namespace HotelManagement_FireBase
         }
 
         private string status;
-
         public string Status
         {
             get { return status; }
@@ -59,7 +54,6 @@ namespace HotelManagement_FireBase
         }
 
         private string dCheckIn;
-
         public string DCheckIn
         {
             get { return dCheckIn; }
@@ -67,7 +61,6 @@ namespace HotelManagement_FireBase
         }
 
         private string dCheckOut;
-
         public string DCheckOut
         {
             get { return dCheckOut; }
@@ -75,11 +68,17 @@ namespace HotelManagement_FireBase
         }
 
         private string roomID;
-
         public string RoomID
         {
             get { return roomID; }
             set { roomID = value; }
+        }
+
+        private string contact;
+        public string Contact
+        {
+            get { return contact; }
+            set { contact = value; }
         }
     }
 }

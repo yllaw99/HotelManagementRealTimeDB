@@ -59,6 +59,7 @@ namespace HotelManagement_FireBase
             this.textBox_roomID.Text = r.Key;
             this.comboBox_roomType.Text = r.Value.type;
             this.comboBox_roomStt.Text = r.Value.status;
+            this.textBox_dateCheckIn.Text = r.Value.dateCheckIn;
         }
         #endregion
     
@@ -71,7 +72,8 @@ namespace HotelManagement_FireBase
             {
                 ID = r.Key,
                 Type = r.Value.type,
-                Status = r.Value.status
+                Status = r.Value.status,
+                BillID = r.Value.dateCheckIn
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
             dataGridView_roomView.AutoResizeColumns();
@@ -85,6 +87,7 @@ namespace HotelManagement_FireBase
             this.dataGridView_roomView.Columns[0].HeaderText = "ID";
             this.dataGridView_roomView.Columns[1].HeaderText = "Loại phòng";
             this.dataGridView_roomView.Columns[2].HeaderText = "Trạng thái";
+            this.dataGridView_roomView.Columns[3].HeaderText = "Mã hoá đơn";
         }
         #endregion
 
@@ -202,6 +205,8 @@ namespace HotelManagement_FireBase
             return comboBox_roomStt.Text;
         }
         #endregion
+
+
 
     }
 }

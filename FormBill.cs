@@ -28,20 +28,36 @@ namespace HotelManagement_FireBase
             InitializeComponent();
             this.fr = frm;
         }
-
         #region Load Form
         private void FormBill_Load(object sender, EventArgs e)
         {
-            this.label_roomID.Text = fr.rID;
+            string roomID = fr.rID;
+            string dCheckIn = getdCheckIn(roomID);
+            Bill BillInfo = getBillInfo(dCheckIn, roomID);
 
+            this.label_CusName.Text = BillInfo.CusName.ToString();
+            this.label_arrivalDate.Text = BillInfo.Address.ToString();
+            this.label_departureDate.Text = BillInfo.DCheckOut.ToString();
+            this.label_contact.Text = BillInfo.Contact.ToString();
+            this.label_roomID.Text = roomID;
+            this.label_address.Text = BillInfo.Address.ToString();
         }
         #endregion
 
         #region Function
-        void getData(string roomID) //input = RoomID //output = BillInfo
+        string getdCheckIn(string roomID) //input = RoomID //output = dCheckIn
         {
-            FirebaseResponse data = client.Get("Bills/" + roomID);
-            IDictionary<string, Bill> billInfo = JsonConvert.DeserializeObject<IDictionary<string, Bill>>(data.Body);
+            FirebaseResponse data = client.Get(@"Rooms/" + roomID);
+            Room RoomInfo = data.ResultAs<Room>();
+            string dateCheckIn = RoomInfo.dateCheckIn.ToString();
+            return dateCheckIn;
+        }
+
+        Bill getBillInfo(string dCheckIn, string roomID)
+        {
+            FirebaseResponse data = client.Get("Bills/" + dCheckIn + "/" + roomID);
+            Bill billInfo = data.ResultAs<Bill>();
+            return billInfo;
         }
         #endregion
 

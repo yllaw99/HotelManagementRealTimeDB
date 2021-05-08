@@ -12,6 +12,7 @@ namespace HotelManagement_FireBase
         public string ID { get; set; }
         public string type { get; set; }
         public string status { get; set; }
+        public string dateCheckIn { get; set; }
         #endregion
         #region compare
         public static bool compare(Room room1, Room room2)

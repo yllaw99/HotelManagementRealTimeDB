@@ -61,11 +61,12 @@ namespace HotelManagement_FireBase
             DialogResult dr = MessageBox.Show("Bạn có muốn đặt phòng?", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                string Bill_id = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-                FirebaseResponse se = client.Update("Bills/" + Bill_id + "/" + textBox_roomID.Text + "/", Declare_Bill());
+                string dateCheckin = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+                FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", Declare_Bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     FirebaseResponse update = client.Set("Rooms/" + textBox_roomID.Text + "/status", "Có người");
+                    update = client.Set("Rooms/" + textBox_roomID.Text + "/dateCheckIn", dateCheckin);
                     MessageBox.Show("Đặt phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
                 }
                 else
@@ -86,7 +87,8 @@ namespace HotelManagement_FireBase
                 CMND = textBox_cmnd.Text,
                 DCheckIn = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + dateTimePicker_checkIn.Text,
                 DCheckOut = "",
-                Address = textBox_address.Text 
+                Address = textBox_address.Text,
+                Contact = textBox_contact.Text
             };
 
             return bill;

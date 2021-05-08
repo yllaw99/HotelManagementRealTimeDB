@@ -46,28 +46,34 @@ namespace HotelManagement_FireBase
                 return;
             }
         #endregion
+            try
+            {
+                FirebaseResponse res = client.Get(@"Users/" + getUsername());
+                User ResUser = res.ResultAs<User>();
+                User CurUser = new User()
+                {
+                    username = getUsername(),
+                    pwd = textBox_signin_pwd.Text
+                };
 
+                if (User.IsEqual(ResUser, CurUser))
+                {
+                    this.Hide();
+                    FormRoom fr = new FormRoom(this);
+                    fr.ShowDialog();
+                    this.Show();
+                    this.textBox_signin_pwd.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi kết nối mạng!", "Vui lòng thử lại", MessageBoxButtons.OK);
+            }
             // check if username & pwd are correct
-            FirebaseResponse res = client.Get(@"Users/" + getUsername());
-            User ResUser = res.ResultAs<User>();
-            User CurUser = new User()
-            {
-                username = getUsername(),
-                pwd = textBox_signin_pwd.Text
-            };
-
-            if (User.IsEqual(ResUser, CurUser))
-            {
-                this.Hide();
-                FormRoom fr = new FormRoom(this);
-                fr.ShowDialog();
-                this.Show();
-                this.textBox_signin_pwd.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Đăng nhập thất bại");
-            }
         }
         #endregion
 
