@@ -42,9 +42,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton_nonGuaranteed = new System.Windows.Forms.RadioButton();
-            this.radioButton_guaranteed = new System.Windows.Forms.RadioButton();
             this.label_contact = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label_roomID = new System.Windows.Forms.Label();
@@ -65,6 +62,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_cardNum = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label_reservationType = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -73,7 +72,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,12 +106,12 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.54386F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.45614F));
+            this.tableLayoutPanel1.Controls.Add(this.label_reservationType, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label_address, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label_contact, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label_roomID, 1, 6);
@@ -129,6 +127,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -260,45 +259,6 @@
             this.label_address.TabIndex = 17;
             this.label_address.Text = "label_address";
             this.label_address.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // groupBox2
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
-            this.groupBox2.Controls.Add(this.radioButton_nonGuaranteed);
-            this.groupBox2.Controls.Add(this.radioButton_guaranteed);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 444);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 43);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // radioButton_nonGuaranteed
-            // 
-            this.radioButton_nonGuaranteed.AutoSize = true;
-            this.radioButton_nonGuaranteed.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton_nonGuaranteed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_nonGuaranteed.Location = new System.Drawing.Point(186, 16);
-            this.radioButton_nonGuaranteed.Name = "radioButton_nonGuaranteed";
-            this.radioButton_nonGuaranteed.Size = new System.Drawing.Size(261, 24);
-            this.radioButton_nonGuaranteed.TabIndex = 1;
-            this.radioButton_nonGuaranteed.Text = "Không đảm bảo (Non Guaranteed)";
-            this.radioButton_nonGuaranteed.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_guaranteed
-            // 
-            this.radioButton_guaranteed.AutoSize = true;
-            this.radioButton_guaranteed.Checked = true;
-            this.radioButton_guaranteed.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton_guaranteed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_guaranteed.Location = new System.Drawing.Point(3, 16);
-            this.radioButton_guaranteed.Name = "radioButton_guaranteed";
-            this.radioButton_guaranteed.Size = new System.Drawing.Size(183, 24);
-            this.radioButton_guaranteed.TabIndex = 0;
-            this.radioButton_guaranteed.TabStop = true;
-            this.radioButton_guaranteed.Text = "Đảm bảo (Guaranteed)";
-            this.radioButton_guaranteed.UseVisualStyleBackColor = true;
             // 
             // label_contact
             // 
@@ -544,6 +504,30 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Số thẻ (Card Number)";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 441);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(188, 49);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Kiểu đặt phòng";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_reservationType
+            // 
+            this.label_reservationType.AutoSize = true;
+            this.label_reservationType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_reservationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_reservationType.Location = new System.Drawing.Point(197, 441);
+            this.label_reservationType.Name = "label_reservationType";
+            this.label_reservationType.Size = new System.Drawing.Size(256, 49);
+            this.label_reservationType.TabIndex = 25;
+            this.label_reservationType.Text = "label_reservationType";
+            this.label_reservationType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,8 +550,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -593,9 +575,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label_roomID;
         private System.Windows.Forms.Label label_address;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton_nonGuaranteed;
-        private System.Windows.Forms.RadioButton radioButton_guaranteed;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.CheckBox checkBox_deposit;
@@ -615,6 +594,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label_departureDate;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_reservationType;
 
 
 

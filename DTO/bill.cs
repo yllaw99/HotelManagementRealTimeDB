@@ -7,17 +7,7 @@ using System.Threading.Tasks;
 namespace HotelManagement_FireBase
 {
     class Bill
-    {
-        //public Bill(string roomID, string dateCheckIn, string dateCheckOut, string stt, string bID, string Cusname)
-        //{
-        //    this.RoomID = roomID;
-        //    this.DCheckIn = dateCheckIn;
-        //    this.DCheckOut = dateCheckOut;
-        //    this.Status = stt;
-        //    this.BillID = bID;
-        //    this.CusName = CusName;
-        //}
-
+    {    
         private string address;
         public string Address
         {
@@ -79,6 +69,20 @@ namespace HotelManagement_FireBase
         {
             get { return contact; }
             set { contact = value; }
+        }
+
+        private string reservationType;
+        public string ReservationType
+        {
+            get { return reservationType; }
+            set { reservationType = value; }
+        }
+
+        private string paymentMethod;
+        public string PaymentMethod
+        {
+            get { return paymentMethod; }
+            set { paymentMethod = value; }
         }
     }
 }

@@ -24,7 +24,6 @@ namespace HotelManagement_FireBase
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
-
         #region initial
         public FormReservation(FormRoom frm)
         {
@@ -32,13 +31,12 @@ namespace HotelManagement_FireBase
             this.fr = frm;
         }
         #endregion
-
         #region Form Load
         private void FormReservation_Load(object sender, EventArgs e)
         {
             this.dateTimePicker_checkIn.Format = DateTimePickerFormat.Custom;
             this.dateTimePicker_checkIn.CustomFormat = "dd-MM-yyyy";
-            this.textBox_roomID.Text = fr.rID;
+            this.textBox_roomID.Text = fr.rID;            
         }
         #endregion
 
@@ -53,9 +51,52 @@ namespace HotelManagement_FireBase
         {
             this.Close();
         }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton_guaranteed.Checked)
+            {
+                this.radioButton1.Visible = false;
+                this.radioButton2.Visible = false;
+            }
+            else
+            {
+                this.radioButton1.Visible = true;
+                this.radioButton2.Visible = true;
+            }
+        }
         #endregion
 
         #region function
+        string getPaymentMethod()
+        {
+            string pMethod = "";
+            if (radioButton1.Checked)
+            {
+                pMethod = radioButton1.Text;
+            }
+            else
+            {
+                pMethod = radioButton2.Text;
+            }
+            return pMethod;
+        }
+
+        string getReservationType()
+        {
+            string ReType = "";
+            if (radioButton_guaranteed.Checked)
+            {
+                ReType = radioButton_guaranteed.Text;
+            }
+            else
+            {
+                ReType = radioButton_nonGuaranteed.Text;
+            }
+            return ReType;
+        }
+
+
         void Booking()
         {
             DialogResult dr = MessageBox.Show("Bạn có muốn đặt phòng?", "Thông báo", MessageBoxButtons.YesNo);
@@ -88,11 +129,17 @@ namespace HotelManagement_FireBase
                 DCheckIn = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + dateTimePicker_checkIn.Text,
                 DCheckOut = "",
                 Address = textBox_address.Text,
-                Contact = textBox_contact.Text
+                Contact = textBox_contact.Text,
+                ReservationType = getReservationType(),
+                PaymentMethod = getPaymentMethod()
             };
-
             return bill;
         }
         #endregion
+
+
+
+
+
     }
 }
