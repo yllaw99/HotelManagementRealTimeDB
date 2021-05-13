@@ -128,7 +128,8 @@
             this.comboBox_roomStt.FormattingEnabled = true;
             this.comboBox_roomStt.Items.AddRange(new object[] {
             "Trống",
-            "Có người"});
+            "Có người",
+            "Đã đặt"});
             this.comboBox_roomStt.Location = new System.Drawing.Point(130, 139);
             this.comboBox_roomStt.Name = "comboBox_roomStt";
             this.comboBox_roomStt.Size = new System.Drawing.Size(161, 21);

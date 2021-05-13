@@ -55,6 +55,9 @@ namespace HotelManagement_FireBase
                     case "Trống":
                         btn.BackColor = Color.Aqua;
                         break;
+                    case "Đã đặt":
+                        btn.BackColor = Color.DarkGray;
+                        break;
                     default:
                         btn.BackColor = Color.AntiqueWhite;
                         break;
@@ -68,17 +71,26 @@ namespace HotelManagement_FireBase
         {
             rID = (sender as Button).Tag.ToString();
             string stt = sender.ToString();
-            if (stt.Substring(stt.Length - 5, 5) == "Trống")
+            string substr = stt.Substring(stt.Length - 5, 5);
+            switch (substr)
             {
-                show_reservation();
-                LoadRoom();
+                case "Trống":
+                    show_reservation();
+                    LoadRoom();
+                    break;
+                case "người":
+                    show_bill();
+                    LoadRoom();
+                    break;
+                case "ã đặt":
+                    show_checkIn();
+                    LoadRoom();
+                    break;
             }
-            else show_bill();
-            LoadRoom();
         }
         #endregion
 
-        #region Bill & Reservation
+        #region Bill & Reservation & checkIn
         void show_reservation()
         {
             FormReservation fr = new FormReservation(this);
@@ -89,6 +101,12 @@ namespace HotelManagement_FireBase
         {
             FormBill fb = new FormBill(this);
             fb.ShowDialog();
+        }
+
+        void show_checkIn()
+        {
+            FormCheckIn fc = new FormCheckIn(this);
+            fc.ShowDialog();
         }
         #endregion
        

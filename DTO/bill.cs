@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagement_FireBase
 {
-    class Bill
+    public class Bill
     {    
         private string address;
         public string Address
@@ -78,11 +78,25 @@ namespace HotelManagement_FireBase
             set { reservationType = value; }
         }
 
-        private string paymentMethod;
-        public string PaymentMethod
+        private string payment;
+        public string Payment
         {
-            get { return paymentMethod; }
-            set { paymentMethod = value; }
+            get { return payment; }
+            set { payment = value; }
+        }
+
+        private string creditCardID;
+        public string CreditCardID
+        {
+            get { return creditCardID; }
+            set { creditCardID = value; }
+        }
+
+        private string cardExpDate;
+        public string CardExpDate
+        {
+            get { return cardExpDate; }
+            set { cardExpDate = value; }
         }
     }
 }

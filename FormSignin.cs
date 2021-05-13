@@ -22,10 +22,10 @@ namespace HotelManagement_FireBase
             InitializeComponent();
         }
 
-    #region connect to db
+        #region connect to db
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
-    #endregion
+        #endregion
 
 
         public string getUsername()
@@ -69,9 +69,9 @@ namespace HotelManagement_FireBase
                     MessageBox.Show("Đăng nhập thất bại");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối mạng!", "Vui lòng thử lại", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message, "Vui lòng thử lại", MessageBoxButtons.OK);
             }
             // check if username & pwd are correct
         }

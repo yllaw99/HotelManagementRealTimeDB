@@ -21,7 +21,7 @@ namespace HotelManagement_FireBase.DAO
         }
 
         public DataProvider() { }
-
+        #region connect
         public IFirebaseClient connect()
         {
             IFirebaseConfig ifc = new FirebaseConfig
@@ -33,7 +33,8 @@ namespace HotelManagement_FireBase.DAO
             client = new FireSharp.FirebaseClient(ifc);
             return client;
         }
-
+        #endregion
+        #region
         public string GetIDBill(string rID)
         {
             IFirebaseClient client = this.connect();
@@ -42,5 +43,26 @@ namespace HotelManagement_FireBase.DAO
             string billID = Bill_List.Select(b => new { bID = b.Value.BillID }).ToString();
             return billID;
         }
+        #endregion
+        #region get date check in
+        public string getdCheckIn(string roomID) //input = RoomID //output = dCheckIn
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get(@"Rooms/" + roomID);
+            Room RoomInfo = data.ResultAs<Room>();
+            string dateCheckIn = RoomInfo.dateCheckIn.ToString();
+            return dateCheckIn;
+        }
+        #endregion
+
+        #region get bill info
+        public Bill getBillInfo(string dCheckIn, string roomID)
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("Bills/" + dCheckIn + "/" + roomID);
+            Bill billInfo = data.ResultAs<Bill>();
+            return billInfo;
+        }
+        #endregion
     }
 }
