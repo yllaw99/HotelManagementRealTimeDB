@@ -34,7 +34,8 @@ namespace HotelManagement_FireBase
             Room room = new Room()
             {
                 type = comboBox_roomType.Text,
-                status = comboBox_roomStt.Text
+                status = comboBox_roomStt.Text,
+                Price = textBox_roomPrice.Text
             };
             return room;
         }
@@ -59,13 +60,19 @@ namespace HotelManagement_FireBase
             this.textBox_roomID.Text = r.Key;
             this.comboBox_roomType.Text = r.Value.type;
             this.comboBox_roomStt.Text = r.Value.status;
-            this.textBox_dateCheckIn.Text = r.Value.dateCheckIn;
+            this.textBox_dateCheckIn.Text = r.Value.DateCheckIn;
+            this.textBox_roomPrice.Text = r.Value.Price;
         }
         #endregion
     
         #region Load Content to DataGridView CLASS
         private void DataGridView_LoadContent()
         {
+            this.textBox_roomID.Clear();
+            this.comboBox_roomType.Text = "";
+            this.comboBox_roomStt.Text = "";
+            this.textBox_dateCheckIn.Clear();
+            this.textBox_roomPrice.Clear();
             var data = client.Get("Rooms/");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
             var listNumber = mList.Select(r => new
@@ -73,7 +80,8 @@ namespace HotelManagement_FireBase
                 ID = r.Key,
                 Type = r.Value.type,
                 Status = r.Value.status,
-                BillID = r.Value.dateCheckIn
+                BillID = r.Value.DateCheckIn,
+                price = r.Value.Price
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
             dataGridView_roomView.AutoResizeColumns();
@@ -87,7 +95,8 @@ namespace HotelManagement_FireBase
             this.dataGridView_roomView.Columns[0].HeaderText = "ID";
             this.dataGridView_roomView.Columns[1].HeaderText = "Loại phòng";
             this.dataGridView_roomView.Columns[2].HeaderText = "Trạng thái";
-            this.dataGridView_roomView.Columns[3].HeaderText = "Mã hoá đơn";
+            this.dataGridView_roomView.Columns[3].HeaderText = "Ngày CheckIn";
+            this.dataGridView_roomView.Columns[4].HeaderText = "Đơn giá";
         }
         #endregion
 
@@ -105,13 +114,13 @@ namespace HotelManagement_FireBase
                 if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được xoá thành công!", "Thông báo!");
-                    DataGridView_LoadContent();
+                    //DataGridView_LoadContent();
                 }
                 else
                 {
                     MessageBox.Show("Lỗi khi xoá phòng" + textBox_roomID.Text, "Thông báo!");
                 }
-                //DataGridView_LoadContent();
+                DataGridView_LoadContent();
             }
         }
         #endregion
@@ -131,7 +140,6 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi tạo phòng [" + textBox_roomID.Text + "]", "Thông báo!");
                 }
-                //DataGridView_LoadContent();
             }
         }
         #endregion

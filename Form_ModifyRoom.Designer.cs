@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ModifyRoom));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_roomView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,6 +45,8 @@
             this.button_deleteRoom = new System.Windows.Forms.Button();
             this.button_updateRoom = new System.Windows.Forms.Button();
             this.button_addRoom = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_roomPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_roomView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -81,6 +84,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53741F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46259F));
+            this.tableLayoutPanel2.Controls.Add(this.textBox_roomPrice, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.comboBox_roomStt, 1, 2);
@@ -89,23 +93,26 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.comboBox_roomType, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(294, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.27988F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2449F));
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(294, 343);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // textBox_dateCheckIn
             // 
             this.textBox_dateCheckIn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_dateCheckIn.Location = new System.Drawing.Point(130, 207);
+            this.textBox_dateCheckIn.Location = new System.Drawing.Point(130, 174);
             this.textBox_dateCheckIn.Name = "textBox_dateCheckIn";
             this.textBox_dateCheckIn.ReadOnly = true;
             this.textBox_dateCheckIn.Size = new System.Drawing.Size(161, 20);
@@ -115,12 +122,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 204);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 20);
+            this.label4.Size = new System.Drawing.Size(121, 18);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Ngày";
+            this.label4.Text = "Ngày check in";
             // 
             // comboBox_roomStt
             // 
@@ -130,7 +137,7 @@
             "Trống",
             "Có người",
             "Đã đặt"});
-            this.comboBox_roomStt.Location = new System.Drawing.Point(130, 139);
+            this.comboBox_roomStt.Location = new System.Drawing.Point(130, 117);
             this.comboBox_roomStt.Name = "comboBox_roomStt";
             this.comboBox_roomStt.Size = new System.Drawing.Size(161, 21);
             this.comboBox_roomStt.TabIndex = 5;
@@ -139,34 +146,34 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 136);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(121, 18);
             this.label3.TabIndex = 4;
-            this.label3.Text = "TRẠNG THÁI";
+            this.label3.Text = "Trạng thái";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 68);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 20);
+            this.label2.Size = new System.Drawing.Size(121, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "LOẠI PHÒNG";
+            this.label2.Text = "Loại phòng";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 20);
+            this.label1.Size = new System.Drawing.Size(121, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "PHÒNG";
+            this.label1.Text = "Mã phòng";
             // 
             // textBox_roomID
             // 
@@ -185,7 +192,7 @@
             "Double Bed",
             "Triple Bed",
             "Family"});
-            this.comboBox_roomType.Location = new System.Drawing.Point(130, 71);
+            this.comboBox_roomType.Location = new System.Drawing.Point(130, 60);
             this.comboBox_roomType.Name = "comboBox_roomType";
             this.comboBox_roomType.Size = new System.Drawing.Size(161, 21);
             this.comboBox_roomType.TabIndex = 3;
@@ -195,9 +202,9 @@
             this.tableLayoutPanel2.SetColumnSpan(this.panel1, 2);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 303);
+            this.panel1.Location = new System.Drawing.Point(3, 288);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 37);
+            this.panel1.Size = new System.Drawing.Size(288, 52);
             this.panel1.TabIndex = 8;
             // 
             // tableLayoutPanel3
@@ -214,15 +221,15 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(288, 37);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(288, 52);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // button_deleteRoom
             // 
             this.button_deleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_deleteRoom.Location = new System.Drawing.Point(195, 3);
             this.button_deleteRoom.Name = "button_deleteRoom";
-            this.button_deleteRoom.Size = new System.Drawing.Size(90, 31);
+            this.button_deleteRoom.Size = new System.Drawing.Size(90, 46);
             this.button_deleteRoom.TabIndex = 5;
             this.button_deleteRoom.Text = "Xoá";
             this.button_deleteRoom.UseVisualStyleBackColor = true;
@@ -233,7 +240,7 @@
             this.button_updateRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_updateRoom.Location = new System.Drawing.Point(99, 3);
             this.button_updateRoom.Name = "button_updateRoom";
-            this.button_updateRoom.Size = new System.Drawing.Size(90, 31);
+            this.button_updateRoom.Size = new System.Drawing.Size(90, 46);
             this.button_updateRoom.TabIndex = 4;
             this.button_updateRoom.Text = "Cập nhật";
             this.button_updateRoom.UseVisualStyleBackColor = true;
@@ -244,11 +251,29 @@
             this.button_addRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_addRoom.Location = new System.Drawing.Point(3, 3);
             this.button_addRoom.Name = "button_addRoom";
-            this.button_addRoom.Size = new System.Drawing.Size(90, 31);
+            this.button_addRoom.Size = new System.Drawing.Size(90, 46);
             this.button_addRoom.TabIndex = 3;
             this.button_addRoom.Text = "Thêm";
             this.button_addRoom.UseVisualStyleBackColor = true;
             this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 18);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Đơn giá phòng";
+            // 
+            // textBox_roomPrice
+            // 
+            this.textBox_roomPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_roomPrice.Location = new System.Drawing.Point(130, 231);
+            this.textBox_roomPrice.Name = "textBox_roomPrice";
+            this.textBox_roomPrice.Size = new System.Drawing.Size(161, 20);
+            this.textBox_roomPrice.TabIndex = 10;
             // 
             // Form_ModifyRoom
             // 
@@ -256,9 +281,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 349);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_ModifyRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_ModifyRoom";
+            this.Text = "Quản lý phòng";
             this.Load += new System.EventHandler(this.Form_ModifyRoom_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_roomView)).EndInit();
@@ -288,6 +314,8 @@
         private System.Windows.Forms.Button button_deleteRoom;
         private System.Windows.Forms.Button button_updateRoom;
         private System.Windows.Forms.Button button_addRoom;
+        private System.Windows.Forms.TextBox textBox_roomPrice;
+        private System.Windows.Forms.Label label5;
 
 
 

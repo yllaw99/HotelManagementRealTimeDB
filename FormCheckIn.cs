@@ -30,8 +30,8 @@ namespace HotelManagement_FireBase
         private void FormCheckIn_Load(object sender, EventArgs e)
         {
             string roomID = fr.rID;
-            string dCheckIn = DataProvider.Instance.getdCheckIn(roomID);
-            Bill BillInfo = DataProvider.Instance.getBillInfo(dCheckIn, roomID);
+            Room roomInfo = provider.getRoomInfo(roomID);
+            Bill BillInfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), roomID);
             this.label_roomID.Text = fr.rID;
             this.label_cusName.Text = BillInfo.CusName.ToString();
         }
@@ -40,11 +40,11 @@ namespace HotelManagement_FireBase
         private void button_bookingCancel_Click(object sender, EventArgs e)
         {
             string roomID = fr.rID;
-            string dCheckIn = DataProvider.Instance.getdCheckIn(roomID);
+            Room roomInfo = provider.getRoomInfo(roomID);
             string dCheckOut = "Đã huỷ";
             var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
             client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
-            client.Set("Bills/" + dCheckIn + "/" + roomID + "/DCheckOut/", dCheckOut);
+            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/DCheckOut/", dCheckOut);
             if (update.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 MessageBox.Show("Huỷ đặt phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
@@ -58,8 +58,8 @@ namespace HotelManagement_FireBase
         #region confirm
         private void button_confirm_Click(object sender, EventArgs e)
         {
-            string billid = DataProvider.Instance.getdCheckIn(fr.rID);
-            Bill billinfo = DataProvider.Instance.getBillInfo(billid, fr.rID);
+            Room roomInfo = provider.getRoomInfo(fr.rID);
+            Bill billinfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), fr.rID);
             string confirmID = textBox_checkInID.Text;
             if (textBox_checkInID.Text == billinfo.CMND.ToString())
             {

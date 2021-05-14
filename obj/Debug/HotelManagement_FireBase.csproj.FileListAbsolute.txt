@@ -31,14 +31,6 @@ D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.pdb
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\HotelManagement_FireBase.exe
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\HotelManagement_FireBase.pdb
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Microsoft.Threading.Tasks.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Newtonsoft.Json.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\System.Net.Http.Extensions.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\System.Net.Http.Formatting.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\System.Net.Http.Primitives.xml
-D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.csprojResolveAssemblyReference.cache
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormAccountList.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.form_signin.resources
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.Properties.Resources.resources

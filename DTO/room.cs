@@ -6,13 +6,26 @@ using System.Threading.Tasks;
 
 namespace HotelManagement_FireBase
 {
-    class Room
+    public class Room
     {
         #region Declaration
         public string ID { get; set; }
         public string type { get; set; }
         public string status { get; set; }
-        public string dateCheckIn { get; set; }
+
+        private string dateCheckIn;
+        public string DateCheckIn
+        {
+            get { return dateCheckIn; }
+            set { dateCheckIn = value; }
+        }
+
+        private string price;
+        public string Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
         #endregion
         #region compare
         public static bool compare(Room room1, Room room2)

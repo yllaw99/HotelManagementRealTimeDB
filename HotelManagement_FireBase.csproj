@@ -95,6 +95,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DTO\bill.cs" />
     <Compile Include="DTO\customer.cs" />
     <Compile Include="DAO\BillDAO.cs" />
@@ -158,6 +161,9 @@
     <Compile Include="FormCheckIn.Designer.cs">
       <DependentUpon>FormCheckIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="roundedTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FormAccountList.resx">
       <DependentUpon>FormAccountList.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_paradise_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_paradise_21.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

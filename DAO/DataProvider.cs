@@ -34,7 +34,7 @@ namespace HotelManagement_FireBase.DAO
             return client;
         }
         #endregion
-        #region
+        #region getIDBill
         public string GetIDBill(string rID)
         {
             IFirebaseClient client = this.connect();
@@ -44,17 +44,6 @@ namespace HotelManagement_FireBase.DAO
             return billID;
         }
         #endregion
-        #region get date check in
-        public string getdCheckIn(string roomID) //input = RoomID //output = dCheckIn
-        {
-            IFirebaseClient client = connect();
-            FirebaseResponse data = client.Get(@"Rooms/" + roomID);
-            Room RoomInfo = data.ResultAs<Room>();
-            string dateCheckIn = RoomInfo.dateCheckIn.ToString();
-            return dateCheckIn;
-        }
-        #endregion
-
         #region get bill info
         public Bill getBillInfo(string dCheckIn, string roomID)
         {
@@ -62,6 +51,16 @@ namespace HotelManagement_FireBase.DAO
             FirebaseResponse data = client.Get("Bills/" + dCheckIn + "/" + roomID);
             Bill billInfo = data.ResultAs<Bill>();
             return billInfo;
+        }
+        #endregion
+
+        #region getRoominfo
+        public Room getRoomInfo(string roomID)
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("Rooms/" + roomID);
+            Room roomInfo = data.ResultAs<Room>();
+            return roomInfo;
         }
         #endregion
     }

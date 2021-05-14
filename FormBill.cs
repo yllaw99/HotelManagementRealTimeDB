@@ -21,8 +21,7 @@ using PdfSharp.Drawing;
 namespace HotelManagement_FireBase
 {
     public partial class FormBill : Form
-    {
-
+    {        
         FormRoom fr;
         #region connect to db
         DataProvider provider = new DataProvider();
@@ -40,13 +39,12 @@ namespace HotelManagement_FireBase
         private void FormBill_Load(object sender, EventArgs e)
         {
             string roomID = fr.rID;
-            string dCheckIn = DataProvider.Instance.getdCheckIn(roomID);
-            Bill BillInfo = DataProvider.Instance.getBillInfo(dCheckIn, roomID);
+            Room roomInfo = provider.getRoomInfo(roomID);
+            Bill BillInfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), roomID);
 
             string dci = BillInfo.DCheckIn.ToString(); 
             this.label_CusName.Text = BillInfo.CusName.ToString();
             this.label_arrivalDate.Text = dci.Substring(dci.IndexOf(" "), dci.Length - dci.IndexOf(" "));
-            //this.label_departureDate.Text = BillInfo.DCheckOut.ToString();
             this.label_contact.Text = BillInfo.Contact.ToString();
             this.label_roomID.Text = roomID;
             this.label_address.Text = BillInfo.Address.ToString();
@@ -56,22 +54,17 @@ namespace HotelManagement_FireBase
         #endregion  
 
         #region click events
+        void checkOut()
+        {
+            FormCheckOut fco = new FormCheckOut(fr);
+            fco.ShowDialog();
+        }
+
         private void button_checkOut_Click(object sender, EventArgs e)
-        {            
-            string roomID = label_roomID.Text;
-            string dCheckIn = DataProvider.Instance.getdCheckIn(roomID);
-            string dCheckOut = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-            var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
-            client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
-            client.Set("Bills/" + dCheckIn + "/" + roomID + "/DCheckOut/", dCheckOut);
-            if (update.StatusCode == System.Net.HttpStatusCode.OK)
-            {                
-                MessageBox.Show("Check out thành công!!", "Thông báo", MessageBoxButtons.OK);
-            }
-            else MessageBox.Show("Lỗi khi Check out", "Thông báo", MessageBoxButtons.OK);
-            
-            this.Close();
+        {
+            checkOut();
         }
         #endregion
+
     }
 }

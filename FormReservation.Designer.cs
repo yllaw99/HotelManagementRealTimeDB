@@ -65,9 +65,9 @@
             this.textBox_creditCardExpDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_booking = new System.Windows.Forms.Button();
-            this.button_reserve = new System.Windows.Forms.Button();
             this.button_quit = new System.Windows.Forms.Button();
+            this.button_reserve = new System.Windows.Forms.Button();
+            this.button_booking = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -527,17 +527,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(656, 40);
             this.tableLayoutPanel2.TabIndex = 73;
             // 
-            // button_booking
+            // button_quit
             // 
-            this.button_booking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_booking.Location = new System.Drawing.Point(3, 3);
-            this.button_booking.Name = "button_booking";
-            this.button_booking.Size = new System.Drawing.Size(212, 34);
-            this.button_booking.TabIndex = 17;
-            this.button_booking.Text = "ĐẶT PHÒNG";
-            this.button_booking.UseVisualStyleBackColor = true;
-            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
+            this.button_quit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_quit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_quit.Location = new System.Drawing.Point(439, 3);
+            this.button_quit.Name = "button_quit";
+            this.button_quit.Size = new System.Drawing.Size(214, 34);
+            this.button_quit.TabIndex = 21;
+            this.button_quit.Text = "THOÁT";
+            this.button_quit.UseVisualStyleBackColor = true;
+            this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
             // button_reserve
             // 
@@ -551,17 +551,17 @@
             this.button_reserve.UseVisualStyleBackColor = true;
             this.button_reserve.Click += new System.EventHandler(this.button_reserve_Click);
             // 
-            // button_quit
+            // button_booking
             // 
-            this.button_quit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_quit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_quit.Location = new System.Drawing.Point(439, 3);
-            this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(214, 34);
-            this.button_quit.TabIndex = 21;
-            this.button_quit.Text = "THOÁT";
-            this.button_quit.UseVisualStyleBackColor = true;
-            this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
+            this.button_booking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_booking.Location = new System.Drawing.Point(3, 3);
+            this.button_booking.Name = "button_booking";
+            this.button_booking.Size = new System.Drawing.Size(212, 34);
+            this.button_booking.TabIndex = 17;
+            this.button_booking.Text = "ĐẶT PHÒNG";
+            this.button_booking.UseVisualStyleBackColor = true;
+            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
             // 
             // FormReservation
             // 

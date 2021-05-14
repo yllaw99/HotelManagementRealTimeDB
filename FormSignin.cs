@@ -17,30 +17,28 @@ namespace HotelManagement_FireBase
 {
     public partial class form_signin : Form
     {
+        #region initial
         public form_signin()
         {
             InitializeComponent();
         }
-
+        #endregion
         #region connect to db
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
-
 
         public string getUsername()
         {
             return textBox_signin_username.Text;
         }
 
-
-
     #region Sign In
         private void button_signin_Click(object sender, EventArgs e)
         {
         #region Null Checking
             if (string.IsNullOrWhiteSpace(textBox_signin_username.Text) &&
-               string.IsNullOrWhiteSpace(textBox_signin_pwd.Text))
+               string.IsNullOrWhiteSpace(textBox123.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
                 return;
@@ -53,7 +51,7 @@ namespace HotelManagement_FireBase
                 User CurUser = new User()
                 {
                     username = getUsername(),
-                    pwd = textBox_signin_pwd.Text
+                    pwd = textBox123.Text
                 };
 
                 if (User.IsEqual(ResUser, CurUser))
@@ -62,7 +60,7 @@ namespace HotelManagement_FireBase
                     FormRoom fr = new FormRoom(this);
                     fr.ShowDialog();
                     this.Show();
-                    this.textBox_signin_pwd.Clear();
+                    this.textBox123.Clear();
                 }
                 else
                 {
@@ -81,5 +79,6 @@ namespace HotelManagement_FireBase
         {
             this.Close();
         }
+
     }
 }
