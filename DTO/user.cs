@@ -27,7 +27,7 @@ namespace HotelManagement_FireBase
         #endregion
 
         #region Check if user & pwd are correct
-        public static bool IsEqual(User user1, User user2)//input = current user, user in database)
+        public static bool IsEqual(User user1, User user2)
         {
             if (user1 == null || user2 == null) { return false; }
 

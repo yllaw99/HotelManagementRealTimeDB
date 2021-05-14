@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace HotelManagement_FireBase.DAO
 {
@@ -53,7 +54,6 @@ namespace HotelManagement_FireBase.DAO
             return billInfo;
         }
         #endregion
-
         #region getRoominfo
         public Room getRoomInfo(string roomID)
         {
@@ -61,6 +61,27 @@ namespace HotelManagement_FireBase.DAO
             FirebaseResponse data = client.Get("Rooms/" + roomID);
             Room roomInfo = data.ResultAs<Room>();
             return roomInfo;
+        }
+        #endregion
+        #region encrypt pwd
+        public string hash_password(string pure_pwd)
+        {
+            pure_pwd += "yllaw";
+            SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
+            byte[] pwd_byte = Encoding.ASCII.GetBytes(pure_pwd);
+            byte[] encrypted_byte = sha1.ComputeHash(pwd_byte);
+
+            string encrypted_pwd = Convert.ToBase64String(encrypted_byte);
+            return encrypted_pwd;
+        }
+        #endregion
+        #region get customer info
+        public customer cusVIP(string CMND)
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("Customers/" + CMND);
+            customer cusInfo = data.ResultAs<customer>();
+            return cusInfo;
         }
         #endregion
     }

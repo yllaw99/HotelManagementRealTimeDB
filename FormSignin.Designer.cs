@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_signin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.roundedTextbox1 = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox123 = new HotelManagement_FireBase.roundedTextbox();
+            this.textBox_pwd = new HotelManagement_FireBase.roundedTextbox();
             this.textBox_signin_username = new HotelManagement_FireBase.roundedTextbox();
             this.button_signin = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +56,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::HotelManagement_FireBase.Properties.Resources.blue_paradise_21;
+            this.pictureBox1.Image = global::HotelManagement_FireBase.Properties.Resources.blue_paradise_background;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(531, 532);
@@ -66,8 +67,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox123);
+            this.panel2.Controls.Add(this.textBox_pwd);
             this.panel2.Controls.Add(this.textBox_signin_username);
             this.panel2.Controls.Add(this.button_signin);
             this.panel2.Location = new System.Drawing.Point(565, 173);
@@ -75,37 +75,16 @@
             this.panel2.Size = new System.Drawing.Size(281, 147);
             this.panel2.TabIndex = 13;
             // 
-            // label1
+            // textBox_pwd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.label1.Location = new System.Drawing.Point(831, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 26);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "X";
-            this.label1.Click += new System.EventHandler(this.button_cancel_Click);
-            // 
-            // roundedTextbox1
-            // 
-            this.roundedTextbox1.Location = new System.Drawing.Point(649, 61);
-            this.roundedTextbox1.Name = "roundedTextbox1";
-            this.roundedTextbox1.Size = new System.Drawing.Size(110, 20);
-            this.roundedTextbox1.TabIndex = 15;
-            this.roundedTextbox1.UseSystemPasswordChar = true;
-            // 
-            // textBox123
-            // 
-            this.textBox123.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox123.Font = new System.Drawing.Font("Ebrima", 13F);
-            this.textBox123.Location = new System.Drawing.Point(16, 55);
-            this.textBox123.Name = "textBox123";
-            this.textBox123.Size = new System.Drawing.Size(250, 31);
-            this.textBox123.TabIndex = 1;
-            this.textBox123.Text = "1";
-            this.textBox123.UseSystemPasswordChar = true;
+            this.textBox_pwd.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox_pwd.Font = new System.Drawing.Font("Ebrima", 13F);
+            this.textBox_pwd.Location = new System.Drawing.Point(16, 55);
+            this.textBox_pwd.Name = "textBox_pwd";
+            this.textBox_pwd.Size = new System.Drawing.Size(250, 31);
+            this.textBox_pwd.TabIndex = 1;
+            this.textBox_pwd.Text = "1";
+            this.textBox_pwd.UseSystemPasswordChar = true;
             // 
             // textBox_signin_username
             // 
@@ -136,27 +115,38 @@
             this.button_signin.UseVisualStyleBackColor = false;
             this.button_signin.Click += new System.EventHandler(this.button_signin_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(822, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(39, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.button_cancel_Click);
+            // 
             // form_signin
             // 
+            this.AcceptButton = this.button_signin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(873, 532);
-            this.Controls.Add(this.roundedTextbox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_signin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Enter += new System.EventHandler(this.button_signin_Click);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -166,10 +156,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private ePOSOne.btnProduct.Button_WOC button_signin;
-        private System.Windows.Forms.Label label1;
         private roundedTextbox textBox_signin_username;
-        private roundedTextbox textBox123;
-        private roundedTextbox roundedTextbox1;
+        private roundedTextbox textBox_pwd;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
 
 

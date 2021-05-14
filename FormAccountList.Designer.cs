@@ -104,8 +104,7 @@
             this.comboBox_accInfo_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_accInfo_role.FormattingEnabled = true;
             this.comboBox_accInfo_role.Items.AddRange(new object[] {
-            "Admin",
-            "Nhân viên"});
+            ""});
             this.comboBox_accInfo_role.Location = new System.Drawing.Point(121, 10);
             this.comboBox_accInfo_role.MaxDropDownItems = 2;
             this.comboBox_accInfo_role.Name = "comboBox_accInfo_role";
@@ -204,10 +203,6 @@
             // 
             this.comboBox_accInfo_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_accInfo_gender.FormattingEnabled = true;
-            this.comboBox_accInfo_gender.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Khác"});
             this.comboBox_accInfo_gender.Location = new System.Drawing.Point(121, 10);
             this.comboBox_accInfo_gender.MaxDropDownItems = 2;
             this.comboBox_accInfo_gender.Name = "comboBox_accInfo_gender";

@@ -56,7 +56,6 @@ namespace HotelManagement_FireBase
             var converted_data = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
             var r = converted_data.Single(t => t.Key.Equals(ID));
 
-            #region Show
             this.textBox_roomID.Text = r.Key;
             this.comboBox_roomType.Text = r.Value.type;
             this.comboBox_roomStt.Text = r.Value.status;
@@ -100,7 +99,6 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #endregion
 
 
         #region ClassDelete

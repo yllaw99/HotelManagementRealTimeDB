@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_customers = new System.Windows.Forms.Button();
             this.button_accManager = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.button_promo = new System.Windows.Forms.Button();
             this.button_modifyRoom = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             this.panel1.Controls.Add(this.button_customers);
             this.panel1.Controls.Add(this.button_accManager);
-            this.panel1.Controls.Add(this.button18);
+            this.panel1.Controls.Add(this.button_promo);
             this.panel1.Controls.Add(this.button_modifyRoom);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -56,18 +56,18 @@
             // button_customers
             // 
             this.button_customers.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_customers.Location = new System.Drawing.Point(225, 0);
+            this.button_customers.Location = new System.Drawing.Point(257, 0);
             this.button_customers.Name = "button_customers";
-            this.button_customers.Size = new System.Drawing.Size(87, 35);
+            this.button_customers.Size = new System.Drawing.Size(107, 35);
             this.button_customers.TabIndex = 4;
-            this.button_customers.Text = "KHÁCH HÀNG";
+            this.button_customers.Text = "KHÁCH HÀNG VIP";
             this.button_customers.UseVisualStyleBackColor = true;
             this.button_customers.Click += new System.EventHandler(this.button_customers_Click);
             // 
             // button_accManager
             // 
             this.button_accManager.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button_accManager.Location = new System.Drawing.Point(150, 0);
+            this.button_accManager.Location = new System.Drawing.Point(182, 0);
             this.button_accManager.Name = "button_accManager";
             this.button_accManager.Size = new System.Drawing.Size(75, 35);
             this.button_accManager.TabIndex = 3;
@@ -75,15 +75,16 @@
             this.button_accManager.UseVisualStyleBackColor = true;
             this.button_accManager.Click += new System.EventHandler(this.button_accManager_Click);
             // 
-            // button18
+            // button_promo
             // 
-            this.button18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button18.Location = new System.Drawing.Point(75, 0);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 35);
-            this.button18.TabIndex = 2;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.button_promo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button_promo.Location = new System.Drawing.Point(75, 0);
+            this.button_promo.Name = "button_promo";
+            this.button_promo.Size = new System.Drawing.Size(107, 35);
+            this.button_promo.TabIndex = 2;
+            this.button_promo.Text = "KHUYẾN MÃI";
+            this.button_promo.UseVisualStyleBackColor = true;
+            this.button_promo.Click += new System.EventHandler(this.button_promo_Click);
             // 
             // button_modifyRoom
             // 
@@ -113,15 +114,6 @@
             this.panel3.Size = new System.Drawing.Size(192, 464);
             this.panel3.TabIndex = 2;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(192, 71);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(753, 464);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -140,6 +132,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(192, 464);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(192, 71);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(753, 464);
+            this.flowLayoutPanel1.TabIndex = 3;
             // 
             // FormRoom
             // 
@@ -166,7 +167,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button_customers;
         private System.Windows.Forms.Button button_accManager;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button_promo;
         private System.Windows.Forms.Button button_modifyRoom;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

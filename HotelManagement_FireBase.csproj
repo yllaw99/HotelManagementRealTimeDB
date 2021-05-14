@@ -121,6 +121,12 @@
     <Compile Include="FormCheckOut.Designer.cs">
       <DependentUpon>FormCheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPromotion.Designer.cs">
+      <DependentUpon>FormPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +145,11 @@
     <Compile Include="FormSignin.Designer.cs">
       <DependentUpon>FormSignin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Customers.cs">
+    <Compile Include="Form_VIPCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Customers.Designer.cs">
-      <DependentUpon>Form_Customers.cs</DependentUpon>
+    <Compile Include="Form_VIPCustomers.Designer.cs">
+      <DependentUpon>Form_VIPCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ModifyRoom.cs">
       <SubType>Form</SubType>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="FormCheckOut.resx">
       <DependentUpon>FormCheckOut.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPromotion.resx">
+      <DependentUpon>FormPromotion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReservation.resx">
       <DependentUpon>FormReservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,8 +191,8 @@
     <EmbeddedResource Include="FormSignin.resx">
       <DependentUpon>FormSignin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Customers.resx">
-      <DependentUpon>Form_Customers.cs</DependentUpon>
+    <EmbeddedResource Include="Form_VIPCustomers.resx">
+      <DependentUpon>Form_VIPCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ModifyRoom.resx">
       <DependentUpon>Form_ModifyRoom.cs</DependentUpon>
@@ -220,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\blue_paradise_21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="picture\blue_paradise_background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

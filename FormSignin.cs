@@ -38,20 +38,21 @@ namespace HotelManagement_FireBase
         {
         #region Null Checking
             if (string.IsNullOrWhiteSpace(textBox_signin_username.Text) &&
-               string.IsNullOrWhiteSpace(textBox123.Text))
+               string.IsNullOrWhiteSpace(textBox_pwd.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
                 return;
             }
         #endregion
-            try
-            {
+            //try
+            //{
                 FirebaseResponse res = client.Get(@"Users/" + getUsername());
                 User ResUser = res.ResultAs<User>();
                 User CurUser = new User()
                 {
                     username = getUsername(),
-                    pwd = textBox123.Text
+                    pwd = provider.hash_password(textBox_pwd.Text)
+                    //pwd = textBox_pwd.Text
                 };
 
                 if (User.IsEqual(ResUser, CurUser))
@@ -60,17 +61,17 @@ namespace HotelManagement_FireBase
                     FormRoom fr = new FormRoom(this);
                     fr.ShowDialog();
                     this.Show();
-                    this.textBox123.Clear();
+                    this.textBox_pwd.Clear();
                 }
                 else
                 {
                     MessageBox.Show("Đăng nhập thất bại");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Vui lòng thử lại", MessageBoxButtons.OK);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Vui lòng thử lại", MessageBoxButtons.OK);
+            //}
             // check if username & pwd are correct
         }
         #endregion

@@ -152,11 +152,17 @@ namespace HotelManagement_FireBase
         #region Customers
         private void button_customers_Click(object sender, EventArgs e)
         {
-            Form_Customers fs = new Form_Customers();
+            Form_VIPCustomers fs = new Form_VIPCustomers();
             fs.ShowDialog();
             LoadRoom();
         }
         #endregion
 
+        #region promotion
+        private void button_promo_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

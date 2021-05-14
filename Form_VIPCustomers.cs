@@ -16,14 +16,13 @@ using Newtonsoft.Json;
 
 namespace HotelManagement_FireBase
 {
-    public partial class Form_Customers : Form
+    public partial class Form_VIPCustomers : Form
     {
-        public Form_Customers()
+        public Form_VIPCustomers()
         {
             InitializeComponent();
             textBox_customer_phoneNum.MaxLength = 10;
             textBox_customer_CMND.MaxLength = 12;
-            comboBox_blackList.Text = "0";
         }
 
         #region connect to DB
@@ -41,9 +40,7 @@ namespace HotelManagement_FireBase
                 address = textBox_customer_address.Text,
                 CMND = textBox_customer_CMND.Text,
                 phoneNum = textBox_customer_phoneNum.Text,
-                nationality = textBox_customer_nationality.Text,
-                ban = comboBox_blackList.Text,
-                reason = textBox_reason.Text
+                nationality = textBox_customer_nationality.Text
             };
             return customer;
         }
@@ -59,11 +56,11 @@ namespace HotelManagement_FireBase
                 name = cus.Value.name,
                 dOb = cus.Value.dOb,
                 addr = cus.Value.address,
-                cmnd = cus.Value.CMND,
+                cmnd = cus.Key,
                 phone =  cus.Value.phoneNum
             }).ToList();
             dataGridView_customerView.DataSource = listCus;
-            //dataGridView_customerView.AutoResizeColumns();
+            dataGridView_customerView.AutoResizeColumns();
             if (dataGridView_customerView != null)
             {
                 for (int count = 0; (count <= (dataGridView_customerView.Rows.Count - 1)); count++)
@@ -186,17 +183,15 @@ namespace HotelManagement_FireBase
             string ID = this.dataGridView_customerView.CurrentRow.Cells[3].Value.ToString();
             var data = client.Get(@"/Customers");
             var converted_data = JsonConvert.DeserializeObject<IDictionary<string, customer>>(data.Body);
-            var r = converted_data.Single(t => t.Value.CMND.Equals(ID));
+            var r = converted_data.Single(t => t.Key.Equals(ID));
 
             #region Show
             this.textBox_customerName.Text = r.Value.name.ToString();
             this.dateTimePicker_dOb.Text =  r.Value.dOb.ToString();
-            this.textBox_customer_CMND.Text = r.Value.CMND.ToString();
+            this.textBox_customer_CMND.Text = r.Key.ToString();
             this.textBox_customer_address.Text = r.Value.address.ToString();
             this.textBox_customer_phoneNum.Text = r.Value.phoneNum.ToString();
             this.textBox_customer_nationality.Text = r.Value.nationality.ToString();
-            this.comboBox_blackList.Text = r.Value.ban.ToString();
-            this.textBox_reason.Text = r.Value.reason.ToString();
             #endregion
         }
         #endregion

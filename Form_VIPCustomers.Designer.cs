@@ -1,6 +1,6 @@
 ﻿namespace HotelManagement_FireBase
 {
-    partial class Form_Customers
+    partial class Form_VIPCustomers
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,6 @@
         {
             this.dataGridView_customerView = new System.Windows.Forms.DataGridView();
             this.panel_customer = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox_reason = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox_blackList = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox_customer_nationality = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,8 +54,6 @@
             this.label_customerName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerView)).BeginInit();
             this.panel_customer.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -77,14 +69,12 @@
             this.dataGridView_customerView.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridView_customerView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_customerView.Name = "dataGridView_customerView";
-            this.dataGridView_customerView.Size = new System.Drawing.Size(552, 513);
+            this.dataGridView_customerView.Size = new System.Drawing.Size(463, 513);
             this.dataGridView_customerView.TabIndex = 1;
             this.dataGridView_customerView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_customerView_CellClick);
             // 
             // panel_customer
             // 
-            this.panel_customer.Controls.Add(this.panel7);
-            this.panel_customer.Controls.Add(this.panel6);
             this.panel_customer.Controls.Add(this.panel5);
             this.panel_customer.Controls.Add(this.panel4);
             this.panel_customer.Controls.Add(this.panel3);
@@ -93,78 +83,10 @@
             this.panel_customer.Controls.Add(this.panel1);
             this.panel_customer.Controls.Add(this.panel_customerName);
             this.panel_customer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_customer.Location = new System.Drawing.Point(552, 0);
+            this.panel_customer.Location = new System.Drawing.Point(463, 0);
             this.panel_customer.Name = "panel_customer";
-            this.panel_customer.Size = new System.Drawing.Size(381, 513);
+            this.panel_customer.Size = new System.Drawing.Size(470, 513);
             this.panel_customer.TabIndex = 2;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.textBox_reason);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 308);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel7.Size = new System.Drawing.Size(381, 44);
-            this.panel7.TabIndex = 17;
-            // 
-            // textBox_reason
-            // 
-            this.textBox_reason.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox_reason.Enabled = false;
-            this.textBox_reason.Location = new System.Drawing.Point(86, 10);
-            this.textBox_reason.Name = "textBox_reason";
-            this.textBox_reason.Size = new System.Drawing.Size(276, 20);
-            this.textBox_reason.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 10);
-            this.label7.MinimumSize = new System.Drawing.Size(86, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Lí do";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.comboBox_blackList);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 264);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel6.Size = new System.Drawing.Size(381, 44);
-            this.panel6.TabIndex = 16;
-            // 
-            // comboBox_blackList
-            // 
-            this.comboBox_blackList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox_blackList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_blackList.FormattingEnabled = true;
-            this.comboBox_blackList.Items.AddRange(new object[] {
-            "0",
-            "1"});
-            this.comboBox_blackList.Location = new System.Drawing.Point(86, 10);
-            this.comboBox_blackList.Name = "comboBox_blackList";
-            this.comboBox_blackList.Size = new System.Drawing.Size(43, 21);
-            this.comboBox_blackList.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 10);
-            this.label6.MinimumSize = new System.Drawing.Size(86, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Black List";
             // 
             // panel5
             // 
@@ -174,7 +96,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 220);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel5.Size = new System.Drawing.Size(381, 44);
+            this.panel5.Size = new System.Drawing.Size(470, 44);
             this.panel5.TabIndex = 15;
             // 
             // textBox_customer_nationality
@@ -209,7 +131,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 176);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(381, 44);
+            this.panel4.Size = new System.Drawing.Size(470, 44);
             this.panel4.TabIndex = 14;
             // 
             // textBox_customer_phoneNum
@@ -240,7 +162,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(381, 44);
+            this.panel3.Size = new System.Drawing.Size(470, 44);
             this.panel3.TabIndex = 13;
             // 
             // textBox_customer_CMND
@@ -271,7 +193,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 88);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(381, 44);
+            this.panel2.Size = new System.Drawing.Size(470, 44);
             this.panel2.TabIndex = 12;
             // 
             // textBox_customer_address
@@ -302,7 +224,7 @@
             this.panel_dOb.Location = new System.Drawing.Point(0, 44);
             this.panel_dOb.Name = "panel_dOb";
             this.panel_dOb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel_dOb.Size = new System.Drawing.Size(381, 44);
+            this.panel_dOb.Size = new System.Drawing.Size(470, 44);
             this.panel_dOb.TabIndex = 11;
             // 
             // dateTimePicker_dOb
@@ -336,7 +258,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 471);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(381, 42);
+            this.panel1.Size = new System.Drawing.Size(470, 42);
             this.panel1.TabIndex = 10;
             // 
             // button_updateRoom
@@ -353,7 +275,7 @@
             // button_deleteRoom
             // 
             this.button_deleteRoom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_deleteRoom.Location = new System.Drawing.Point(279, 0);
+            this.button_deleteRoom.Location = new System.Drawing.Point(368, 0);
             this.button_deleteRoom.Name = "button_deleteRoom";
             this.button_deleteRoom.Size = new System.Drawing.Size(102, 42);
             this.button_deleteRoom.TabIndex = 5;
@@ -380,7 +302,7 @@
             this.panel_customerName.Location = new System.Drawing.Point(0, 0);
             this.panel_customerName.Name = "panel_customerName";
             this.panel_customerName.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel_customerName.Size = new System.Drawing.Size(381, 44);
+            this.panel_customerName.Size = new System.Drawing.Size(470, 44);
             this.panel_customerName.TabIndex = 8;
             // 
             // textBox_customerName
@@ -403,23 +325,19 @@
             this.label_customerName.TabIndex = 0;
             this.label_customerName.Text = "Tên KH";
             // 
-            // Form_Customers
+            // Form_VIPCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 513);
             this.Controls.Add(this.panel_customer);
             this.Controls.Add(this.dataGridView_customerView);
-            this.Name = "Form_Customers";
+            this.Name = "Form_VIPCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_Customers";
+            this.Text = "Khách hàng VIP";
             this.Load += new System.EventHandler(this.Form_Customers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_customerView)).EndInit();
             this.panel_customer.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -463,11 +381,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox_customer_address;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox_reason;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox_blackList;
     }
 }

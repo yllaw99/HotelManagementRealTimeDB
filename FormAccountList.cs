@@ -33,7 +33,20 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region Reload DataGridView
+        #region functions
+        #region clear textboxes
+        private void ClearTextboxes()
+        {
+            textBox_accInfo_fullname.Clear();
+            textBox_accInfo_phonenum.Clear();
+            textBox_accInfo_pwd.Clear();
+            textBox_accInfo_username.Clear();
+
+            comboBox_accInfo_gender.Items.Clear();
+            comboBox_accInfo_role.Items.Clear();
+        }
+        #endregion
+        #region reload
         private void Reload()
         {
             var data = client.Get("/Users");
@@ -41,7 +54,8 @@ namespace HotelManagement_FireBase
             var listNumber = mList.Select(tk => new
             {
                 name = tk.Value.fullname,
-                username = tk.Value.username
+                username = tk.Value.username,
+                role = tk.Value.role
             }).ToList();
             dataGridView_accInfo.DataSource = listNumber;
             dataGridView_accInfo.AutoResizeColumns();
@@ -54,7 +68,9 @@ namespace HotelManagement_FireBase
             }
             this.dataGridView_accInfo.Columns[0].HeaderText = "Họ và tên";
             this.dataGridView_accInfo.Columns[1].HeaderText = "Tên tài khoản";
+            this.dataGridView_accInfo.Columns[2].HeaderText = "Chức vụ";
         }
+        #endregion
         #endregion
 
         #region Display AccInfo in TextBox
@@ -65,10 +81,18 @@ namespace HotelManagement_FireBase
             var converted_data = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
             var us = converted_data.Single(t => t.Value.username.Equals(usernameLocal));
 
-            #region Show
+            #region add item into comboBox
+            comboBox_accInfo_gender.Items.Add("Nam");
+            comboBox_accInfo_gender.Items.Add("Nữ");
+            comboBox_accInfo_gender.Items.Add("Khác");
+
+            comboBox_accInfo_role.Items.Add("Nhân viên");
+            comboBox_accInfo_role.Items.Add("Admin");
+            #endregion
+            #region load textBoxes
             this.textBox_accInfo_fullname.Text = us.Value.fullname.ToString();
             this.textBox_accInfo_username.Text = us.Value.username.ToString();
-            this.textBox_accInfo_pwd.Text = us.Value.pwd.ToString();
+            this.textBox_accInfo_pwd.Text = "";
             this.textBox_accInfo_phonenum.Text = us.Value.phoneNum.ToString();
             this.comboBox_accInfo_gender.Text = us.Value.gender.ToString();
             this.comboBox_accInfo_role.Text = us.Value.role.ToString();
@@ -116,7 +140,7 @@ namespace HotelManagement_FireBase
             User user = new User()
             {
                 username = textBox_accInfo_username.Text,
-                pwd = textBox_accInfo_pwd.Text,
+                pwd = provider.hash_password(textBox_accInfo_pwd.Text),
                 fullname = textBox_accInfo_fullname.Text,
                 phoneNum = textBox_accInfo_phonenum.Text,
                 gender = comboBox_accInfo_gender.Text,
@@ -143,6 +167,7 @@ namespace HotelManagement_FireBase
                     MessageBox.Show("Lỗi khi xoá tài khoản" + textBox_accInfo_username.Text, "Thông báo!");
                 }
                 Reload();
+                ClearTextboxes();
             }
         }
         #endregion
@@ -163,6 +188,7 @@ namespace HotelManagement_FireBase
                     MessageBox.Show("Lỗi khi tạo tài khoản [" + textBox_accInfo_username.Text + "]", "Thông báo!");
                 }
                 Reload();
+                ClearTextboxes();
             }
         }
         #endregion
@@ -180,13 +206,14 @@ namespace HotelManagement_FireBase
                     {
                         MessageBox.Show("Tài khoản [" + textBox_accInfo_username.Text + "] đã được cập nhật thành công!", "Thông báo!");
                         Reload();
+                        ClearTextboxes();
                     }
                     
                 }                
             }
-            catch
+            catch(Exception e)
             {
-                MessageBox.Show("Loi khi cap nhat tai khoan");
+                MessageBox.Show(e.Message);
             }
         }
         #endregion

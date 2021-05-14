@@ -21,7 +21,6 @@ namespace HotelManagement_FireBase
             this.fr = frm;
         }
         FormRoom fr;
-        DataProvider data = new DataProvider();
         #endregion
         #region connect to db
         DataProvider provider = new DataProvider();
@@ -49,8 +48,9 @@ namespace HotelManagement_FireBase
         private void FormCheckOut_Load(object sender, EventArgs e)
         {
             string today = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-            Room roomInfo = data.getRoomInfo(fr.rID);
-            Bill billin4 = data.getBillInfo(roomInfo.DateCheckIn.ToString(), fr.rID);
+            Room roomInfo = provider.getRoomInfo(fr.rID);
+            Bill billin4 = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), fr.rID);
+            customer cusInfo = provider.cusVIP(billin4.CMND);
             
             this.label_roomID.Text = fr.rID;
             this.label_cusName.Text = billin4.CusName.ToString();
