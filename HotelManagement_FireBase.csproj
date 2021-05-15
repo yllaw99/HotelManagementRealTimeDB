@@ -88,7 +88,6 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\roomDAO.cs" />
     <Compile Include="DTO\promo.cs" />
-    <Compile Include="DTO\roomPrices.cs" />
     <Compile Include="FormAccountList.cs">
       <SubType>Form</SubType>
     </Compile>

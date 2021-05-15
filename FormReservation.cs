@@ -36,6 +36,7 @@ namespace HotelManagement_FireBase
         {
             this.dateTimePicker_checkIn.Format = DateTimePickerFormat.Custom;
             this.dateTimePicker_checkIn.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker_checkIn.Value = DateTime.Now;
             this.textBox_roomID.Text = fr.rID;
             this.panel_cardID.Enabled = false;
             this.panel_cardEXP.Enabled = false;
