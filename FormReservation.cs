@@ -52,9 +52,7 @@ namespace HotelManagement_FireBase
 
         private void button_quit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có chắc không?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
-                this.Close();
+            this.Close();
         }
 
         private void button_reserve_Click(object sender, EventArgs e)
@@ -185,11 +183,13 @@ namespace HotelManagement_FireBase
                 ReservationType = getReservationType(),
                 Payment = getPaymentMethod(),
                 CreditCardID = textBox_cardID.Text,
-                CardExpDate = textBox_creditCardExpDate.Text
+                CardExpDate = textBox_creditCardExpDate.Text,
+                PromoType = textBox_promoCode.Text
             };
             return bill;
         }
         #endregion
+
 
     }
 }

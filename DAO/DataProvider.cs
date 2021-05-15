@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using HotelManagement_FireBase.DTO;
 
 namespace HotelManagement_FireBase.DAO
 {
@@ -82,6 +83,27 @@ namespace HotelManagement_FireBase.DAO
             FirebaseResponse data = client.Get("Customers/" + CMND);
             customer cusInfo = data.ResultAs<customer>();
             return cusInfo;
+        }
+        #endregion
+
+        #region get Promotion Info
+        public promo promotion(string promoType)
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("Promos/" + promoType);
+            promo promoInfo = data.ResultAs<promo>();
+            return promoInfo;
+        }
+        #endregion
+
+        #region get Room Prices
+        public object roomPrices()
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("RoomPrices/");
+            var mList = JsonConvert.DeserializeObject<List<string>>(data.Body);
+
+            return mList;
         }
         #endregion
     }

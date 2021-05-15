@@ -29,18 +29,14 @@ namespace HotelManagement_FireBase
         #region click events
         private void button_pay_Click(object sender, EventArgs e)
         {
-            string roomID = label_roomID.Text;
-            Room roomInfo = provider.getRoomInfo(roomID);
-            string dCheckOut = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
-            var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
-            client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
-            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/DCheckOut/", dCheckOut);
-            if (update.StatusCode == System.Net.HttpStatusCode.OK)
+            DialogResult dr = MessageBox.Show("Bạn có muốn thanh toán?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                MessageBox.Show("Check out thành công!!", "Thông báo", MessageBoxButtons.OK);
+                checkingOut();
+                FormBill fb = new FormBill(fr);
+                fb.Close();
             }
-            else MessageBox.Show("Lỗi khi Check out", "Thông báo", MessageBoxButtons.OK);
-
+            
             this.Close();
         }
         #endregion
@@ -64,6 +60,23 @@ namespace HotelManagement_FireBase
         void pricing(string originalPrice, string dateCheckIn,  string dateCheckOut)
         {
 
+        }
+        #endregion
+
+        #region checking out
+        void checkingOut()
+        {
+            string roomID = label_roomID.Text;
+            Room roomInfo = provider.getRoomInfo(roomID);
+            string dCheckOut = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+            var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
+            client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
+            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/DCheckOut/", dCheckOut);
+            if (update.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                MessageBox.Show("Check out thành công!!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Lỗi khi Check out", "Thông báo", MessageBoxButtons.OK);
         }
         #endregion
     }

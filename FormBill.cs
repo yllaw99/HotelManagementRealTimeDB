@@ -14,8 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Drawing.Printing;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
+
 #endregion
 
 namespace HotelManagement_FireBase

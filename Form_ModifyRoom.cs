@@ -83,7 +83,7 @@ namespace HotelManagement_FireBase
                 price = r.Value.Price
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
-            dataGridView_roomView.AutoResizeColumns();
+            
             if (dataGridView_roomView != null)
             {
                 for (int count = 0; (count <= (dataGridView_roomView.Rows.Count - 1)); count++)
@@ -211,6 +211,17 @@ namespace HotelManagement_FireBase
             return comboBox_roomStt.Text;
         }
         #endregion
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel5_click(object sender, EventArgs e)
+        {
+            FormRoomTypePrice price = new FormRoomTypePrice();
+            price.ShowDialog();
+        }
 
 
 
