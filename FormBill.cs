@@ -41,14 +41,14 @@ namespace HotelManagement_FireBase
             Room roomInfo = provider.getRoomInfo(roomID);
             Bill BillInfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), roomID);
 
-            string dci = BillInfo.DCheckIn.ToString(); 
+            string dci = BillInfo.DCheckIn.ToString();
+            this.label_datenow.Text = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
             this.label_CusName.Text = BillInfo.CusName.ToString();
             this.label_arrivalDate.Text = dci.Substring(dci.IndexOf(" "), dci.Length - dci.IndexOf(" "));
             this.label_contact.Text = BillInfo.Contact.ToString();
             this.label_roomID.Text = roomID;
             this.label_address.Text = BillInfo.Address.ToString();
-            this.label_reservationType.Text = BillInfo.ReservationType.ToString();
-            this.label_info.Text = "Ngày nhận: Ngày " + DateTime.Now.Day.ToString() + " Tháng " + DateTime.Now.Month.ToString() + " Năm " + DateTime.Now.Year.ToString(); ;
+            this.label_room_type.Text = roomInfo.type;
         }
         #endregion  
 
@@ -63,8 +63,46 @@ namespace HotelManagement_FireBase
         {
             checkOut();
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
+        #region printing
+        Bitmap bitmap;
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
 
+        }        
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap, 0, 0);
+        }
+        
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            Panel panel = new Panel();
+            this.Controls.Add(panel);
+            Graphics grp = panel.CreateGraphics();
+            Size formSize = new System.Drawing.Size(610, 560);
+            bitmap = new Bitmap(formSize.Width, formSize.Height, grp);
+            grp = Graphics.FromImage(bitmap);
+            Point panelLocation = PointToScreen(panel.Location);
+            grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
+        private void CaptureScreen()
+        {
+            Graphics myGraphics = this.CreateGraphics();
+            Size s = this.Size;
+            bitmap = new Bitmap(s.Width, s.Height, myGraphics);
+            Graphics memoryGraphics = Graphics.FromImage(bitmap);
+            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
+        } 
+        #endregion
     }
 }
