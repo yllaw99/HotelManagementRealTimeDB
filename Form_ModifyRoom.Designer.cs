@@ -32,7 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView_roomView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox_roomPrice = new System.Windows.Forms.TextBox();
             this.textBox_dateCheckIn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_roomStt = new System.Windows.Forms.ComboBox();
@@ -44,7 +43,6 @@
             this.button_deleteRoom = new System.Windows.Forms.Button();
             this.button_updateRoom = new System.Windows.Forms.Button();
             this.button_addRoom = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_roomID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +50,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_roomView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -62,7 +60,6 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -97,7 +94,6 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53741F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46259F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox_roomPrice, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.comboBox_roomStt, 1, 2);
@@ -105,7 +101,6 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.comboBox_roomType, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,15 +116,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(337, 364);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // textBox_roomPrice
-            // 
-            this.textBox_roomPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_roomPrice.Location = new System.Drawing.Point(149, 260);
-            this.textBox_roomPrice.Name = "textBox_roomPrice";
-            this.textBox_roomPrice.ReadOnly = true;
-            this.textBox_roomPrice.Size = new System.Drawing.Size(185, 20);
-            this.textBox_roomPrice.TabIndex = 10;
             // 
             // textBox_dateCheckIn
             // 
@@ -260,17 +246,6 @@
             this.button_addRoom.UseVisualStyleBackColor = true;
             this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Đơn giá phòng";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.textBox_roomID);
@@ -301,8 +276,8 @@
             // panel3
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.panel3, 2);
+            this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -345,18 +320,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // label16
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(739, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.label16.AutoSize = true;
+            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label16.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label16.Location = new System.Drawing.Point(750, 4);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 20);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "X";
+            this.label16.Click += new System.EventHandler(this.exit_Click);
             // 
             // Form_ModifyRoom
             // 
@@ -380,10 +355,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,15 +380,13 @@
         private System.Windows.Forms.Button button_deleteRoom;
         private System.Windows.Forms.Button button_updateRoom;
         private System.Windows.Forms.Button button_addRoom;
-        private System.Windows.Forms.TextBox textBox_roomPrice;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox_roomID;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
 
 
 

@@ -34,8 +34,7 @@ namespace HotelManagement_FireBase
             Room room = new Room()
             {
                 type = comboBox_roomType.Text,
-                status = comboBox_roomStt.Text,
-                Price = textBox_roomPrice.Text
+                status = comboBox_roomStt.Text
             };
             return room;
         }
@@ -60,7 +59,6 @@ namespace HotelManagement_FireBase
             this.comboBox_roomType.Text = r.Value.type;
             this.comboBox_roomStt.Text = r.Value.status;
             this.textBox_dateCheckIn.Text = r.Value.DateCheckIn;
-            this.textBox_roomPrice.Text = r.Value.Price;
         }
         #endregion
     
@@ -71,7 +69,6 @@ namespace HotelManagement_FireBase
             this.comboBox_roomType.Text = "";
             this.comboBox_roomStt.Text = "";
             this.textBox_dateCheckIn.Clear();
-            this.textBox_roomPrice.Clear();
             var data = client.Get("Rooms/");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
             var listNumber = mList.Select(r => new
@@ -79,8 +76,7 @@ namespace HotelManagement_FireBase
                 ID = r.Key,
                 Type = r.Value.type,
                 Status = r.Value.status,
-                BillID = r.Value.DateCheckIn,
-                price = r.Value.Price
+                BillID = r.Value.DateCheckIn
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
             
@@ -95,7 +91,6 @@ namespace HotelManagement_FireBase
             this.dataGridView_roomView.Columns[1].HeaderText = "Loại phòng";
             this.dataGridView_roomView.Columns[2].HeaderText = "Trạng thái";
             this.dataGridView_roomView.Columns[3].HeaderText = "Ngày CheckIn";
-            this.dataGridView_roomView.Columns[4].HeaderText = "Đơn giá";
         }
         #endregion
 
@@ -212,7 +207,7 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

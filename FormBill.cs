@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Drawing.Printing;
+using System.Globalization;
 
 #endregion
 
@@ -38,19 +39,44 @@ namespace HotelManagement_FireBase
         private void FormBill_Load(object sender, EventArgs e)
         {
             string roomID = fr.rID;
+            string roomPrice = "";
             Room roomInfo = provider.getRoomInfo(roomID);
             Bill BillInfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), roomID);
+            string getday_arrival = BillInfo.DCheckIn.ToString();
+            List<KeyValuePair<string, string>> listPrice = provider.roomPrices();
 
-            string dci = BillInfo.DCheckIn.ToString();
-            this.label_datenow.Text = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+            string formatted_day = getday_arrival.Substring(6, 10);
+            DateTime dayNow = DateTime.Now;
+            DateTime dayArrived = new DateTime();
+            DateTime.TryParseExact(formatted_day, "dd-MM-yyyy", null, DateTimeStyles.None, out dayArrived);
+
+            foreach (var i in listPrice)
+            {
+                if (i.Key.ToString() == roomInfo.type.ToString())
+                    roomPrice = i.Value;
+            }
+
+            this.label_datenow.Text = dayNow.ToString("HH:mm dd-MM-yyyy"); 
+            this.label_arrivalDate.Text = BillInfo.DCheckIn.ToString();
             this.label_CusName.Text = BillInfo.CusName.ToString();
-            this.label_arrivalDate.Text = dci.Substring(dci.IndexOf(" "), dci.Length - dci.IndexOf(" "));
             this.label_contact.Text = BillInfo.Contact.ToString();
-            this.label_roomID.Text = roomID;
             this.label_address.Text = BillInfo.Address.ToString();
+            this.label_roomID.Text = roomID;
             this.label_room_type.Text = roomInfo.type;
+            this.label_price.Text = roomPrice.ToString();
+            this.label_quantity.Text = cal_night(dayArrived, dayNow).ToString();
+            this.label_total_temp.Text = (cal_night(dayArrived, dayNow) * Convert.ToInt32(roomPrice)).ToString();
+
         }
         #endregion  
+
+        #region calculate nights
+        int cal_night(DateTime dayin, DateTime dayout)
+        {
+            int nights = Convert.ToInt16((dayout - dayin).TotalDays);
+            return nights;
+        }
+        #endregion
 
         #region click events
         void checkOut()
@@ -86,7 +112,7 @@ namespace HotelManagement_FireBase
             Panel panel = new Panel();
             this.Controls.Add(panel);
             Graphics grp = panel.CreateGraphics();
-            Size formSize = new System.Drawing.Size(610, 560);
+            Size formSize = new System.Drawing.Size(610, 600);
             bitmap = new Bitmap(formSize.Width, formSize.Height, grp);
             grp = Graphics.FromImage(bitmap);
             Point panelLocation = PointToScreen(panel.Location);

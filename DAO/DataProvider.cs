@@ -97,18 +97,18 @@ namespace HotelManagement_FireBase.DAO
         #endregion
 
         #region get Room Prices
-        public List<string> roomPrices()
+        public List<KeyValuePair<string, string>> roomPrices()
         {
             IFirebaseClient client = connect();
             FirebaseResponse data = client.Get("RoomPrices/");
             IDictionary<string, string> mList = JsonConvert.DeserializeObject<IDictionary<string, string>>(data.Body);
             List<KeyValuePair<string, string>> listNumber = mList.ToList();
-            List<string> roomType = new List<string>();
-            foreach (var val in listNumber)
-            {
-                roomType.Add(val.Key);
-            }
-            return roomType;
+            //List<string> roomType = new List<string>();
+            //foreach (var val in listNumber)
+            //{
+            //    roomType.Add(val.Key);
+            //}
+            return listNumber;
         }
         #endregion
     }

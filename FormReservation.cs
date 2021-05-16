@@ -131,7 +131,7 @@ namespace HotelManagement_FireBase
             DialogResult dr = MessageBox.Show("Bạn có muốn đặt phòng?", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                string dateCheckin = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+                string dateCheckin = DateTime.Now.ToString("dd-MM-yyyy");
                 FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", Declare_Bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -152,7 +152,7 @@ namespace HotelManagement_FireBase
             DialogResult dr = MessageBox.Show("Bạn có muốn giữ phòng?", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
-                string dateCheckin = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+                string dateCheckin = DateTime.Now.ToString("dd-MM-yyyy");
                 FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", Declare_Bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -177,7 +177,7 @@ namespace HotelManagement_FireBase
             {
                 CusName = textBox_fullname.Text,
                 CMND = textBox_cmnd.Text,
-                DCheckIn = DateTime.Now.Hour.ToString() + "H" + DateTime.Now.Minute.ToString() + " " + dateTimePicker_checkIn.Text,
+                DCheckIn = DateTime.Now.ToString("HH:mm") + " " + dateTimePicker_checkIn.Text,
                 DCheckOut = "",
                 Address = textBox_address.Text,
                 Contact = textBox_contact.Text,

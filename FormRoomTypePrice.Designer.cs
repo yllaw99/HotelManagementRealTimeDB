@@ -30,18 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoomTypePrice));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox_roomType = new HotelManagement_FireBase.roundedTextbox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox_price = new HotelManagement_FireBase.roundedTextbox();
             this.button_Change = new ePOSOne.btnProduct.Button_WOC();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -50,25 +49,24 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 24);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox2
+            // label2
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(295, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(309, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.exit_Click);
             // 
             // panel2
             // 
@@ -123,6 +121,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // textBox_roomType
+            // 
+            this.textBox_roomType.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBox_roomType.Font = new System.Drawing.Font("Ebrima", 13F);
+            this.textBox_roomType.Location = new System.Drawing.Point(16, 18);
+            this.textBox_roomType.Name = "textBox_roomType";
+            this.textBox_roomType.Size = new System.Drawing.Size(250, 31);
+            this.textBox_roomType.TabIndex = 4;
+            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -141,15 +148,6 @@
             this.comboBox1.Size = new System.Drawing.Size(230, 25);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBox_roomType
-            // 
-            this.textBox_roomType.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox_roomType.Font = new System.Drawing.Font("Ebrima", 13F);
-            this.textBox_roomType.Location = new System.Drawing.Point(16, 18);
-            this.textBox_roomType.Name = "textBox_roomType";
-            this.textBox_roomType.Size = new System.Drawing.Size(250, 31);
-            this.textBox_roomType.TabIndex = 4;
             // 
             // textBox_price
             // 
@@ -188,13 +186,14 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRoomTypePrice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRoomTypePrice";
             this.Load += new System.EventHandler(this.FormRoomTypePrice_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -208,7 +207,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -218,5 +216,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

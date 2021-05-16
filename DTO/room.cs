@@ -19,13 +19,6 @@ namespace HotelManagement_FireBase
             get { return dateCheckIn; }
             set { dateCheckIn = value; }
         }
-
-        private string price;
-        public string Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
         #endregion
         #region compare
         public static bool compare(Room room1, Room room2)

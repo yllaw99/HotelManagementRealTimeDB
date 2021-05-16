@@ -54,7 +54,6 @@ namespace HotelManagement_FireBase
             this.label_roomType.Text = roomInfo.type.ToString();
             this.label_dateCheckOut.Text = today;
             this.label_dateCheckIn.Text = roomInfo.DateCheckIn.ToString();
-            this.label_roomPrice.Text = roomInfo.Price.ToString();
         }
 
         void pricing(string originalPrice, string dateCheckIn,  string dateCheckOut)

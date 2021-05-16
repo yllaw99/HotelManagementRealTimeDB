@@ -24,7 +24,7 @@ namespace HotelManagement_FireBase
         DataProvider provider = new DataProvider();
 
         #region click events
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
