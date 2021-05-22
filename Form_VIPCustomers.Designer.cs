@@ -85,7 +85,7 @@
             this.panel_customer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_customer.Location = new System.Drawing.Point(463, 0);
             this.panel_customer.Name = "panel_customer";
-            this.panel_customer.Size = new System.Drawing.Size(470, 513);
+            this.panel_customer.Size = new System.Drawing.Size(382, 513);
             this.panel_customer.TabIndex = 2;
             // 
             // panel5
@@ -96,7 +96,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 220);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel5.Size = new System.Drawing.Size(470, 44);
+            this.panel5.Size = new System.Drawing.Size(382, 44);
             this.panel5.TabIndex = 15;
             // 
             // textBox_customer_nationality
@@ -131,7 +131,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 176);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(470, 44);
+            this.panel4.Size = new System.Drawing.Size(382, 44);
             this.panel4.TabIndex = 14;
             // 
             // textBox_customer_phoneNum
@@ -162,7 +162,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(470, 44);
+            this.panel3.Size = new System.Drawing.Size(382, 44);
             this.panel3.TabIndex = 13;
             // 
             // textBox_customer_CMND
@@ -193,7 +193,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 88);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(470, 44);
+            this.panel2.Size = new System.Drawing.Size(382, 44);
             this.panel2.TabIndex = 12;
             // 
             // textBox_customer_address
@@ -224,7 +224,7 @@
             this.panel_dOb.Location = new System.Drawing.Point(0, 44);
             this.panel_dOb.Name = "panel_dOb";
             this.panel_dOb.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel_dOb.Size = new System.Drawing.Size(470, 44);
+            this.panel_dOb.Size = new System.Drawing.Size(382, 44);
             this.panel_dOb.TabIndex = 11;
             // 
             // dateTimePicker_dOb
@@ -258,7 +258,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 471);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 42);
+            this.panel1.Size = new System.Drawing.Size(382, 42);
             this.panel1.TabIndex = 10;
             // 
             // button_updateRoom
@@ -275,7 +275,7 @@
             // button_deleteRoom
             // 
             this.button_deleteRoom.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button_deleteRoom.Location = new System.Drawing.Point(368, 0);
+            this.button_deleteRoom.Location = new System.Drawing.Point(280, 0);
             this.button_deleteRoom.Name = "button_deleteRoom";
             this.button_deleteRoom.Size = new System.Drawing.Size(102, 42);
             this.button_deleteRoom.TabIndex = 5;
@@ -302,7 +302,7 @@
             this.panel_customerName.Location = new System.Drawing.Point(0, 0);
             this.panel_customerName.Name = "panel_customerName";
             this.panel_customerName.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel_customerName.Size = new System.Drawing.Size(470, 44);
+            this.panel_customerName.Size = new System.Drawing.Size(382, 44);
             this.panel_customerName.TabIndex = 8;
             // 
             // textBox_customerName
@@ -329,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 513);
+            this.ClientSize = new System.Drawing.Size(845, 513);
             this.Controls.Add(this.panel_customer);
             this.Controls.Add(this.dataGridView_customerView);
             this.Name = "Form_VIPCustomers";

@@ -22,6 +22,7 @@ namespace HotelManagement_FireBase
 {
     public partial class FormBill : Form
     {        
+        private static int TAX;
         FormRoom fr;
         #region connect to db
         DataProvider provider = new DataProvider();

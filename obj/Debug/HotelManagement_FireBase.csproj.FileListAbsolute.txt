@@ -47,3 +47,4 @@ D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Newtonsoft.Json.dll
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\bin\Debug\Newtonsoft.Json.xml
 D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormRoomTypePrice.resources
+D:\Coding_WorkSpace\NLCNTT\HotelManagement_firebase\HotelManagement_FireBase\obj\Debug\HotelManagement_FireBase.FormBlackList.resources

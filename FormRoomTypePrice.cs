@@ -24,6 +24,16 @@ namespace HotelManagement_FireBase
         DataProvider provider = new DataProvider();
 
         #region click events
+        private void button_Change_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thanh toán?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                updateRoomPrice();
+            }
+        }
+
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,7 +44,7 @@ namespace HotelManagement_FireBase
             this.comboBox1.DroppedDown = true;
         }
         #endregion
-        #region form load
+        #region load event
         private void FormRoomTypePrice_Load(object sender, EventArgs e)
         {
             this.comboBox1.DataSource = provider.roomPrices();
@@ -46,24 +56,20 @@ namespace HotelManagement_FireBase
             this.textBox_roomType.Text = comboBox1.SelectedItem.ToString();
         }
 
-        private void button_Change_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Bạn có muốn thanh toán?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
-            {
-                updateRoomPrice();
-            }
-        }
-
+        #region method
         void updateRoomPrice()
         {
             IFirebaseClient client = provider.connect();
+
             var update = client.Set("RoomPrices/" + textBox_roomType.Text, textBox_price.Text);
+
             if (update.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 MessageBox.Show("Cập nhật giá phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
             }
             else MessageBox.Show("Lỗi khi cập nhật giá phòng ", "Thông báo", MessageBoxButtons.OK);
         }
+
+        #endregion
     }
 }

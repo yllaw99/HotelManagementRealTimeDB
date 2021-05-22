@@ -38,6 +38,8 @@ namespace HotelManagement_FireBase
         public string rID;
         public void LoadRoom()
         {
+            this.label_currentUser.Text = fs.getUsername();
+            this.panel_moreInfo.Visible = false;
             flowLayoutPanel1.Controls.OfType<Button>().ToList().ForEach(btn => btn.Dispose());
             FirebaseResponse response = client.Get("Rooms/");
             IDictionary<string, Room> rList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(response.Body);
@@ -45,6 +47,8 @@ namespace HotelManagement_FireBase
             foreach (var r in rList)
             {
                 Button btn = new Button() { Width = roomDAO.width, Height = roomDAO.height };
+
+
                 flowLayoutPanel1.Controls.Add(btn);
                 btn.Text = "Phòng " + r.Key.ToString() + "\n\n" + r.Value.status.ToString();
                 btn.Click += btn_Click;
@@ -87,6 +91,17 @@ namespace HotelManagement_FireBase
                     LoadRoom();
                     break;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBoxVisibleChange(object sender, EventArgs e)
+        {
+            if (this.panel_moreInfo.Visible == false) this.panel_moreInfo.Visible = true;
+            else this.panel_moreInfo.Visible = false;
         }
         #endregion
 
@@ -164,5 +179,15 @@ namespace HotelManagement_FireBase
 
         }
         #endregion
+
+        #region blackList
+        private void button_blackList_Click(object sender, EventArgs e)
+        {
+            FormBlackList fbl = new FormBlackList();
+            fbl.ShowDialog();
+            LoadRoom();
+        }
+        #endregion
+
     }
 }

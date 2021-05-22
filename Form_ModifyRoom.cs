@@ -69,6 +69,7 @@ namespace HotelManagement_FireBase
             this.comboBox_roomType.Text = "";
             this.comboBox_roomStt.Text = "";
             this.textBox_dateCheckIn.Clear();
+
             var data = client.Get("Rooms/");
             var mList = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
             var listNumber = mList.Select(r => new

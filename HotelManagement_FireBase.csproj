@@ -83,6 +83,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DTO\bill.cs" />
+    <Compile Include="DTO\BlackList.cs" />
     <Compile Include="DTO\customer.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="FormBill.Designer.cs">
       <DependentUpon>FormBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBlackList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBlackList.Designer.cs">
+      <DependentUpon>FormBlackList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCheckOut.cs">
       <SubType>Form</SubType>
@@ -166,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBill.resx">
       <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBlackList.resx">
+      <DependentUpon>FormBlackList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCheckOut.resx">
       <DependentUpon>FormCheckOut.cs</DependentUpon>

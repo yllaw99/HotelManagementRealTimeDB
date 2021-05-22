@@ -44,15 +44,12 @@ namespace HotelManagement_FireBase
                 return;
             }
         #endregion
-            //try
-            //{
                 FirebaseResponse res = client.Get(@"Users/" + getUsername());
                 User ResUser = res.ResultAs<User>();
                 User CurUser = new User()
                 {
                     username = getUsername(),
                     pwd = provider.hash_password(textBox_pwd.Text)
-                    //pwd = textBox_pwd.Text
                 };
 
                 if (User.IsEqual(ResUser, CurUser))
@@ -67,12 +64,6 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Đăng nhập thất bại");
                 }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Vui lòng thử lại", MessageBoxButtons.OK);
-            //}
-            // check if username & pwd are correct
         }
         #endregion
 
