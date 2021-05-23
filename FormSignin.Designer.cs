@@ -80,7 +80,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
             this.panel2.Controls.Add(this.button_signin);
             this.panel2.Controls.Add(this.textBox_pwd);
             this.panel2.Controls.Add(this.textBox_signin_username);

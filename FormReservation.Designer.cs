@@ -34,9 +34,6 @@
             this.radioButton_nonGuaranteed = new System.Windows.Forms.RadioButton();
             this.radioButton_guaranteed = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_quit = new System.Windows.Forms.Button();
-            this.button_reserve = new System.Windows.Forms.Button();
-            this.button_booking = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel_cardID = new System.Windows.Forms.Panel();
             this.textBox_cardID = new System.Windows.Forms.TextBox();
@@ -70,6 +67,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox_promoCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button_reserve = new ePOSOne.btnProduct.Button_WOC();
+            this.button_booking = new ePOSOne.btnProduct.Button_WOC();
+            this.button_quit = new ePOSOne.btnProduct.Button_WOC();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -191,9 +191,9 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.button_quit, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_reserve, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_booking, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_quit, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 453);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -201,42 +201,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(656, 44);
             this.tableLayoutPanel2.TabIndex = 74;
-            // 
-            // button_quit
-            // 
-            this.button_quit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_quit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_quit.Location = new System.Drawing.Point(439, 3);
-            this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(214, 38);
-            this.button_quit.TabIndex = 21;
-            this.button_quit.Text = "THOÁT";
-            this.button_quit.UseVisualStyleBackColor = true;
-            this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
-            // 
-            // button_reserve
-            // 
-            this.button_reserve.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_reserve.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_reserve.Location = new System.Drawing.Point(221, 3);
-            this.button_reserve.Name = "button_reserve";
-            this.button_reserve.Size = new System.Drawing.Size(212, 38);
-            this.button_reserve.TabIndex = 20;
-            this.button_reserve.Text = "GIỮ CHỖ";
-            this.button_reserve.UseVisualStyleBackColor = true;
-            this.button_reserve.Click += new System.EventHandler(this.button_reserve_Click);
-            // 
-            // button_booking
-            // 
-            this.button_booking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_booking.Location = new System.Drawing.Point(3, 3);
-            this.button_booking.Name = "button_booking";
-            this.button_booking.Size = new System.Drawing.Size(212, 38);
-            this.button_booking.TabIndex = 17;
-            this.button_booking.Text = "ĐẶT PHÒNG";
-            this.button_booking.UseVisualStyleBackColor = true;
-            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
             // 
             // panel8
             // 
@@ -259,7 +223,7 @@
             // textBox_cardID
             // 
             this.textBox_cardID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_cardID.Location = new System.Drawing.Point(0, 35);
+            this.textBox_cardID.Location = new System.Drawing.Point(0, 16);
             this.textBox_cardID.Name = "textBox_cardID";
             this.textBox_cardID.Size = new System.Drawing.Size(325, 20);
             this.textBox_cardID.TabIndex = 13;
@@ -272,8 +236,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.label3.Size = new System.Drawing.Size(65, 35);
+            this.label3.Size = new System.Drawing.Size(65, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "MÃ THẺ";
             // 
@@ -299,7 +262,7 @@
             // textBox_creditCardExpDate
             // 
             this.textBox_creditCardExpDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_creditCardExpDate.Location = new System.Drawing.Point(0, 35);
+            this.textBox_creditCardExpDate.Location = new System.Drawing.Point(0, 16);
             this.textBox_creditCardExpDate.Name = "textBox_creditCardExpDate";
             this.textBox_creditCardExpDate.Size = new System.Drawing.Size(325, 20);
             this.textBox_creditCardExpDate.TabIndex = 14;
@@ -312,8 +275,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.label5.Size = new System.Drawing.Size(113, 35);
+            this.label5.Size = new System.Drawing.Size(113, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "HẠN SỬ DỤNG";
             // 
@@ -584,6 +546,60 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "MÃ GIẢM GIÁ";
             // 
+            // button_reserve
+            // 
+            this.button_reserve.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_reserve.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_reserve.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_reserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reserve.Location = new System.Drawing.Point(221, 3);
+            this.button_reserve.Name = "button_reserve";
+            this.button_reserve.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_reserve.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_reserve.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_reserve.Size = new System.Drawing.Size(212, 38);
+            this.button_reserve.TabIndex = 27;
+            this.button_reserve.Text = "CẬP NHẬT";
+            this.button_reserve.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_reserve.UseVisualStyleBackColor = true;
+            this.button_reserve.Click += new System.EventHandler(this.button_reserve_Click);
+            // 
+            // button_booking
+            // 
+            this.button_booking.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_booking.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_booking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_booking.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_booking.Location = new System.Drawing.Point(3, 3);
+            this.button_booking.Name = "button_booking";
+            this.button_booking.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_booking.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_booking.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_booking.Size = new System.Drawing.Size(212, 38);
+            this.button_booking.TabIndex = 25;
+            this.button_booking.Text = "ĐẶT PHÒNG";
+            this.button_booking.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_booking.UseVisualStyleBackColor = true;
+            this.button_booking.Click += new System.EventHandler(this.button_reserve_Click);
+            // 
+            // button_quit
+            // 
+            this.button_quit.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_quit.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_quit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_quit.Location = new System.Drawing.Point(439, 3);
+            this.button_quit.Name = "button_quit";
+            this.button_quit.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_quit.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_quit.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_quit.Size = new System.Drawing.Size(214, 38);
+            this.button_quit.TabIndex = 26;
+            this.button_quit.Text = "THOÁT";
+            this.button_quit.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_quit.UseVisualStyleBackColor = true;
+            this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
+            // 
             // FormReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,9 +674,6 @@
         private System.Windows.Forms.TextBox textBox_creditCardExpDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button_quit;
-        private System.Windows.Forms.Button button_reserve;
-        private System.Windows.Forms.Button button_booking;
         private System.Windows.Forms.Panel panel_cardID;
         private System.Windows.Forms.TextBox textBox_cardID;
         private System.Windows.Forms.Label label3;
@@ -671,6 +684,9 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBox_promoCode;
         private System.Windows.Forms.Label label7;
+        private ePOSOne.btnProduct.Button_WOC button_reserve;
+        private ePOSOne.btnProduct.Button_WOC button_booking;
+        private ePOSOne.btnProduct.Button_WOC button_quit;
 
 
     }

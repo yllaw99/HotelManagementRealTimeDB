@@ -50,15 +50,17 @@ namespace HotelManagement_FireBase
         #region dataGridView Cell Click
         private void dataGridView_roomView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ID = this.dataGridView_roomView.CurrentRow.Cells[0].Value.ToString();
-            var data = client.Get("Rooms/");
-            var converted_data = JsonConvert.DeserializeObject<IDictionary<string, Room>>(data.Body);
-            var r = converted_data.Single(t => t.Key.Equals(ID));
+            this.textBox_roomID.Text = dataGridView_roomView.CurrentRow.Cells[0].Value.ToString();
 
-            this.textBox_roomID.Text = r.Key;
-            this.comboBox_roomType.Text = r.Value.type;
-            this.comboBox_roomStt.Text = r.Value.status;
-            this.textBox_dateCheckIn.Text = r.Value.DateCheckIn;
+            this.comboBox_roomType.Text = dataGridView_roomView.CurrentRow.Cells[1].Value.ToString();
+
+            this.roundedTextBoxRoomType.Text = comboBox_roomType.Text.ToString();
+
+            this.comboBox_roomStt.Text = dataGridView_roomView.CurrentRow.Cells[2].Value.ToString();
+
+            this.roundedTextboxRoomStt.Text = comboBox_roomStt.Text.ToString();
+
+            this.textBox_dateCheckIn.Text = dataGridView_roomView.CurrentRow.Cells[3].Value.ToString();
         }
         #endregion
     
@@ -100,7 +102,6 @@ namespace HotelManagement_FireBase
         #region ClassDelete
         private void Delete()
         {
-            Declare_room();
             DialogResult dr = MessageBox.Show("Xác nhận xoá phòng?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
@@ -217,6 +218,16 @@ namespace HotelManagement_FireBase
         {
             FormRoomTypePrice price = new FormRoomTypePrice();
             price.ShowDialog();
+        }
+
+        private void dropDownRoomType(object sender, EventArgs e)
+        {
+            this.comboBox_roomType.DroppedDown = true;
+        }
+
+        private void dropDownRoomStt(object sender, EventArgs e)
+        {
+            this.comboBox_roomStt.DroppedDown = true;
         }
 
 

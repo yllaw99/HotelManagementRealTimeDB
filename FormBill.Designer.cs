@@ -39,9 +39,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label_tax = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label_penalty = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,6 +78,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.button_checkOut = new ePOSOne.btnProduct.Button_WOC();
             this.button_print = new ePOSOne.btnProduct.Button_WOC();
+            this.textBox_penalty = new HotelManagement_FireBase.roundedTextbox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_tax = new HotelManagement_FireBase.roundedTextbox();
             this.panel_print.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -96,6 +98,7 @@
             this.panel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_print
@@ -199,10 +202,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.40351F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.59649F));
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_penalty, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label_tax, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label_penalty, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -225,18 +228,6 @@
             this.label11.Text = "Thuế";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_tax
-            // 
-            this.label_tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_tax.AutoSize = true;
-            this.label_tax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tax.Location = new System.Drawing.Point(86, 39);
-            this.label_tax.Name = "label_tax";
-            this.label_tax.Size = new System.Drawing.Size(139, 16);
-            this.label_tax.TabIndex = 20;
-            this.label_tax.Text = "label_tax";
-            this.label_tax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -248,18 +239,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Phạt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label_penalty
-            // 
-            this.label_penalty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_penalty.AutoSize = true;
-            this.label_penalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_penalty.Location = new System.Drawing.Point(86, 7);
-            this.label_penalty.Name = "label_penalty";
-            this.label_penalty.Size = new System.Drawing.Size(139, 16);
-            this.label_penalty.TabIndex = 14;
-            this.label_penalty.Text = "label4";
-            this.label_penalty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel6
             // 
@@ -725,6 +704,49 @@
             this.button_print.UseVisualStyleBackColor = true;
             this.button_print.Click += new System.EventHandler(this.button_print_Click);
             // 
+            // textBox_penalty
+            // 
+            this.textBox_penalty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_penalty.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox_penalty.Location = new System.Drawing.Point(86, 3);
+            this.textBox_penalty.Multiline = true;
+            this.textBox_penalty.Name = "textBox_penalty";
+            this.textBox_penalty.Size = new System.Drawing.Size(139, 25);
+            this.textBox_penalty.TabIndex = 10;
+            this.textBox_penalty.Text = "0";
+            this.textBox_penalty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.Control;
+            this.panel10.Controls.Add(this.label1);
+            this.panel10.Controls.Add(this.textBox_tax);
+            this.panel10.Location = new System.Drawing.Point(86, 34);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(139, 26);
+            this.panel10.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(121, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "%";
+            // 
+            // textBox_tax
+            // 
+            this.textBox_tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_tax.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox_tax.Location = new System.Drawing.Point(3, 3);
+            this.textBox_tax.Multiline = true;
+            this.textBox_tax.Name = "textBox_tax";
+            this.textBox_tax.Size = new System.Drawing.Size(120, 18);
+            this.textBox_tax.TabIndex = 24;
+            this.textBox_tax.Text = "10";
+            this.textBox_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,6 +787,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,9 +803,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label_tax;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label_penalty;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label_CusName;
@@ -823,6 +845,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private roundedTextbox textBox_penalty;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label1;
+        private roundedTextbox textBox_tax;
 
 
 

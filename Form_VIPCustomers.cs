@@ -57,7 +57,8 @@ namespace HotelManagement_FireBase
                 dOb = cus.Value.dOb,
                 addr = cus.Value.address,
                 cmnd = cus.Key,
-                phone =  cus.Value.phoneNum
+                phone =  cus.Value.phoneNum,
+                nationality = cus.Value.nationality
             }).ToList();
             dataGridView_customerView.DataSource = listCus;
             dataGridView_customerView.AutoResizeColumns();
@@ -70,11 +71,18 @@ namespace HotelManagement_FireBase
             }
 
             #region Columns Rename
+
             this.dataGridView_customerView.Columns[0].HeaderText = "Tên KH";
+
             this.dataGridView_customerView.Columns[1].HeaderText = "Ngày sinh";
+
             this.dataGridView_customerView.Columns[2].HeaderText = "Địa chỉ";
+
             this.dataGridView_customerView.Columns[3].HeaderText = "CMND";
+
             this.dataGridView_customerView.Columns[4].HeaderText = "SĐT";
+
+            this.dataGridView_customerView.Columns[5].HeaderText = "Quốc tịch";
         }
             #endregion
 
@@ -106,7 +114,7 @@ namespace HotelManagement_FireBase
         private void Update_Cus()
         {
             Customer();
-            DialogResult dr = MessageBox.Show("Xác nhận cập nhật tài khoản [" + textBox_customerName.Text + "] ", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Xác nhận cập nhật khách hàng [" + textBox_customerName.Text + "] ", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 var update = client.Update("Customers/" + textBox_customer_CMND.Text, Customer());
@@ -180,20 +188,31 @@ namespace HotelManagement_FireBase
         #region Show data to textBoxes
         private void dataGridView_customerView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ID = this.dataGridView_customerView.CurrentRow.Cells[3].Value.ToString();
-            var data = client.Get(@"/Customers");
-            var converted_data = JsonConvert.DeserializeObject<IDictionary<string, customer>>(data.Body);
-            var r = converted_data.Single(t => t.Key.Equals(ID));
+            this.textBox_customerName.Text = dataGridView_customerView.CurrentRow.Cells[0].Value.ToString();
 
-            #region Show
-            this.textBox_customerName.Text = r.Value.name.ToString();
-            this.dateTimePicker_dOb.Text =  r.Value.dOb.ToString();
-            this.textBox_customer_CMND.Text = r.Key.ToString();
-            this.textBox_customer_address.Text = r.Value.address.ToString();
-            this.textBox_customer_phoneNum.Text = r.Value.phoneNum.ToString();
-            this.textBox_customer_nationality.Text = r.Value.nationality.ToString();
-            #endregion
+            this.dateTimePicker_dOb.Text =  dataGridView_customerView.CurrentRow.Cells[1].Value.ToString();
+
+            //this.textBox_dOb.Text = dateTimePicker_dOb.Text;
+
+            this.textBox_customer_CMND.Text = dataGridView_customerView.CurrentRow.Cells[3].Value.ToString();
+
+            this.textBox_customer_address.Text = dataGridView_customerView.CurrentRow.Cells[2].Value.ToString();
+
+            this.textBox_customer_phoneNum.Text = dataGridView_customerView.CurrentRow.Cells[4].Value.ToString();
+
+            this.textBox_customer_nationality.Text = dataGridView_customerView.CurrentRow.Cells[5].Value.ToString();
+            
         }
         #endregion
+
+        private void label_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dropDownDobComboBox(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

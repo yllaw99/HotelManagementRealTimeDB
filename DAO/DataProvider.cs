@@ -103,11 +103,7 @@ namespace HotelManagement_FireBase.DAO
             FirebaseResponse data = client.Get("RoomPrices/");
             IDictionary<string, string> mList = JsonConvert.DeserializeObject<IDictionary<string, string>>(data.Body);
             List<KeyValuePair<string, string>> listNumber = mList.ToList();
-            //List<string> roomType = new List<string>();
-            //foreach (var val in listNumber)
-            //{
-            //    roomType.Add(val.Key);
-            //}
+
             return listNumber;
         }
         #endregion

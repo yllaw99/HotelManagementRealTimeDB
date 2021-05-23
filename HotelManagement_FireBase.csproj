@@ -107,12 +107,6 @@
     <Compile Include="FormBlackList.Designer.cs">
       <DependentUpon>FormBlackList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCheckOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCheckOut.Designer.cs">
-      <DependentUpon>FormCheckOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPromotion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBlackList.resx">
       <DependentUpon>FormBlackList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCheckOut.resx">
-      <DependentUpon>FormCheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPromotion.resx">
       <DependentUpon>FormPromotion.cs</DependentUpon>

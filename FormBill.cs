@@ -21,17 +21,30 @@ using System.Globalization;
 namespace HotelManagement_FireBase
 {
     public partial class FormBill : Form
-    {        
-        private static int TAX;
+    {
+        private int totalTempPrice;
+
+        private int penalty;
+
+        private int tax;
+
+        private int totalFinal;
+
+        private int taxPrice;
+
         FormRoom fr;
+
         #region connect to db
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
+
         #region initial
+
         public FormBill(FormRoom frm)
         {
             InitializeComponent();
+
             this.fr = frm;
         }
         #endregion
@@ -40,10 +53,15 @@ namespace HotelManagement_FireBase
         private void FormBill_Load(object sender, EventArgs e)
         {
             string roomID = fr.rID;
+
             string roomPrice = "";
+
             Room roomInfo = provider.getRoomInfo(roomID);
+
             Bill BillInfo = provider.getBillInfo(roomInfo.DateCheckIn.ToString(), roomID);
+
             string getday_arrival = BillInfo.DCheckIn.ToString();
+
             List<KeyValuePair<string, string>> listPrice = provider.roomPrices();
 
             string formatted_day = getday_arrival.Substring(6, 10);
@@ -56,7 +74,7 @@ namespace HotelManagement_FireBase
                 if (i.Key.ToString() == roomInfo.type.ToString())
                     roomPrice = i.Value;
             }
-
+      
             this.label_datenow.Text = dayNow.ToString("HH:mm dd-MM-yyyy"); 
             this.label_arrivalDate.Text = BillInfo.DCheckIn.ToString();
             this.label_CusName.Text = BillInfo.CusName.ToString();
@@ -67,6 +85,18 @@ namespace HotelManagement_FireBase
             this.label_price.Text = roomPrice.ToString();
             this.label_quantity.Text = cal_night(dayArrived, dayNow).ToString();
             this.label_total_temp.Text = (cal_night(dayArrived, dayNow) * Convert.ToInt32(roomPrice)).ToString();
+
+            totalTempPrice = Convert.ToInt32(label_total_temp.Text);
+
+            penalty = Convert.ToInt32(textBox_penalty.Text);
+
+            tax = Convert.ToInt32(textBox_tax.Text);
+
+            taxPrice =  ((totalTempPrice + penalty) * tax/100);
+
+            totalFinal = totalTempPrice + penalty + taxPrice;
+
+            this.label_total_final.Text = totalFinal.ToString();
 
         }
         #endregion  
@@ -80,15 +110,15 @@ namespace HotelManagement_FireBase
         #endregion
 
         #region click events
-        void checkOut()
-        {
-            FormCheckOut fco = new FormCheckOut(fr);
-            fco.ShowDialog();
-        }
 
         private void button_checkOut_Click(object sender, EventArgs e)
         {
-            checkOut();
+            DialogResult dr = MessageBox.Show("Bạn muốn thanh toán?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                checkOut();
+            }
+            this.Close();
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -131,5 +161,20 @@ namespace HotelManagement_FireBase
             memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
         } 
         #endregion
+
+        private void checkOut()
+        {
+            string roomID = label_roomID.Text;
+            Room roomInfo = provider.getRoomInfo(roomID);
+            string dCheckOut = DateTime.Now.Day.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Year.ToString();
+            var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
+            client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
+            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/DCheckOut/", dCheckOut);
+            if (update.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                MessageBox.Show("Check out thành công!!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else MessageBox.Show("Lỗi khi Check out", "Thông báo", MessageBoxButtons.OK);
+        }
     }
 }

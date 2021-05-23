@@ -50,15 +50,22 @@ namespace HotelManagement_FireBase
         private void Reload()
         {
             var data = client.Get("/Users");
+
             var mList = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
+
             var listNumber = mList.Select(tk => new
             {
                 name = tk.Value.fullname,
+
                 username = tk.Value.username,
-                role = tk.Value.role
+
+                role = tk.Value.role,
+
+                phoneNumber = tk.Value.phoneNum,
+
+                gender = tk.Value.gender
             }).ToList();
             dataGridView_accInfo.DataSource = listNumber;
-            dataGridView_accInfo.AutoResizeColumns();
             if (dataGridView_accInfo != null)
             {
                 for (int count = 0; (count <= (dataGridView_accInfo.Rows.Count - 1)); count++)
@@ -67,8 +74,14 @@ namespace HotelManagement_FireBase
                 }
             }
             this.dataGridView_accInfo.Columns[0].HeaderText = "Họ và tên";
+
             this.dataGridView_accInfo.Columns[1].HeaderText = "Tên tài khoản";
+
             this.dataGridView_accInfo.Columns[2].HeaderText = "Chức vụ";
+
+            this.dataGridView_accInfo.Columns[3].HeaderText = "SĐT";
+
+            this.dataGridView_accInfo.Columns[4].HeaderText = "Giới tính";
         }
         #endregion
         #endregion
@@ -76,27 +89,31 @@ namespace HotelManagement_FireBase
         #region Display AccInfo in TextBox
         private void dataGridView_accInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string usernameLocal = this.dataGridView_accInfo.CurrentRow.Cells[1].Value.ToString();
-            var data = client.Get(@"/Users");
-            var converted_data = JsonConvert.DeserializeObject<IDictionary<string, User>>(data.Body);
-            var us = converted_data.Single(t => t.Value.username.Equals(usernameLocal));
-
-            #region add item into comboBox
             comboBox_accInfo_gender.Items.Add("Nam");
+
             comboBox_accInfo_gender.Items.Add("Nữ");
+
             comboBox_accInfo_gender.Items.Add("Khác");
 
             comboBox_accInfo_role.Items.Add("Nhân viên");
+
             comboBox_accInfo_role.Items.Add("Admin");
-            #endregion
-            #region load textBoxes
-            this.textBox_accInfo_fullname.Text = us.Value.fullname.ToString();
-            this.textBox_accInfo_username.Text = us.Value.username.ToString();
-            this.textBox_accInfo_pwd.Text = "";
-            this.textBox_accInfo_phonenum.Text = us.Value.phoneNum.ToString();
-            this.comboBox_accInfo_gender.Text = us.Value.gender.ToString();
-            this.comboBox_accInfo_role.Text = us.Value.role.ToString();
-            #endregion
+
+            this.textBox_accInfo_fullname.Text = dataGridView_accInfo.CurrentRow.Cells[0].Value.ToString();
+
+            this.textBox_accInfo_username.Text = dataGridView_accInfo.CurrentRow.Cells[1].Value.ToString();
+
+            this.textBox_accInfo_phonenum.Text = dataGridView_accInfo.CurrentRow.Cells[3].Value.ToString();
+
+            this.comboBox_accInfo_gender.Text = dataGridView_accInfo.CurrentRow.Cells[4].Value.ToString();
+
+            this.comboBox_accInfo_role.Text = dataGridView_accInfo.CurrentRow.Cells[2].Value.ToString();
+
+            this.textBox_accInfo_pwd.Clear();
+
+            this.textBoxGender.Text = comboBox_accInfo_gender.SelectedItem.ToString();
+
+            this.textBoxRole.Text = comboBox_accInfo_role.SelectedItem.ToString();
         }
         #endregion
 
@@ -153,7 +170,6 @@ namespace HotelManagement_FireBase
         #region ClassDelete
         private void Delete()
         {
-            Declare();
             DialogResult dr = MessageBox.Show("Bạn có chắc muốn xoá?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
@@ -219,6 +235,21 @@ namespace HotelManagement_FireBase
         #endregion
 
         #endregion
+
+        private void dropDownGenderComboBox(object sender, EventArgs e)
+        {
+            this.comboBox_accInfo_gender.DroppedDown = true;
+        }
+
+        private void dropDownRoleComboBox(object sender, EventArgs e)
+        {
+            this.comboBox_accInfo_role.DroppedDown = true;
+        }
+
+        private void label_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
     }
 }

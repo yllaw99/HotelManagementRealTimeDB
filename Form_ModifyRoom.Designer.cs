@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView_roomView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_roomStt = new System.Windows.Forms.ComboBox();
@@ -44,20 +45,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_roomType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button_updateRoom = new ePOSOne.btnProduct.Button_WOC();
             this.button_addRoom = new ePOSOne.btnProduct.Button_WOC();
             this.button_deleteRoom = new ePOSOne.btnProduct.Button_WOC();
-            this.textBox_dateCheckIn = new HotelManagement_FireBase.roundedTextbox();
             this.textBox_roomID = new HotelManagement_FireBase.roundedTextbox();
+            this.textBox_dateCheckIn = new HotelManagement_FireBase.roundedTextbox();
+            this.roundedTextBoxRoomType = new HotelManagement_FireBase.roundedTextbox();
+            this.roundedTextboxRoomStt = new HotelManagement_FireBase.roundedTextbox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_roomView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,12 +139,13 @@
             // 
             // dataGridView_roomView
             // 
+            this.dataGridView_roomView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView_roomView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_roomView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_roomView.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_roomView.Name = "dataGridView_roomView";
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView_roomView, 2);
-            this.dataGridView_roomView.Size = new System.Drawing.Size(417, 363);
+            this.dataGridView_roomView.Size = new System.Drawing.Size(418, 363);
             this.dataGridView_roomView.TabIndex = 0;
             this.dataGridView_roomView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_roomView_CellClick);
             // 
@@ -155,6 +166,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 369);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Controls.Add(this.button_updateRoom, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_addRoom, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_deleteRoom, 2, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(427, 309);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(355, 57);
+            this.tableLayoutPanel3.TabIndex = 27;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -163,13 +192,13 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox_roomStt, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox_roomType, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(426, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(427, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -178,7 +207,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(356, 300);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 300);
             this.tableLayoutPanel2.TabIndex = 26;
             // 
             // label4
@@ -195,14 +224,15 @@
             // comboBox_roomStt
             // 
             this.comboBox_roomStt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_roomStt.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox_roomStt.FormattingEnabled = true;
             this.comboBox_roomStt.Items.AddRange(new object[] {
             "Trống",
             "Có người",
             "Đã đặt"});
-            this.comboBox_roomStt.Location = new System.Drawing.Point(157, 177);
+            this.comboBox_roomStt.Location = new System.Drawing.Point(0, 23);
             this.comboBox_roomStt.Name = "comboBox_roomStt";
-            this.comboBox_roomStt.Size = new System.Drawing.Size(196, 21);
+            this.comboBox_roomStt.Size = new System.Drawing.Size(192, 21);
             this.comboBox_roomStt.TabIndex = 5;
             // 
             // label3
@@ -230,15 +260,16 @@
             // comboBox_roomType
             // 
             this.comboBox_roomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_roomType.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox_roomType.FormattingEnabled = true;
             this.comboBox_roomType.Items.AddRange(new object[] {
             "Single Bed",
             "Double Bed",
             "Triple Bed",
             "Family"});
-            this.comboBox_roomType.Location = new System.Drawing.Point(157, 102);
+            this.comboBox_roomType.Location = new System.Drawing.Point(0, 22);
             this.comboBox_roomType.Name = "comboBox_roomType";
-            this.comboBox_roomType.Size = new System.Drawing.Size(196, 21);
+            this.comboBox_roomType.Size = new System.Drawing.Size(195, 21);
             this.comboBox_roomType.TabIndex = 3;
             // 
             // label1
@@ -252,23 +283,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng";
             // 
-            // tableLayoutPanel3
+            // panel2
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.button_updateRoom, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_addRoom, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_deleteRoom, 2, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(426, 309);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(356, 57);
-            this.tableLayoutPanel3.TabIndex = 27;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.roundedTextBoxRoomType);
+            this.panel2.Controls.Add(this.comboBox_roomType);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(157, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(195, 69);
+            this.panel2.TabIndex = 27;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(168, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.dropDownRoomType);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox3);
+            this.panel4.Controls.Add(this.roundedTextboxRoomStt);
+            this.panel4.Controls.Add(this.comboBox_roomStt);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(157, 153);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(195, 69);
+            this.panel4.TabIndex = 28;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(167, 27);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.dropDownRoomStt);
             // 
             // button_updateRoom
             // 
@@ -317,34 +378,54 @@
             this.button_deleteRoom.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
             this.button_deleteRoom.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
             this.button_deleteRoom.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_deleteRoom.Size = new System.Drawing.Size(114, 51);
+            this.button_deleteRoom.Size = new System.Drawing.Size(113, 51);
             this.button_deleteRoom.TabIndex = 23;
             this.button_deleteRoom.Text = "Xoá";
             this.button_deleteRoom.TextColor = System.Drawing.SystemColors.HotTrack;
             this.button_deleteRoom.UseVisualStyleBackColor = true;
             this.button_deleteRoom.Click += new System.EventHandler(this.button_deleteRoom_Click);
             // 
-            // textBox_dateCheckIn
-            // 
-            this.textBox_dateCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_dateCheckIn.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 247);
-            this.textBox_dateCheckIn.Multiline = true;
-            this.textBox_dateCheckIn.Name = "textBox_dateCheckIn";
-            this.textBox_dateCheckIn.ReadOnly = true;
-            this.textBox_dateCheckIn.Size = new System.Drawing.Size(196, 30);
-            this.textBox_dateCheckIn.TabIndex = 25;
-            // 
             // textBox_roomID
             // 
             this.textBox_roomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_roomID.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_roomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.textBox_roomID.Location = new System.Drawing.Point(157, 22);
             this.textBox_roomID.Multiline = true;
             this.textBox_roomID.Name = "textBox_roomID";
             this.textBox_roomID.ReadOnly = true;
-            this.textBox_roomID.Size = new System.Drawing.Size(196, 30);
+            this.textBox_roomID.Size = new System.Drawing.Size(195, 30);
             this.textBox_roomID.TabIndex = 26;
+            // 
+            // textBox_dateCheckIn
+            // 
+            this.textBox_dateCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_dateCheckIn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_dateCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 247);
+            this.textBox_dateCheckIn.Multiline = true;
+            this.textBox_dateCheckIn.Name = "textBox_dateCheckIn";
+            this.textBox_dateCheckIn.ReadOnly = true;
+            this.textBox_dateCheckIn.Size = new System.Drawing.Size(195, 30);
+            this.textBox_dateCheckIn.TabIndex = 25;
+            // 
+            // roundedTextBoxRoomType
+            // 
+            this.roundedTextBoxRoomType.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.roundedTextBoxRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.roundedTextBoxRoomType.Location = new System.Drawing.Point(0, 19);
+            this.roundedTextBoxRoomType.Name = "roundedTextBoxRoomType";
+            this.roundedTextBoxRoomType.Size = new System.Drawing.Size(196, 27);
+            this.roundedTextBoxRoomType.TabIndex = 27;
+            // 
+            // roundedTextboxRoomStt
+            // 
+            this.roundedTextboxRoomStt.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.roundedTextboxRoomStt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.roundedTextboxRoomStt.Location = new System.Drawing.Point(-1, 19);
+            this.roundedTextboxRoomStt.Name = "roundedTextboxRoomStt";
+            this.roundedTextboxRoomStt.Size = new System.Drawing.Size(196, 27);
+            this.roundedTextboxRoomStt.TabIndex = 29;
             // 
             // Form_ModifyRoom
             // 
@@ -368,9 +449,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_roomView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,6 +485,12 @@
         private ePOSOne.btnProduct.Button_WOC button_deleteRoom;
         private roundedTextbox textBox_roomID;
         private roundedTextbox textBox_dateCheckIn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private roundedTextbox roundedTextBoxRoomType;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private roundedTextbox roundedTextboxRoomStt;
 
 
 

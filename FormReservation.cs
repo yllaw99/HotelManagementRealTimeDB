@@ -13,6 +13,7 @@ using FireSharp.Response;
 using FireSharp.Interfaces;
 using Newtonsoft.Json;
 using HotelManagement_FireBase.DAO;
+using HotelManagement_FireBase.DTO;
 #endregion
 
 namespace HotelManagement_FireBase
@@ -47,8 +48,11 @@ namespace HotelManagement_FireBase
 
         private void button_booking_Click(object sender, EventArgs e)
         {
-            Booking();
-            this.Close();
+            if (isInBlackList(this.textBox_cmnd.Text))
+
+                MessageBox.Show("Khách hàng này nằm trong BlackList, không thể thực hiện đặt phòng");
+
+            else Booking();
         }
 
         private void button_quit_Click(object sender, EventArgs e)
@@ -58,8 +62,11 @@ namespace HotelManagement_FireBase
 
         private void button_reserve_Click(object sender, EventArgs e)
         {
-            reserve();
-            this.Close();
+            if (isInBlackList(this.textBox_cmnd.Text))
+
+                MessageBox.Show("Khách hàng này nằm trong BlackList, không thể thực hiện đặt phòng");
+
+            else reserve();
         }
 
         private void radioButton_nonGuaranteed_CheckedChanged(object sender, EventArgs e)
@@ -94,7 +101,8 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region function
+        #region methods
+
         #region Payment Method
         string getPaymentMethod()
         {
@@ -110,6 +118,7 @@ namespace HotelManagement_FireBase
             return pMethod;
         }
         #endregion
+
         #region Reservation Type
         string getReservationType()
         {
@@ -125,6 +134,7 @@ namespace HotelManagement_FireBase
             return ReType;
         }
         #endregion
+
         #region Booking
         void Booking()
         {
@@ -132,12 +142,13 @@ namespace HotelManagement_FireBase
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 string dateCheckin = DateTime.Now.ToString("dd-MM-yyyy");
-                FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", Declare_Bill());
+                FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     FirebaseResponse update = client.Set("Rooms/" + textBox_roomID.Text + "/status", "Có người");
                     update = client.Set("Rooms/" + textBox_roomID.Text + "/dateCheckIn", dateCheckin);
                     MessageBox.Show("Đặt phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
+                    this.Close();
                 }
                 else
                 {
@@ -146,19 +157,21 @@ namespace HotelManagement_FireBase
             }
         }
         #endregion
+
         #region reserve
-        void reserve()
+        private void reserve()
         {
             DialogResult dr = MessageBox.Show("Bạn có muốn giữ phòng?", "Thông báo", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 string dateCheckin = DateTime.Now.ToString("dd-MM-yyyy");
-                FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", Declare_Bill());
+                FirebaseResponse se = client.Update("Bills/" + dateCheckin + "/" + textBox_roomID.Text + "/", bill());
                 if (se.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     FirebaseResponse update = client.Set("Rooms/" + textBox_roomID.Text + "/status", "Đã đặt");
                     update = client.Set("Rooms/" + textBox_roomID.Text + "/dateCheckIn", dateCheckin);
                     MessageBox.Show("Giữ phòng thành công!!", "Thông báo", MessageBoxButtons.OK);
+                    this.Close();
                 }
                 else
                 {
@@ -168,10 +181,29 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
+        private bool isInBlackList(string identityNumber)
+        {
+            var responsedBlackList  = client.Get("BlackList/");
+
+            var convertedBlackList = JsonConvert.DeserializeObject<IDictionary<string, BlackList>>(responsedBlackList.Body);
+
+            while (true)
+            {
+                foreach (var item in convertedBlackList)
+                {
+                    bool isBadCustomer = identityNumber == item.Key;
+
+                    if (isBadCustomer) return isBadCustomer;
+
+                    else return isBadCustomer;
+                }
+            }
+        }
+
         #endregion
 
         #region Declare
-        private Bill Declare_Bill()
+        private Bill bill()
         {
             Bill bill = new Bill()
             {

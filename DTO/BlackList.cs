@@ -16,12 +16,12 @@ namespace HotelManagement_FireBase.DTO
             set { identityId = value; }
         }
 
-        private string fullName;
+        private string name;
 
-        public string FullName
+        public string Name
         {
-            get { return fullName; }
-            set { fullName = value; }
+            get { return name; }
+            set { name = value; }
         }
 
         private string nationality;
@@ -32,12 +32,12 @@ namespace HotelManagement_FireBase.DTO
             set { nationality = value; }
         }
 
-        private string phoneNumber;
+        private string phoneNum;
 
-        public string PhoneNumber
+        public string PhoneNum
         {
-            get { return phoneNumber; }
-            set { phoneNumber = value; }
+            get { return phoneNum; }
+            set { phoneNum = value; }
         }
 
         private string address;
@@ -55,5 +55,6 @@ namespace HotelManagement_FireBase.DTO
             get { return note; }
             set { note = value; }
         }
+
     }
 }

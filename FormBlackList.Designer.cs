@@ -35,9 +35,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_updateRoom = new ePOSOne.btnProduct.Button_WOC();
-            this.button_addRoom = new ePOSOne.btnProduct.Button_WOC();
-            this.button_deleteRoom = new ePOSOne.btnProduct.Button_WOC();
+            this.button_update = new ePOSOne.btnProduct.Button_WOC();
+            this.button_add = new ePOSOne.btnProduct.Button_WOC();
+            this.button_delete = new ePOSOne.btnProduct.Button_WOC();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -130,72 +130,75 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.button_updateRoom, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_addRoom, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button_deleteRoom, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_update, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_add, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button_delete, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(390, 274);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(342, 49);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // button_updateRoom
+            // button_update
             // 
-            this.button_updateRoom.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button_updateRoom.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_updateRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_updateRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_updateRoom.Location = new System.Drawing.Point(117, 3);
-            this.button_updateRoom.Name = "button_updateRoom";
-            this.button_updateRoom.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_updateRoom.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
-            this.button_updateRoom.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_updateRoom.Size = new System.Drawing.Size(108, 43);
-            this.button_updateRoom.TabIndex = 24;
-            this.button_updateRoom.Text = "Cập nhật";
-            this.button_updateRoom.TextColor = System.Drawing.SystemColors.HotTrack;
-            this.button_updateRoom.UseVisualStyleBackColor = true;
+            this.button_update.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_update.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_update.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_update.Location = new System.Drawing.Point(117, 3);
+            this.button_update.Name = "button_update";
+            this.button_update.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_update.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_update.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_update.Size = new System.Drawing.Size(108, 43);
+            this.button_update.TabIndex = 24;
+            this.button_update.Text = "Cập nhật";
+            this.button_update.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
-            // button_addRoom
+            // button_add
             // 
-            this.button_addRoom.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button_addRoom.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_addRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_addRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_addRoom.Location = new System.Drawing.Point(3, 3);
-            this.button_addRoom.Name = "button_addRoom";
-            this.button_addRoom.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_addRoom.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
-            this.button_addRoom.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_addRoom.Size = new System.Drawing.Size(108, 43);
-            this.button_addRoom.TabIndex = 22;
-            this.button_addRoom.Text = "Thêm";
-            this.button_addRoom.TextColor = System.Drawing.SystemColors.HotTrack;
-            this.button_addRoom.UseVisualStyleBackColor = true;
-            this.button_addRoom.Click += new System.EventHandler(this.button_addRoom_Click);
+            this.button_add.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_add.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_add.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_add.Location = new System.Drawing.Point(3, 3);
+            this.button_add.Name = "button_add";
+            this.button_add.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_add.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_add.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_add.Size = new System.Drawing.Size(108, 43);
+            this.button_add.TabIndex = 22;
+            this.button_add.Text = "Thêm";
+            this.button_add.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // button_deleteRoom
+            // button_delete
             // 
-            this.button_deleteRoom.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button_deleteRoom.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_deleteRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_deleteRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_deleteRoom.Location = new System.Drawing.Point(231, 3);
-            this.button_deleteRoom.Name = "button_deleteRoom";
-            this.button_deleteRoom.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_deleteRoom.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
-            this.button_deleteRoom.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_deleteRoom.Size = new System.Drawing.Size(108, 43);
-            this.button_deleteRoom.TabIndex = 23;
-            this.button_deleteRoom.Text = "Xoá";
-            this.button_deleteRoom.TextColor = System.Drawing.SystemColors.HotTrack;
-            this.button_deleteRoom.UseVisualStyleBackColor = true;
+            this.button_delete.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_delete.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_delete.Location = new System.Drawing.Point(231, 3);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_delete.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_delete.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_delete.Size = new System.Drawing.Size(108, 43);
+            this.button_delete.TabIndex = 23;
+            this.button_delete.Text = "Xoá";
+            this.button_delete.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(3, 3);
@@ -203,6 +206,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView, 2);
             this.dataGridView.Size = new System.Drawing.Size(381, 320);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // panel3
             // 
@@ -266,6 +270,7 @@
             this.textBox_phoneNumber.Name = "textBox_phoneNumber";
             this.textBox_phoneNumber.Size = new System.Drawing.Size(188, 30);
             this.textBox_phoneNumber.TabIndex = 22;
+            this.textBox_phoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_identityId
             // 
@@ -276,6 +281,7 @@
             this.textBox_identityId.Name = "textBox_identityId";
             this.textBox_identityId.Size = new System.Drawing.Size(188, 30);
             this.textBox_identityId.TabIndex = 9;
+            this.textBox_identityId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -322,6 +328,7 @@
             this.textBox_customerName.Name = "textBox_customerName";
             this.textBox_customerName.Size = new System.Drawing.Size(188, 30);
             this.textBox_customerName.TabIndex = 8;
+            this.textBox_customerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -356,6 +363,7 @@
             this.textBox_note.Name = "textBox_note";
             this.textBox_note.Size = new System.Drawing.Size(188, 39);
             this.textBox_note.TabIndex = 11;
+            this.textBox_note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_nationality
             // 
@@ -366,6 +374,7 @@
             this.textBox_nationality.Name = "textBox_nationality";
             this.textBox_nationality.Size = new System.Drawing.Size(188, 30);
             this.textBox_nationality.TabIndex = 13;
+            this.textBox_nationality.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_address
             // 
@@ -376,6 +385,7 @@
             this.textBox_address.Name = "textBox_address";
             this.textBox_address.Size = new System.Drawing.Size(188, 30);
             this.textBox_address.TabIndex = 10;
+            this.textBox_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormBlackList
             // 
@@ -413,9 +423,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private ePOSOne.btnProduct.Button_WOC button_updateRoom;
-        private ePOSOne.btnProduct.Button_WOC button_addRoom;
-        private ePOSOne.btnProduct.Button_WOC button_deleteRoom;
+        private ePOSOne.btnProduct.Button_WOC button_update;
+        private ePOSOne.btnProduct.Button_WOC button_add;
+        private ePOSOne.btnProduct.Button_WOC button_delete;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label4;
