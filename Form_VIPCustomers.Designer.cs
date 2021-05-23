@@ -86,6 +86,7 @@
             // 
             // panel_customer
             // 
+            this.panel_customer.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel_customer.Controls.Add(this.panel5);
             this.panel_customer.Controls.Add(this.panel4);
             this.panel_customer.Controls.Add(this.panel3);
@@ -393,6 +394,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel6.Controls.Add(this.pictureBox1);
             this.panel6.Controls.Add(this.label_exit);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -445,7 +447,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 464);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(770, 426);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

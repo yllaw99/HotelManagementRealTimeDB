@@ -32,49 +32,49 @@
             this.dataGridView_accInfo = new System.Windows.Forms.DataGridView();
             this.panel_acc_info = new System.Windows.Forms.Panel();
             this.panel_accInfo_role = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBoxRole = new HotelManagement_FireBase.roundedTextbox();
             this.comboBox_accInfo_role = new System.Windows.Forms.ComboBox();
             this.label_accInfo_role = new System.Windows.Forms.Label();
             this.panel_accInfo_phonenum = new System.Windows.Forms.Panel();
+            this.textBox_accInfo_phonenum = new HotelManagement_FireBase.roundedTextbox();
             this.label_accInfo_phonenum = new System.Windows.Forms.Label();
             this.panel_accInfo_fullname = new System.Windows.Forms.Panel();
+            this.textBox_accInfo_fullname = new HotelManagement_FireBase.roundedTextbox();
             this.label_accInfo_fullname = new System.Windows.Forms.Label();
             this.panel_accInfo_gender = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBoxGender = new HotelManagement_FireBase.roundedTextbox();
             this.comboBox_accInfo_gender = new System.Windows.Forms.ComboBox();
             this.label_accInfo_gender = new System.Windows.Forms.Label();
             this.panel_accInfo_pwd = new System.Windows.Forms.Panel();
+            this.textBox_accInfo_pwd = new HotelManagement_FireBase.roundedTextbox();
             this.label_accInfo_pwd = new System.Windows.Forms.Label();
             this.panel_accInfo_username = new System.Windows.Forms.Panel();
+            this.textBox_accInfo_username = new HotelManagement_FireBase.roundedTextbox();
             this.label_accInfo_username = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_add = new ePOSOne.btnProduct.Button_WOC();
+            this.button_update = new ePOSOne.btnProduct.Button_WOC();
+            this.button_delete = new ePOSOne.btnProduct.Button_WOC();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_exit = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBoxRole = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox_accInfo_phonenum = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox_accInfo_fullname = new HotelManagement_FireBase.roundedTextbox();
-            this.textBoxGender = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox_accInfo_pwd = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox_accInfo_username = new HotelManagement_FireBase.roundedTextbox();
-            this.button_add = new ePOSOne.btnProduct.Button_WOC();
-            this.button_update = new ePOSOne.btnProduct.Button_WOC();
-            this.button_delete = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_accInfo)).BeginInit();
             this.panel_acc_info.SuspendLayout();
             this.panel_accInfo_role.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel_accInfo_phonenum.SuspendLayout();
             this.panel_accInfo_fullname.SuspendLayout();
             this.panel_accInfo_gender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_accInfo_pwd.SuspendLayout();
             this.panel_accInfo_username.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_accInfo
@@ -115,6 +115,30 @@
             this.panel_accInfo_role.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_role.TabIndex = 11;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(296, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 36;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.dropDownRoleComboBox);
+            // 
+            // textBoxRole
+            // 
+            this.textBoxRole.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRole.Location = new System.Drawing.Point(121, 7);
+            this.textBoxRole.Multiline = true;
+            this.textBoxRole.Name = "textBoxRole";
+            this.textBoxRole.Size = new System.Drawing.Size(203, 30);
+            this.textBoxRole.TabIndex = 35;
+            this.textBoxRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // comboBox_accInfo_role
             // 
             this.comboBox_accInfo_role.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -148,6 +172,19 @@
             this.panel_accInfo_phonenum.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_phonenum.TabIndex = 10;
             // 
+            // textBox_accInfo_phonenum
+            // 
+            this.textBox_accInfo_phonenum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_accInfo_phonenum.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_accInfo_phonenum.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox_accInfo_phonenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox_accInfo_phonenum.Location = new System.Drawing.Point(121, 6);
+            this.textBox_accInfo_phonenum.Multiline = true;
+            this.textBox_accInfo_phonenum.Name = "textBox_accInfo_phonenum";
+            this.textBox_accInfo_phonenum.Size = new System.Drawing.Size(203, 30);
+            this.textBox_accInfo_phonenum.TabIndex = 25;
+            this.textBox_accInfo_phonenum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label_accInfo_phonenum
             // 
             this.label_accInfo_phonenum.AutoSize = true;
@@ -167,6 +204,19 @@
             this.panel_accInfo_fullname.Name = "panel_accInfo_fullname";
             this.panel_accInfo_fullname.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_fullname.TabIndex = 9;
+            // 
+            // textBox_accInfo_fullname
+            // 
+            this.textBox_accInfo_fullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_accInfo_fullname.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_accInfo_fullname.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox_accInfo_fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox_accInfo_fullname.Location = new System.Drawing.Point(121, 6);
+            this.textBox_accInfo_fullname.Multiline = true;
+            this.textBox_accInfo_fullname.Name = "textBox_accInfo_fullname";
+            this.textBox_accInfo_fullname.Size = new System.Drawing.Size(203, 30);
+            this.textBox_accInfo_fullname.TabIndex = 24;
+            this.textBox_accInfo_fullname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_accInfo_fullname
             // 
@@ -189,6 +239,30 @@
             this.panel_accInfo_gender.Name = "panel_accInfo_gender";
             this.panel_accInfo_gender.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_gender.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(296, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.dropDownGenderComboBox);
+            // 
+            // textBoxGender
+            // 
+            this.textBoxGender.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBoxGender.Location = new System.Drawing.Point(121, 7);
+            this.textBoxGender.Multiline = true;
+            this.textBoxGender.Name = "textBoxGender";
+            this.textBoxGender.Size = new System.Drawing.Size(203, 30);
+            this.textBoxGender.TabIndex = 31;
+            this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox_accInfo_gender
             // 
@@ -221,6 +295,19 @@
             this.panel_accInfo_pwd.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_pwd.TabIndex = 7;
             // 
+            // textBox_accInfo_pwd
+            // 
+            this.textBox_accInfo_pwd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_accInfo_pwd.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_accInfo_pwd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox_accInfo_pwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox_accInfo_pwd.Location = new System.Drawing.Point(121, 5);
+            this.textBox_accInfo_pwd.Multiline = true;
+            this.textBox_accInfo_pwd.Name = "textBox_accInfo_pwd";
+            this.textBox_accInfo_pwd.Size = new System.Drawing.Size(203, 30);
+            this.textBox_accInfo_pwd.TabIndex = 23;
+            this.textBox_accInfo_pwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label_accInfo_pwd
             // 
             this.label_accInfo_pwd.AutoSize = true;
@@ -240,6 +327,19 @@
             this.panel_accInfo_username.Name = "panel_accInfo_username";
             this.panel_accInfo_username.Size = new System.Drawing.Size(366, 41);
             this.panel_accInfo_username.TabIndex = 6;
+            // 
+            // textBox_accInfo_username
+            // 
+            this.textBox_accInfo_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_accInfo_username.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_accInfo_username.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox_accInfo_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.textBox_accInfo_username.Location = new System.Drawing.Point(121, 5);
+            this.textBox_accInfo_username.Multiline = true;
+            this.textBox_accInfo_username.Name = "textBox_accInfo_username";
+            this.textBox_accInfo_username.Size = new System.Drawing.Size(203, 30);
+            this.textBox_accInfo_username.TabIndex = 22;
+            this.textBox_accInfo_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_accInfo_username
             // 
@@ -268,158 +368,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(366, 47);
             this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label_exit);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 82);
-            this.panel1.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label_exit
-            // 
-            this.label_exit.AutoSize = true;
-            this.label_exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label_exit.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_exit.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label_exit.Location = new System.Drawing.Point(721, 0);
-            this.label_exit.Name = "label_exit";
-            this.label_exit.Size = new System.Drawing.Size(23, 20);
-            this.label_exit.TabIndex = 20;
-            this.label_exit.Text = "X";
-            this.label_exit.Click += new System.EventHandler(this.label_exit_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel_acc_info, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView_accInfo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 82);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.45033F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.54967F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(744, 302);
-            this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(296, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.dropDownGenderComboBox);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(296, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 36;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.dropDownRoleComboBox);
-            // 
-            // textBoxRole
-            // 
-            this.textBoxRole.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRole.Location = new System.Drawing.Point(121, 7);
-            this.textBoxRole.Multiline = true;
-            this.textBoxRole.Name = "textBoxRole";
-            this.textBoxRole.Size = new System.Drawing.Size(203, 30);
-            this.textBoxRole.TabIndex = 35;
-            this.textBoxRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_accInfo_phonenum
-            // 
-            this.textBox_accInfo_phonenum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_accInfo_phonenum.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_accInfo_phonenum.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox_accInfo_phonenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox_accInfo_phonenum.Location = new System.Drawing.Point(121, 6);
-            this.textBox_accInfo_phonenum.Multiline = true;
-            this.textBox_accInfo_phonenum.Name = "textBox_accInfo_phonenum";
-            this.textBox_accInfo_phonenum.Size = new System.Drawing.Size(203, 30);
-            this.textBox_accInfo_phonenum.TabIndex = 25;
-            this.textBox_accInfo_phonenum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_accInfo_fullname
-            // 
-            this.textBox_accInfo_fullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_accInfo_fullname.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_accInfo_fullname.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox_accInfo_fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox_accInfo_fullname.Location = new System.Drawing.Point(121, 6);
-            this.textBox_accInfo_fullname.Multiline = true;
-            this.textBox_accInfo_fullname.Name = "textBox_accInfo_fullname";
-            this.textBox_accInfo_fullname.Size = new System.Drawing.Size(203, 30);
-            this.textBox_accInfo_fullname.TabIndex = 24;
-            this.textBox_accInfo_fullname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxGender
-            // 
-            this.textBoxGender.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBoxGender.Location = new System.Drawing.Point(121, 7);
-            this.textBoxGender.Multiline = true;
-            this.textBoxGender.Name = "textBoxGender";
-            this.textBoxGender.Size = new System.Drawing.Size(203, 30);
-            this.textBoxGender.TabIndex = 31;
-            this.textBoxGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_accInfo_pwd
-            // 
-            this.textBox_accInfo_pwd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_accInfo_pwd.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_accInfo_pwd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox_accInfo_pwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox_accInfo_pwd.Location = new System.Drawing.Point(121, 5);
-            this.textBox_accInfo_pwd.Multiline = true;
-            this.textBox_accInfo_pwd.Name = "textBox_accInfo_pwd";
-            this.textBox_accInfo_pwd.Size = new System.Drawing.Size(203, 30);
-            this.textBox_accInfo_pwd.TabIndex = 23;
-            this.textBox_accInfo_pwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_accInfo_username
-            // 
-            this.textBox_accInfo_username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_accInfo_username.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_accInfo_username.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox_accInfo_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox_accInfo_username.Location = new System.Drawing.Point(121, 5);
-            this.textBox_accInfo_username.Multiline = true;
-            this.textBox_accInfo_username.Name = "textBox_accInfo_username";
-            this.textBox_accInfo_username.Size = new System.Drawing.Size(203, 30);
-            this.textBox_accInfo_username.TabIndex = 22;
-            this.textBox_accInfo_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_add
             // 
@@ -478,6 +426,58 @@
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_acc_del_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label_exit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(744, 82);
+            this.panel1.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(40, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label_exit
+            // 
+            this.label_exit.AutoSize = true;
+            this.label_exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label_exit.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exit.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label_exit.Location = new System.Drawing.Point(721, 0);
+            this.label_exit.Name = "label_exit";
+            this.label_exit.Size = new System.Drawing.Size(23, 20);
+            this.label_exit.TabIndex = 20;
+            this.label_exit.Text = "X";
+            this.label_exit.Click += new System.EventHandler(this.label_exit_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panel_acc_info, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView_accInfo, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 82);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.45033F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.54967F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(744, 302);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
             // FormAccountList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,12 +494,14 @@
             this.panel_acc_info.ResumeLayout(false);
             this.panel_accInfo_role.ResumeLayout(false);
             this.panel_accInfo_role.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel_accInfo_phonenum.ResumeLayout(false);
             this.panel_accInfo_phonenum.PerformLayout();
             this.panel_accInfo_fullname.ResumeLayout(false);
             this.panel_accInfo_fullname.PerformLayout();
             this.panel_accInfo_gender.ResumeLayout(false);
             this.panel_accInfo_gender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_accInfo_pwd.ResumeLayout(false);
             this.panel_accInfo_pwd.PerformLayout();
             this.panel_accInfo_username.ResumeLayout(false);
@@ -509,8 +511,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

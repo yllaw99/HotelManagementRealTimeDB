@@ -34,7 +34,8 @@ namespace HotelManagement_FireBase
             Room room = new Room()
             {
                 type = comboBox_roomType.Text,
-                status = comboBox_roomStt.Text
+                status = comboBox_roomStt.Text,
+                DateCheckIn = textBox_dateCheckIn.Text
             };
             return room;
         }
@@ -54,11 +55,7 @@ namespace HotelManagement_FireBase
 
             this.comboBox_roomType.Text = dataGridView_roomView.CurrentRow.Cells[1].Value.ToString();
 
-            this.roundedTextBoxRoomType.Text = comboBox_roomType.Text.ToString();
-
             this.comboBox_roomStt.Text = dataGridView_roomView.CurrentRow.Cells[2].Value.ToString();
-
-            this.roundedTextboxRoomStt.Text = comboBox_roomStt.Text.ToString();
 
             this.textBox_dateCheckIn.Text = dataGridView_roomView.CurrentRow.Cells[3].Value.ToString();
         }

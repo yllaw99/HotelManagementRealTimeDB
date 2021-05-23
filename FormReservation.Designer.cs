@@ -559,7 +559,7 @@
             this.button_reserve.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
             this.button_reserve.Size = new System.Drawing.Size(212, 38);
             this.button_reserve.TabIndex = 27;
-            this.button_reserve.Text = "CẬP NHẬT";
+            this.button_reserve.Text = "GIỮ PHÒNG";
             this.button_reserve.TextColor = System.Drawing.SystemColors.HotTrack;
             this.button_reserve.UseVisualStyleBackColor = true;
             this.button_reserve.Click += new System.EventHandler(this.button_reserve_Click);
@@ -580,7 +580,7 @@
             this.button_booking.Text = "ĐẶT PHÒNG";
             this.button_booking.TextColor = System.Drawing.SystemColors.HotTrack;
             this.button_booking.UseVisualStyleBackColor = true;
-            this.button_booking.Click += new System.EventHandler(this.button_reserve_Click);
+            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
             // 
             // button_quit
             // 

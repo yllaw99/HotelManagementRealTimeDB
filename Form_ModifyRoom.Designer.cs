@@ -38,24 +38,20 @@
             this.dataGridView_roomView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_roomStt = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_roomType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button_updateRoom = new ePOSOne.btnProduct.Button_WOC();
             this.button_addRoom = new ePOSOne.btnProduct.Button_WOC();
             this.button_deleteRoom = new ePOSOne.btnProduct.Button_WOC();
-            this.textBox_roomID = new HotelManagement_FireBase.roundedTextbox();
-            this.textBox_dateCheckIn = new HotelManagement_FireBase.roundedTextbox();
-            this.roundedTextBoxRoomType = new HotelManagement_FireBase.roundedTextbox();
-            this.roundedTextboxRoomStt = new HotelManagement_FireBase.roundedTextbox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox_roomType = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBox_roomStt = new System.Windows.Forms.ComboBox();
+            this.textBox_roomID = new System.Windows.Forms.TextBox();
+            this.textBox_dateCheckIn = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -65,9 +61,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,6 +119,7 @@
             this.label6.Size = new System.Drawing.Size(95, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Đơn giá phòng";
+            this.label6.Click += new System.EventHandler(this.panel5_click);
             // 
             // pictureBox1
             // 
@@ -136,6 +131,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.panel5_click);
             // 
             // dataGridView_roomView
             // 
@@ -183,153 +179,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(355, 57);
             this.tableLayoutPanel3.TabIndex = 27;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53741F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46259F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(427, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 300);
-            this.tableLayoutPanel2.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 253);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Ngày check in";
-            // 
-            // comboBox_roomStt
-            // 
-            this.comboBox_roomStt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_roomStt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox_roomStt.FormattingEnabled = true;
-            this.comboBox_roomStt.Items.AddRange(new object[] {
-            "Trống",
-            "Có người",
-            "Đã đặt"});
-            this.comboBox_roomStt.Location = new System.Drawing.Point(0, 23);
-            this.comboBox_roomStt.Name = "comboBox_roomStt";
-            this.comboBox_roomStt.Size = new System.Drawing.Size(192, 21);
-            this.comboBox_roomStt.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 178);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Trạng thái";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Loại phòng";
-            // 
-            // comboBox_roomType
-            // 
-            this.comboBox_roomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_roomType.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox_roomType.FormattingEnabled = true;
-            this.comboBox_roomType.Items.AddRange(new object[] {
-            "Single Bed",
-            "Double Bed",
-            "Triple Bed",
-            "Family"});
-            this.comboBox_roomType.Location = new System.Drawing.Point(0, 22);
-            this.comboBox_roomType.Name = "comboBox_roomType";
-            this.comboBox_roomType.Size = new System.Drawing.Size(195, 21);
-            this.comboBox_roomType.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã phòng";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.roundedTextBoxRoomType);
-            this.panel2.Controls.Add(this.comboBox_roomType);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(157, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(195, 69);
-            this.panel2.TabIndex = 27;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(168, 27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.dropDownRoomType);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.roundedTextboxRoomStt);
-            this.panel4.Controls.Add(this.comboBox_roomStt);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(157, 153);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(195, 69);
-            this.panel4.TabIndex = 28;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(167, 27);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 30;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.dropDownRoomStt);
             // 
             // button_updateRoom
             // 
@@ -385,47 +234,139 @@
             this.button_deleteRoom.UseVisualStyleBackColor = true;
             this.button_deleteRoom.Click += new System.EventHandler(this.button_deleteRoom_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53741F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46259F));
+            this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(427, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 300);
+            this.tableLayoutPanel2.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ngày check in";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Trạng thái";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Loại phòng";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã phòng";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.comboBox_roomType);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(157, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(195, 69);
+            this.panel2.TabIndex = 27;
+            // 
+            // comboBox_roomType
+            // 
+            this.comboBox_roomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_roomType.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.comboBox_roomType.FormattingEnabled = true;
+            this.comboBox_roomType.Items.AddRange(new object[] {
+            "Single Bed",
+            "Double Bed",
+            "Triple Bed",
+            "Family"});
+            this.comboBox_roomType.Location = new System.Drawing.Point(0, 22);
+            this.comboBox_roomType.Name = "comboBox_roomType";
+            this.comboBox_roomType.Size = new System.Drawing.Size(195, 21);
+            this.comboBox_roomType.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.comboBox_roomStt);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(157, 153);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(195, 69);
+            this.panel4.TabIndex = 28;
+            // 
+            // comboBox_roomStt
+            // 
+            this.comboBox_roomStt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox_roomStt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.comboBox_roomStt.FormattingEnabled = true;
+            this.comboBox_roomStt.Items.AddRange(new object[] {
+            "Trống",
+            "Có người",
+            "Đã đặt"});
+            this.comboBox_roomStt.Location = new System.Drawing.Point(0, 23);
+            this.comboBox_roomStt.Name = "comboBox_roomStt";
+            this.comboBox_roomStt.Size = new System.Drawing.Size(192, 21);
+            this.comboBox_roomStt.TabIndex = 5;
+            // 
             // textBox_roomID
             // 
             this.textBox_roomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_roomID.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_roomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.textBox_roomID.Location = new System.Drawing.Point(157, 22);
-            this.textBox_roomID.Multiline = true;
+            this.textBox_roomID.Location = new System.Drawing.Point(157, 27);
             this.textBox_roomID.Name = "textBox_roomID";
-            this.textBox_roomID.ReadOnly = true;
-            this.textBox_roomID.Size = new System.Drawing.Size(195, 30);
-            this.textBox_roomID.TabIndex = 26;
+            this.textBox_roomID.Size = new System.Drawing.Size(195, 20);
+            this.textBox_roomID.TabIndex = 29;
             // 
             // textBox_dateCheckIn
             // 
             this.textBox_dateCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_dateCheckIn.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_dateCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 247);
-            this.textBox_dateCheckIn.Multiline = true;
+            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 252);
             this.textBox_dateCheckIn.Name = "textBox_dateCheckIn";
             this.textBox_dateCheckIn.ReadOnly = true;
-            this.textBox_dateCheckIn.Size = new System.Drawing.Size(195, 30);
-            this.textBox_dateCheckIn.TabIndex = 25;
-            // 
-            // roundedTextBoxRoomType
-            // 
-            this.roundedTextBoxRoomType.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.roundedTextBoxRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.roundedTextBoxRoomType.Location = new System.Drawing.Point(0, 19);
-            this.roundedTextBoxRoomType.Name = "roundedTextBoxRoomType";
-            this.roundedTextBoxRoomType.Size = new System.Drawing.Size(196, 27);
-            this.roundedTextBoxRoomType.TabIndex = 27;
-            // 
-            // roundedTextboxRoomStt
-            // 
-            this.roundedTextboxRoomStt.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.roundedTextboxRoomStt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.roundedTextboxRoomStt.Location = new System.Drawing.Point(-1, 19);
-            this.roundedTextboxRoomStt.Name = "roundedTextboxRoomStt";
-            this.roundedTextboxRoomStt.Size = new System.Drawing.Size(196, 27);
-            this.roundedTextboxRoomStt.TabIndex = 29;
+            this.textBox_dateCheckIn.Size = new System.Drawing.Size(195, 20);
+            this.textBox_dateCheckIn.TabIndex = 30;
             // 
             // Form_ModifyRoom
             // 
@@ -453,11 +394,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,14 +420,10 @@
         private ePOSOne.btnProduct.Button_WOC button_updateRoom;
         private ePOSOne.btnProduct.Button_WOC button_addRoom;
         private ePOSOne.btnProduct.Button_WOC button_deleteRoom;
-        private roundedTextbox textBox_roomID;
-        private roundedTextbox textBox_dateCheckIn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private roundedTextbox roundedTextBoxRoomType;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private roundedTextbox roundedTextboxRoomStt;
+        private System.Windows.Forms.TextBox textBox_dateCheckIn;
+        private System.Windows.Forms.TextBox textBox_roomID;
 
 
 
