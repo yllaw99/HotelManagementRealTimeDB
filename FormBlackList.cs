@@ -257,8 +257,5 @@ namespace HotelManagement_FireBase
 
         #endregion
 
-
-
-
     }
 }

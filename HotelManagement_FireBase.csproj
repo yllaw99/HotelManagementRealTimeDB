@@ -101,6 +101,12 @@
     <Compile Include="FormBill.Designer.cs">
       <DependentUpon>FormBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBillManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBillManager.Designer.cs">
+      <DependentUpon>FormBillManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBlackList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +137,6 @@
     <Compile Include="FormSignin.Designer.cs">
       <DependentUpon>FormSignin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_VIPCustomers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_VIPCustomers.Designer.cs">
-      <DependentUpon>Form_VIPCustomers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ModifyRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +162,9 @@
     <EmbeddedResource Include="FormBill.resx">
       <DependentUpon>FormBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBillManager.resx">
+      <DependentUpon>FormBillManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBlackList.resx">
       <DependentUpon>FormBlackList.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSignin.resx">
       <DependentUpon>FormSignin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_VIPCustomers.resx">
-      <DependentUpon>Form_VIPCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ModifyRoom.resx">
       <DependentUpon>Form_ModifyRoom.cs</DependentUpon>

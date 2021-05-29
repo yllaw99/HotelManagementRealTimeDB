@@ -99,19 +99,5 @@ namespace HotelManagement_FireBase
             set { cardExpDate = value; }
         }
 
-        private string promoType;
-        public string PromoType
-        {
-            get { return promoType; }
-            set { promoType = value; }
-        }
-
-        private string addedBy;
-
-        public string AddedBy
-        {
-            get { return addedBy; }
-            set { addedBy = value; }
-        }
     }
 }

@@ -164,11 +164,11 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region Customers
-        private void button_customers_Click(object sender, EventArgs e)
+        #region billManager
+        private void button_billManager_Click(object sender, EventArgs e)
         {
-            Form_VIPCustomers fs = new Form_VIPCustomers();
-            fs.ShowDialog();
+            FormBillManager fbm = new FormBillManager();
+            fbm.ShowDialog();
             LoadRoom();
         }
         #endregion

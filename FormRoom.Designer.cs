@@ -199,10 +199,10 @@
             this.button_customers.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
             this.button_customers.Size = new System.Drawing.Size(186, 47);
             this.button_customers.TabIndex = 9;
-            this.button_customers.Text = "KHÁCH HÀNG VIP";
+            this.button_customers.Text = "THỐNG KÊ HOÁ ĐƠN";
             this.button_customers.TextColor = System.Drawing.SystemColors.HotTrack;
             this.button_customers.UseVisualStyleBackColor = true;
-            this.button_customers.Click += new System.EventHandler(this.button_customers_Click);
+            this.button_customers.Click += new System.EventHandler(this.button_billManager_Click);
             // 
             // button_accManager
             // 
