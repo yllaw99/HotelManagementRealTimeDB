@@ -179,6 +179,7 @@
             this.textBox_accInfo_phonenum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox_accInfo_phonenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_accInfo_phonenum.Location = new System.Drawing.Point(121, 6);
+            this.textBox_accInfo_phonenum.MaxLength = 10;
             this.textBox_accInfo_phonenum.Multiline = true;
             this.textBox_accInfo_phonenum.Name = "textBox_accInfo_phonenum";
             this.textBox_accInfo_phonenum.Size = new System.Drawing.Size(203, 30);
@@ -212,6 +213,7 @@
             this.textBox_accInfo_fullname.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox_accInfo_fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_accInfo_fullname.Location = new System.Drawing.Point(121, 6);
+            this.textBox_accInfo_fullname.MaxLength = 30;
             this.textBox_accInfo_fullname.Multiline = true;
             this.textBox_accInfo_fullname.Name = "textBox_accInfo_fullname";
             this.textBox_accInfo_fullname.Size = new System.Drawing.Size(203, 30);
@@ -302,6 +304,7 @@
             this.textBox_accInfo_pwd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox_accInfo_pwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_accInfo_pwd.Location = new System.Drawing.Point(121, 5);
+            this.textBox_accInfo_pwd.MaxLength = 30;
             this.textBox_accInfo_pwd.Multiline = true;
             this.textBox_accInfo_pwd.Name = "textBox_accInfo_pwd";
             this.textBox_accInfo_pwd.Size = new System.Drawing.Size(203, 30);
@@ -334,7 +337,8 @@
             this.textBox_accInfo_username.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_accInfo_username.Cursor = System.Windows.Forms.Cursors.Hand;
             this.textBox_accInfo_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox_accInfo_username.Location = new System.Drawing.Point(121, 5);
+            this.textBox_accInfo_username.Location = new System.Drawing.Point(121, 4);
+            this.textBox_accInfo_username.MaxLength = 20;
             this.textBox_accInfo_username.Multiline = true;
             this.textBox_accInfo_username.Name = "textBox_accInfo_username";
             this.textBox_accInfo_username.Size = new System.Drawing.Size(203, 30);

@@ -113,6 +113,7 @@
             this.textBox_pwd.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox_pwd.Font = new System.Drawing.Font("Ebrima", 13F);
             this.textBox_pwd.Location = new System.Drawing.Point(12, 49);
+            this.textBox_pwd.MaxLength = 30;
             this.textBox_pwd.Name = "textBox_pwd";
             this.textBox_pwd.Size = new System.Drawing.Size(250, 31);
             this.textBox_pwd.TabIndex = 18;
@@ -124,6 +125,7 @@
             this.textBox_signin_username.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.textBox_signin_username.Font = new System.Drawing.Font("Ebrima", 13F);
             this.textBox_signin_username.Location = new System.Drawing.Point(12, 12);
+            this.textBox_signin_username.MaxLength = 20;
             this.textBox_signin_username.Name = "textBox_signin_username";
             this.textBox_signin_username.Size = new System.Drawing.Size(250, 31);
             this.textBox_signin_username.TabIndex = 17;

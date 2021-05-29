@@ -33,10 +33,10 @@
             this.button_confirm = new System.Windows.Forms.Button();
             this.label_4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_checkInID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_roomID = new System.Windows.Forms.Label();
             this.label_cusName = new System.Windows.Forms.Label();
+            this.textBox_checkInID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,14 +111,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nhập mã nhận phòng";
             // 
-            // textBox_checkInID
-            // 
-            this.textBox_checkInID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_checkInID.Location = new System.Drawing.Point(155, 166);
-            this.textBox_checkInID.Name = "textBox_checkInID";
-            this.textBox_checkInID.Size = new System.Drawing.Size(179, 20);
-            this.textBox_checkInID.TabIndex = 2;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,6 +141,15 @@
             this.label_cusName.Size = new System.Drawing.Size(179, 13);
             this.label_cusName.TabIndex = 5;
             this.label_cusName.Text = "cusName";
+            // 
+            // textBox_checkInID
+            // 
+            this.textBox_checkInID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_checkInID.Location = new System.Drawing.Point(155, 166);
+            this.textBox_checkInID.MaxLength = 12;
+            this.textBox_checkInID.Name = "textBox_checkInID";
+            this.textBox_checkInID.Size = new System.Drawing.Size(179, 20);
+            this.textBox_checkInID.TabIndex = 2;
             // 
             // FormCheckIn
             // 

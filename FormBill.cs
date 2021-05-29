@@ -74,7 +74,8 @@ namespace HotelManagement_FireBase
                 if (i.Key.ToString() == roomInfo.type.ToString())
                     roomPrice = i.Value;
             }
-      
+
+            this.comboBox_discount.DataSource = provider.getDiscount();
             this.label_datenow.Text = dayNow.ToString("HH:mm dd-MM-yyyy"); 
             this.label_arrivalDate.Text = BillInfo.DCheckIn.ToString();
             this.label_CusName.Text = BillInfo.CusName.ToString();
@@ -101,15 +102,11 @@ namespace HotelManagement_FireBase
         }
         #endregion  
 
-        #region calculate nights
-        int cal_night(DateTime dayin, DateTime dayout)
-        {
-            int nights = Convert.ToInt16((dayout - dayin).TotalDays);
-            return nights;
-        }
-        #endregion
-
         #region click events
+        private void button_discount_Click(object sender, EventArgs e)
+        {
+            discount();
+        }
 
         private void button_checkOut_Click(object sender, EventArgs e)
         {
@@ -162,6 +159,27 @@ namespace HotelManagement_FireBase
         } 
         #endregion
 
+        #region methods
+        private void discount()
+        {
+            String selectedComboBoxItem = this.comboBox_discount.SelectedItem.ToString();
+            int startIndex = selectedComboBoxItem.IndexOf(",")+2;
+            int length = selectedComboBoxItem.Length - startIndex -1;
+            String voucherCode = selectedComboBoxItem.Substring(startIndex, length);
+            Int32 discountValue = Int32.Parse(voucherCode);
+            Int32 preDiscountTotal = Int32.Parse(label_total_final.Text);
+
+            int discountedTotal = preDiscountTotal * discountValue / 100;
+            discountedTotal = preDiscountTotal - discountedTotal;
+            this.label_total_final.Text = discountedTotal.ToString(); 
+        }
+
+        int cal_night(DateTime dayin, DateTime dayout)
+        {
+            int nights = Convert.ToInt16((dayout - dayin).TotalDays);
+            return nights;
+        }
+
         private void checkOut()
         {
             string roomID = label_roomID.Text;
@@ -170,11 +188,15 @@ namespace HotelManagement_FireBase
             var update = client.Set("Rooms/" + label_roomID.Text + "/status", "Trống");
             client.Set("Rooms/" + label_roomID.Text + "/dateCheckIn", "");
             client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/DCheckOut/", dCheckOut);
+            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/Total/", this.label_total_final.Text);
+            client.Set("Bills/" + roomInfo.DateCheckIn.ToString() + "/" + roomID + "/voucherUsed/", this.comboBox_discount.SelectedItem.ToString());
             if (update.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 MessageBox.Show("Check out thành công!!", "Thông báo", MessageBoxButtons.OK);
             }
             else MessageBox.Show("Lỗi khi Check out", "Thông báo", MessageBoxButtons.OK);
         }
+        #endregion
+
     }
 }

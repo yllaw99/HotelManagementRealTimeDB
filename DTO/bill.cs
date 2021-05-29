@@ -105,5 +105,13 @@ namespace HotelManagement_FireBase
             get { return promoType; }
             set { promoType = value; }
         }
+
+        private string addedBy;
+
+        public string AddedBy
+        {
+            get { return addedBy; }
+            set { addedBy = value; }
+        }
     }
 }

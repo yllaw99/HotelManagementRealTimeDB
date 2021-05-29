@@ -56,5 +56,12 @@ namespace HotelManagement_FireBase.DTO
             set { note = value; }
         }
 
+        private string addedBy;
+
+        public string AddedBy
+        {
+            get { return addedBy; }
+            set { addedBy = value; }
+        }
     }
 }

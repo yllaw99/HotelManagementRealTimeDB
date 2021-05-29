@@ -216,8 +216,7 @@ namespace HotelManagement_FireBase
                 ReservationType = getReservationType(),
                 Payment = getPaymentMethod(),
                 CreditCardID = textBox_cardID.Text,
-                CardExpDate = textBox_creditCardExpDate.Text,
-                PromoType = textBox_promoCode.Text
+                CardExpDate = textBox_creditCardExpDate.Text
             };
             return bill;
         }

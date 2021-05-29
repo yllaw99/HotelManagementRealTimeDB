@@ -57,7 +57,7 @@ namespace HotelManagement_FireBase
                 dOb = cus.Value.dOb,
                 addr = cus.Value.address,
                 cmnd = cus.Key,
-                phone =  cus.Value.phoneNum,
+                phone = cus.Value.phoneNum,
                 nationality = cus.Value.nationality
             }).ToList();
             dataGridView_customerView.DataSource = listCus;
@@ -93,31 +93,37 @@ namespace HotelManagement_FireBase
         #region Add
         private void Add()
         {
-            Customer();
-            DialogResult dr = MessageBox.Show("Xác nhận thêm thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
+            if (!isNull(textBox_customer_address.Text, textBox_customer_CMND.Text, textBox_customer_nationality.Text, textBox_customer_phoneNum.Text, textBox_customerName.Text))
             {
-                SetResponse set = client.Set("Customers/" + textBox_customer_CMND.Text, Customer());
-                if (set.StatusCode == System.Net.HttpStatusCode.OK)
+                DialogResult dr = MessageBox.Show("Xác nhận thêm thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được thêm thành công!!", "Thông báo!");
-                    Reload();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi tạo tài khoản", "Lỗi");
+                    SetResponse set = client.Set("Customers/" + textBox_customer_CMND.Text, Customer());
+                    if (set.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được thêm thành công!!", "Thông báo!");
+                        Reload();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi tạo tài khoản", "Lỗi");
+                    }
                 }
             }
+            else MessageBox.Show("Vui lòng điền đầy đủ và đúng thông tin", "Thông báo");
+
         }
         #endregion
         #region Update
         private void Update_Cus()
         {
-            Customer();
             DialogResult dr = MessageBox.Show("Xác nhận cập nhật khách hàng [" + textBox_customerName.Text + "] ", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
                 var update = client.Update("Customers/" + textBox_customer_CMND.Text, Customer());
+                if (update.StatusCode == System.Net.HttpStatusCode.OK) 
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo!");
+                else MessageBox.Show("Lỗi khi cập nhật", "Thông báo!");
                 Reload();
             }
         }
@@ -125,21 +131,25 @@ namespace HotelManagement_FireBase
         #region Delete
         private void Delete()
         {
-            Customer();
-            DialogResult dr = MessageBox.Show("Xác nhận xoá khách hàng?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
+            if (string.IsNullOrWhiteSpace(textBox_customer_CMND.Text))
             {
-                var dlt = client.Delete(@"Customers/" + textBox_customer_CMND.Text);
-                if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
+                DialogResult dr = MessageBox.Show("Xác nhận xoá khách hàng?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được xoá thành công!", "Thông báo!");
-                    Reload();
+                    var dlt = client.Delete(@"Customers/" + textBox_customer_CMND.Text);
+                    if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Khách hàng [" + textBox_customerName.Text + "] đã được xoá thành công!", "Thông báo!");
+                        Reload();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xoá khách hàng" + textBox_customerName.Text, "Thông báo!");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xoá khách hàng" + textBox_customerName.Text, "Thông báo!");
-                }
+                else MessageBox.Show("Vui lòng điền đầy đủ và đúng thông tin", "Thông báo");
             }
+
         }
         #endregion
         #endregion
@@ -166,7 +176,7 @@ namespace HotelManagement_FireBase
         #region update
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
-            Update_Cus();            
+            Update_Cus();
         }
         #endregion
         #region delete
@@ -190,7 +200,7 @@ namespace HotelManagement_FireBase
         {
             this.textBox_customerName.Text = dataGridView_customerView.CurrentRow.Cells[0].Value.ToString();
 
-            this.dateTimePicker_dOb.Text =  dataGridView_customerView.CurrentRow.Cells[1].Value.ToString();
+            this.dateTimePicker_dOb.Text = dataGridView_customerView.CurrentRow.Cells[1].Value.ToString();
 
             //this.textBox_dOb.Text = dateTimePicker_dOb.Text;
 
@@ -201,18 +211,24 @@ namespace HotelManagement_FireBase
             this.textBox_customer_phoneNum.Text = dataGridView_customerView.CurrentRow.Cells[4].Value.ToString();
 
             this.textBox_customer_nationality.Text = dataGridView_customerView.CurrentRow.Cells[5].Value.ToString();
-            
+
         }
         #endregion
+
+        private bool isNull(string textBoxValue, string textBoxValue1, string textBoxValue2, string textBoxValue3, string textBoxValue4)
+        {
+            return
+                (string.IsNullOrWhiteSpace(textBoxValue) ||
+                string.IsNullOrWhiteSpace(textBoxValue1) ||
+                string.IsNullOrWhiteSpace(textBoxValue2) ||
+                string.IsNullOrWhiteSpace(textBoxValue3) ||
+                string.IsNullOrWhiteSpace(textBoxValue4));
+        }
 
         private void label_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void dropDownDobComboBox(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

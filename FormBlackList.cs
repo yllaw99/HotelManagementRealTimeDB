@@ -19,9 +19,11 @@ namespace HotelManagement_FireBase
 {
     public partial class FormBlackList : Form
     {
-        public FormBlackList()
+        form_signin fs;
+        public FormBlackList(form_signin fsin)
         {
             InitializeComponent();
+            this.fs = fsin;
         }
 
         #region connection
@@ -39,7 +41,8 @@ namespace HotelManagement_FireBase
                 Address = this.textBox_address.Text,
                 Nationality = this.textBox_nationality.Text,
                 PhoneNum = this.textBox_phoneNumber.Text,
-                Note = this.textBox_note.Text
+                Note = this.textBox_note.Text,
+                AddedBy = fs.getUsername()
             };
             return listOfBadCustomer;
         }
@@ -144,7 +147,8 @@ namespace HotelManagement_FireBase
                     phoneNumber = r.Value.PhoneNum,
                     address = r.Value.Address,
                     nationality = r.Value.Nationality,
-                    note = r.Value.Note
+                    note = r.Value.Note,
+                    addedBy = r.Value.AddedBy
                 }).ToList();
                 dataGridView.DataSource = listOfBadCustomer;
             }
@@ -162,6 +166,7 @@ namespace HotelManagement_FireBase
             this.dataGridView.Columns[3].HeaderText = "Địa chỉ";
             this.dataGridView.Columns[4].HeaderText = "Quốc tịch";
             this.dataGridView.Columns[5].HeaderText = "Ghi chú";
+            this.dataGridView.Columns[6].HeaderText = "Thêm bởi";
         }
 
         private void clearTextBoxes()

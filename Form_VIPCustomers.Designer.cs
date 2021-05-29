@@ -150,6 +150,7 @@
             this.textBox_customer_nationality.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customer_nationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_customer_nationality.Location = new System.Drawing.Point(86, 8);
+            this.textBox_customer_nationality.MaxLength = 100;
             this.textBox_customer_nationality.Multiline = true;
             this.textBox_customer_nationality.Name = "textBox_customer_nationality";
             this.textBox_customer_nationality.Size = new System.Drawing.Size(276, 30);
@@ -185,6 +186,7 @@
             this.textBox_customer_phoneNum.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customer_phoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_customer_phoneNum.Location = new System.Drawing.Point(86, 6);
+            this.textBox_customer_phoneNum.MaxLength = 10;
             this.textBox_customer_phoneNum.Multiline = true;
             this.textBox_customer_phoneNum.Name = "textBox_customer_phoneNum";
             this.textBox_customer_phoneNum.Size = new System.Drawing.Size(276, 30);
@@ -220,6 +222,7 @@
             this.textBox_customer_CMND.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customer_CMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_customer_CMND.Location = new System.Drawing.Point(86, 7);
+            this.textBox_customer_CMND.MaxLength = 12;
             this.textBox_customer_CMND.Multiline = true;
             this.textBox_customer_CMND.Name = "textBox_customer_CMND";
             this.textBox_customer_CMND.Size = new System.Drawing.Size(276, 30);
@@ -255,6 +258,7 @@
             this.textBox_customer_address.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customer_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox_customer_address.Location = new System.Drawing.Point(86, 8);
+            this.textBox_customer_address.MaxLength = 100;
             this.textBox_customer_address.Multiline = true;
             this.textBox_customer_address.Name = "textBox_customer_address";
             this.textBox_customer_address.Size = new System.Drawing.Size(276, 30);
@@ -374,6 +378,7 @@
             this.textBox_customerName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_customerName.Location = new System.Drawing.Point(86, 3);
+            this.textBox_customerName.MaxLength = 50;
             this.textBox_customerName.Multiline = true;
             this.textBox_customerName.Name = "textBox_customerName";
             this.textBox_customerName.Size = new System.Drawing.Size(276, 30);

@@ -28,16 +28,13 @@ namespace HotelManagement_FireBase
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
 
-        public string getUsername()
-        {
-            return textBox_signin_username.Text;
-        }
+
 
     #region Sign In
         private void button_signin_Click(object sender, EventArgs e)
         {
         #region Null Checking
-            if (string.IsNullOrWhiteSpace(textBox_signin_username.Text) &&
+            if (string.IsNullOrWhiteSpace(textBox_signin_username.Text) ||
                string.IsNullOrWhiteSpace(textBox_pwd.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
@@ -66,6 +63,11 @@ namespace HotelManagement_FireBase
                 }
         }
         #endregion
+
+        public string getUsername()
+        {
+            return textBox_signin_username.Text;
+        }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {

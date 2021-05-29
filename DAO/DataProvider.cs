@@ -107,5 +107,15 @@ namespace HotelManagement_FireBase.DAO
             return listNumber;
         }
         #endregion
+
+        public List<KeyValuePair<string, string>> getDiscount()
+        {
+            IFirebaseClient client = connect();
+            FirebaseResponse data = client.Get("Promos/");
+            IDictionary<string, string> mList = JsonConvert.DeserializeObject<IDictionary<string, string>>(data.Body);
+            List<KeyValuePair<string, string>> listPromos = mList.ToList();
+
+            return listPromos;
+        }
     }
 }

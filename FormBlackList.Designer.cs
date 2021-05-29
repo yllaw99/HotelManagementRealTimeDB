@@ -266,6 +266,7 @@
             this.textBox_phoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_phoneNumber.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_phoneNumber.Location = new System.Drawing.Point(151, 139);
+            this.textBox_phoneNumber.MaxLength = 10;
             this.textBox_phoneNumber.Multiline = true;
             this.textBox_phoneNumber.Name = "textBox_phoneNumber";
             this.textBox_phoneNumber.Size = new System.Drawing.Size(188, 30);
@@ -277,6 +278,7 @@
             this.textBox_identityId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_identityId.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_identityId.Location = new System.Drawing.Point(151, 51);
+            this.textBox_identityId.MaxLength = 12;
             this.textBox_identityId.Multiline = true;
             this.textBox_identityId.Name = "textBox_identityId";
             this.textBox_identityId.Size = new System.Drawing.Size(188, 30);
@@ -324,6 +326,7 @@
             this.textBox_customerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_customerName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_customerName.Location = new System.Drawing.Point(151, 7);
+            this.textBox_customerName.MaxLength = 50;
             this.textBox_customerName.Multiline = true;
             this.textBox_customerName.Name = "textBox_customerName";
             this.textBox_customerName.Size = new System.Drawing.Size(188, 30);
@@ -359,6 +362,7 @@
             this.textBox_note.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_note.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_note.Location = new System.Drawing.Point(151, 223);
+            this.textBox_note.MaxLength = 200;
             this.textBox_note.Multiline = true;
             this.textBox_note.Name = "textBox_note";
             this.textBox_note.Size = new System.Drawing.Size(188, 39);
@@ -370,6 +374,7 @@
             this.textBox_nationality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_nationality.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_nationality.Location = new System.Drawing.Point(151, 183);
+            this.textBox_nationality.MaxLength = 40;
             this.textBox_nationality.Multiline = true;
             this.textBox_nationality.Name = "textBox_nationality";
             this.textBox_nationality.Size = new System.Drawing.Size(188, 30);
@@ -381,6 +386,7 @@
             this.textBox_address.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_address.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_address.Location = new System.Drawing.Point(151, 95);
+            this.textBox_address.MaxLength = 100;
             this.textBox_address.Multiline = true;
             this.textBox_address.Name = "textBox_address";
             this.textBox_address.Size = new System.Drawing.Size(188, 30);

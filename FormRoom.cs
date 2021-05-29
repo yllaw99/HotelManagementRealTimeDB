@@ -183,7 +183,7 @@ namespace HotelManagement_FireBase
         #region blackList
         private void button_blackList_Click(object sender, EventArgs e)
         {
-            FormBlackList fbl = new FormBlackList();
+            FormBlackList fbl = new FormBlackList(fs);
             fbl.ShowDialog();
             LoadRoom();
         }

@@ -42,16 +42,14 @@
             this.button_addRoom = new ePOSOne.btnProduct.Button_WOC();
             this.button_deleteRoom = new ePOSOne.btnProduct.Button_WOC();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_roomStt = new HotelManagement_FireBase.roundedTextbox();
+            this.textBox_roomID = new HotelManagement_FireBase.roundedTextbox();
+            this.textBox_roomType = new HotelManagement_FireBase.roundedTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox_roomType = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox_roomStt = new System.Windows.Forms.ComboBox();
-            this.textBox_roomID = new System.Windows.Forms.TextBox();
-            this.textBox_dateCheckIn = new System.Windows.Forms.TextBox();
+            this.textBox_dateCheckIn = new HotelManagement_FireBase.roundedTextbox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -60,8 +58,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,7 +132,6 @@
             // dataGridView_roomView
             // 
             this.dataGridView_roomView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView_roomView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_roomView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_roomView.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_roomView.Name = "dataGridView_roomView";
@@ -239,14 +234,14 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.53741F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.46259F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_roomStt, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_roomType, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox_roomID, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_dateCheckIn, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(427, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -259,6 +254,46 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 300);
             this.tableLayoutPanel2.TabIndex = 26;
+            // 
+            // textBox_roomStt
+            // 
+            this.textBox_roomStt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_roomStt.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_roomStt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_roomStt.Location = new System.Drawing.Point(157, 172);
+            this.textBox_roomStt.MaxLength = 10;
+            this.textBox_roomStt.Multiline = true;
+            this.textBox_roomStt.Name = "textBox_roomStt";
+            this.textBox_roomStt.ReadOnly = true;
+            this.textBox_roomStt.Size = new System.Drawing.Size(195, 30);
+            this.textBox_roomStt.TabIndex = 28;
+            this.textBox_roomStt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_roomID
+            // 
+            this.textBox_roomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_roomID.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_roomID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_roomID.Location = new System.Drawing.Point(157, 22);
+            this.textBox_roomID.MaxLength = 10;
+            this.textBox_roomID.Multiline = true;
+            this.textBox_roomID.Name = "textBox_roomID";
+            this.textBox_roomID.Size = new System.Drawing.Size(195, 30);
+            this.textBox_roomID.TabIndex = 25;
+            this.textBox_roomID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_roomType
+            // 
+            this.textBox_roomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_roomType.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_roomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_roomType.Location = new System.Drawing.Point(157, 97);
+            this.textBox_roomType.MaxLength = 30;
+            this.textBox_roomType.Multiline = true;
+            this.textBox_roomType.Name = "textBox_roomType";
+            this.textBox_roomType.Size = new System.Drawing.Size(195, 30);
+            this.textBox_roomType.TabIndex = 27;
+            this.textBox_roomType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -304,69 +339,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã phòng";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.comboBox_roomType);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(157, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(195, 69);
-            this.panel2.TabIndex = 27;
-            // 
-            // comboBox_roomType
-            // 
-            this.comboBox_roomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_roomType.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.comboBox_roomType.FormattingEnabled = true;
-            this.comboBox_roomType.Items.AddRange(new object[] {
-            "Single Bed",
-            "Double Bed",
-            "Triple Bed",
-            "Family"});
-            this.comboBox_roomType.Location = new System.Drawing.Point(0, 22);
-            this.comboBox_roomType.Name = "comboBox_roomType";
-            this.comboBox_roomType.Size = new System.Drawing.Size(195, 21);
-            this.comboBox_roomType.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.comboBox_roomStt);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(157, 153);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(195, 69);
-            this.panel4.TabIndex = 28;
-            // 
-            // comboBox_roomStt
-            // 
-            this.comboBox_roomStt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox_roomStt.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.comboBox_roomStt.FormattingEnabled = true;
-            this.comboBox_roomStt.Items.AddRange(new object[] {
-            "Trống",
-            "Có người",
-            "Đã đặt"});
-            this.comboBox_roomStt.Location = new System.Drawing.Point(0, 23);
-            this.comboBox_roomStt.Name = "comboBox_roomStt";
-            this.comboBox_roomStt.Size = new System.Drawing.Size(192, 21);
-            this.comboBox_roomStt.TabIndex = 5;
-            // 
-            // textBox_roomID
-            // 
-            this.textBox_roomID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_roomID.Location = new System.Drawing.Point(157, 27);
-            this.textBox_roomID.Name = "textBox_roomID";
-            this.textBox_roomID.Size = new System.Drawing.Size(195, 20);
-            this.textBox_roomID.TabIndex = 29;
-            // 
             // textBox_dateCheckIn
             // 
             this.textBox_dateCheckIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 252);
+            this.textBox_dateCheckIn.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_dateCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dateCheckIn.Location = new System.Drawing.Point(157, 247);
+            this.textBox_dateCheckIn.Multiline = true;
             this.textBox_dateCheckIn.Name = "textBox_dateCheckIn";
             this.textBox_dateCheckIn.ReadOnly = true;
-            this.textBox_dateCheckIn.Size = new System.Drawing.Size(195, 20);
-            this.textBox_dateCheckIn.TabIndex = 30;
+            this.textBox_dateCheckIn.Size = new System.Drawing.Size(195, 30);
+            this.textBox_dateCheckIn.TabIndex = 26;
+            this.textBox_dateCheckIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form_ModifyRoom
             // 
@@ -393,8 +377,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -411,19 +393,17 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox_roomStt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox_roomType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private ePOSOne.btnProduct.Button_WOC button_updateRoom;
         private ePOSOne.btnProduct.Button_WOC button_addRoom;
         private ePOSOne.btnProduct.Button_WOC button_deleteRoom;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox_dateCheckIn;
-        private System.Windows.Forms.TextBox textBox_roomID;
+        private roundedTextbox textBox_dateCheckIn;
+        private roundedTextbox textBox_roomStt;
+        private roundedTextbox textBox_roomID;
+        private roundedTextbox textBox_roomType;
 
 
 

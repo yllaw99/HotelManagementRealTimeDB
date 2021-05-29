@@ -23,18 +23,25 @@ namespace HotelManagement_FireBase
             InitializeComponent();
         }
 
+        private bool roomTypeChecking;
         #region connect to db
         DataProvider provider = new DataProvider();
         IFirebaseClient client = DataProvider.Instance.connect();
         #endregion
+
+        private bool isNull(string textBoxValue)
+        {
+            return string.IsNullOrWhiteSpace(textBoxValue);
+        }
 
         #region Declare Room
         private Room Declare_room()
         {
             Room room = new Room()
             {
-                type = comboBox_roomType.Text,
-                status = comboBox_roomStt.Text,
+                ID = textBox_roomID.Text,
+                type = textBox_roomType.Text,
+                status = textBox_roomStt.Text,
                 DateCheckIn = textBox_dateCheckIn.Text
             };
             return room;
@@ -44,7 +51,9 @@ namespace HotelManagement_FireBase
         #region Form Load
         private void Form_ModifyRoom_Load(object sender, EventArgs e)
         {
-            DataGridView_LoadContent();
+
+            loadDataToDataGridView();
+
         }
         #endregion
 
@@ -53,20 +62,22 @@ namespace HotelManagement_FireBase
         {
             this.textBox_roomID.Text = dataGridView_roomView.CurrentRow.Cells[0].Value.ToString();
 
-            this.comboBox_roomType.Text = dataGridView_roomView.CurrentRow.Cells[1].Value.ToString();
+            this.textBox_roomType.Text = dataGridView_roomView.CurrentRow.Cells[1].Value.ToString();
 
-            this.comboBox_roomStt.Text = dataGridView_roomView.CurrentRow.Cells[2].Value.ToString();
+            this.textBox_roomStt.Text = dataGridView_roomView.CurrentRow.Cells[2].Value.ToString();
 
             this.textBox_dateCheckIn.Text = dataGridView_roomView.CurrentRow.Cells[3].Value.ToString();
+
+
         }
         #endregion
-    
+
         #region Load Content to DataGridView CLASS
-        private void DataGridView_LoadContent()
+        private void loadDataToDataGridView()
         {
             this.textBox_roomID.Clear();
-            this.comboBox_roomType.Text = "";
-            this.comboBox_roomStt.Text = "";
+            this.textBox_roomType.Text = "";
+            this.textBox_roomStt.Text = "";
             this.textBox_dateCheckIn.Clear();
 
             var data = client.Get("Rooms/");
@@ -79,7 +90,7 @@ namespace HotelManagement_FireBase
                 BillID = r.Value.DateCheckIn
             }).ToList();
             dataGridView_roomView.DataSource = listNumber;
-            
+
             if (dataGridView_roomView != null)
             {
                 for (int count = 0; (count <= (dataGridView_roomView.Rows.Count - 1)); count++)
@@ -104,22 +115,15 @@ namespace HotelManagement_FireBase
             {
                 var dlt = client.Delete(@"Rooms/" + textBox_roomID.Text);
                 if (dlt.StatusCode == System.Net.HttpStatusCode.OK)
-                {
                     MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được xoá thành công!", "Thông báo!");
-                    //DataGridView_LoadContent();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xoá phòng" + textBox_roomID.Text, "Thông báo!");
-                }
-                DataGridView_LoadContent();
+                else MessageBox.Show("Lỗi khi xoá phòng" + textBox_roomID.Text, "Thông báo!");
+                loadDataToDataGridView();
             }
         }
         #endregion
         #region ClassAdd
         private void Add()
         {
-            Declare_room();
             DialogResult dr = MessageBox.Show("Xác nhận thêm phòng?", "Thông báo!", MessageBoxButtons.YesNo);
             if (dr == System.Windows.Forms.DialogResult.Yes)
             {
@@ -132,6 +136,7 @@ namespace HotelManagement_FireBase
                 {
                     MessageBox.Show("Lỗi khi tạo phòng [" + textBox_roomID.Text + "]", "Thông báo!");
                 }
+                loadDataToDataGridView();
             }
         }
         #endregion
@@ -140,7 +145,6 @@ namespace HotelManagement_FireBase
         {
             try
             {
-                Declare_room();
                 DialogResult dr = MessageBox.Show("Xác nhận cập nhật phòng?", "Thông báo!", MessageBoxButtons.YesNo);
                 if (dr == System.Windows.Forms.DialogResult.Yes)
                 {
@@ -148,7 +152,7 @@ namespace HotelManagement_FireBase
                     if (update.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Phòng [" + textBox_roomID.Text + "] đã được cập nhật thành công!", "Thông báo!");
-                        DataGridView_LoadContent();
+                        loadDataToDataGridView();
                     }
 
                 }
@@ -164,36 +168,70 @@ namespace HotelManagement_FireBase
         #region Add new Room
         private void button_addRoom_Click(object sender, EventArgs e)
         {
+            int parsedValue;
+            roomTypeChecking = (!this.textBox_roomType.Text.Equals("Single Bed") && !this.textBox_roomType.Text.Equals("Double Bed") && !this.textBox_roomType.Text.Equals("Triple Bed") && !this.textBox_roomType.Text.Equals("Family"));
             FirebaseResponse res = client.Get(@"Rooms/" + textBox_roomID.Text);
             Room ResRoom = res.ResultAs<Room>();
             Room CurRoom = new Room()
             {
                 ID = textBox_roomID.Text
             };
-            if (Room.compare(ResRoom, CurRoom))
-            {
-                MessageBox.Show("Phòng đã tồn tại, xin vui lòng nhập ID phòng khác!", "Thông báo");
-            }
+            if (Room.compare(ResRoom, CurRoom))MessageBox.Show("Phòng đã tồn tại, xin vui lòng nhập ID phòng khác!", "Thông báo");
             else
             {
-                Add();
-                DataGridView_LoadContent();
+                if (isNull(textBox_roomID.Text) || roomTypeChecking)
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ và đúng thông tin", "Thông báo");
+                    return;
+                }
+                else if (!int.TryParse(textBox_roomID.Text, out parsedValue))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng số phòng");
+                    return;
+                }
+                else Add();
             }
-            
         }
         #endregion
 
         #region Update room
         private void button_updateRoom_Click(object sender, EventArgs e)
         {
-            Update_();
+            int parsedValue;
+            roomTypeChecking = (!this.textBox_roomType.Text.Equals("Single Bed") && !this.textBox_roomType.Text.Equals("Double Bed") && !this.textBox_roomType.Text.Equals("Triple Bed") && !this.textBox_roomType.Text.Equals("Family"));
+            if (isNull(textBox_roomID.Text) || roomTypeChecking)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
+                return;
+            }
+            else if (!int.TryParse(textBox_roomID.Text, out parsedValue))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số phòng");
+                return;
+            }
+            else Update_();
         }
         #endregion
 
         #region Delete Room
         private void button_deleteRoom_Click(object sender, EventArgs e)
         {
-            Delete();
+            int parsedValue;
+            if (isNull(textBox_roomID.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo!");
+                return;
+            }
+            else if (!isNull(textBox_dateCheckIn.Text))
+            {
+                MessageBox.Show("Phòng đang có người hoặc đã được đặt", "Không thể xoá phòng");
+            }
+            else if (!int.TryParse(textBox_roomID.Text, out parsedValue))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số phòng");
+                return;
+            }
+            else Delete();
         }
         #endregion
 
@@ -202,7 +240,7 @@ namespace HotelManagement_FireBase
         #region get room status
         public string getRoomStatus()
         {
-            return comboBox_roomStt.Text;
+            return textBox_roomStt.Text;
         }
         #endregion
 
@@ -216,17 +254,6 @@ namespace HotelManagement_FireBase
             FormRoomTypePrice price = new FormRoomTypePrice();
             price.ShowDialog();
         }
-
-        private void dropDownRoomType(object sender, EventArgs e)
-        {
-            this.comboBox_roomType.DroppedDown = true;
-        }
-
-        private void dropDownRoomStt(object sender, EventArgs e)
-        {
-            this.comboBox_roomStt.DroppedDown = true;
-        }
-
 
 
     }
