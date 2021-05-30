@@ -42,7 +42,7 @@ namespace HotelManagement_FireBase.DAO
             IFirebaseClient client = this.connect();
             FirebaseResponse res = client.Get("/Bills" + rID);
             IDictionary<string, Bill> Bill_List = JsonConvert.DeserializeObject<IDictionary<string, Bill>>(res.Body);
-            string billID = Bill_List.Select(b => new { bID = b.Value.BillID }).ToString();
+            string billID = Bill_List.Select(b => new { bID = b.Key }).ToString();
             return billID;
         }
         #endregion

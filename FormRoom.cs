@@ -164,15 +164,6 @@ namespace HotelManagement_FireBase
         }
         #endregion
 
-        #region billManager
-        private void button_billManager_Click(object sender, EventArgs e)
-        {
-            FormBillManager fbm = new FormBillManager();
-            fbm.ShowDialog();
-            LoadRoom();
-        }
-        #endregion
-
         #region promotion
         private void button_promo_Click(object sender, EventArgs e)
         {

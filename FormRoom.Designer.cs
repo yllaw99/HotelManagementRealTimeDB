@@ -38,13 +38,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_blackList = new ePOSOne.btnProduct.Button_WOC();
-            this.button_customers = new ePOSOne.btnProduct.Button_WOC();
             this.button_accManager = new ePOSOne.btnProduct.Button_WOC();
             this.button_promo = new ePOSOne.btnProduct.Button_WOC();
             this.button_modifyRoom = new ePOSOne.btnProduct.Button_WOC();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button_blackList = new ePOSOne.btnProduct.Button_WOC();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_moreInfo.SuspendLayout();
@@ -146,11 +145,10 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.button_blackList, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.button_customers, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button_accManager, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.button_promo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button_modifyRoom, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_blackList, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -165,44 +163,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(192, 424);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // button_blackList
-            // 
-            this.button_blackList.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button_blackList.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_blackList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_blackList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_blackList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_blackList.Location = new System.Drawing.Point(3, 215);
-            this.button_blackList.Name = "button_blackList";
-            this.button_blackList.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_blackList.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
-            this.button_blackList.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_blackList.Size = new System.Drawing.Size(186, 47);
-            this.button_blackList.TabIndex = 10;
-            this.button_blackList.Text = "BLACK LIST";
-            this.button_blackList.TextColor = System.Drawing.SystemColors.HotTrack;
-            this.button_blackList.UseVisualStyleBackColor = true;
-            this.button_blackList.Click += new System.EventHandler(this.button_blackList_Click);
-            // 
-            // button_customers
-            // 
-            this.button_customers.BorderColor = System.Drawing.SystemColors.HotTrack;
-            this.button_customers.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_customers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_customers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_customers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_customers.Location = new System.Drawing.Point(3, 162);
-            this.button_customers.Name = "button_customers";
-            this.button_customers.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_customers.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
-            this.button_customers.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button_customers.Size = new System.Drawing.Size(186, 47);
-            this.button_customers.TabIndex = 9;
-            this.button_customers.Text = "THỐNG KÊ HOÁ ĐƠN";
-            this.button_customers.TextColor = System.Drawing.SystemColors.HotTrack;
-            this.button_customers.UseVisualStyleBackColor = true;
-            this.button_customers.Click += new System.EventHandler(this.button_billManager_Click);
             // 
             // button_accManager
             // 
@@ -278,6 +238,25 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(669, 418);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
+            // button_blackList
+            // 
+            this.button_blackList.BorderColor = System.Drawing.SystemColors.HotTrack;
+            this.button_blackList.ButtonColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_blackList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_blackList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_blackList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_blackList.Location = new System.Drawing.Point(3, 162);
+            this.button_blackList.Name = "button_blackList";
+            this.button_blackList.OnHoverBorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_blackList.OnHoverButtonColor = System.Drawing.SystemColors.HotTrack;
+            this.button_blackList.OnHoverTextColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_blackList.Size = new System.Drawing.Size(186, 47);
+            this.button_blackList.TabIndex = 10;
+            this.button_blackList.Text = "BLACK LIST";
+            this.button_blackList.TextColor = System.Drawing.SystemColors.HotTrack;
+            this.button_blackList.UseVisualStyleBackColor = true;
+            this.button_blackList.Click += new System.EventHandler(this.button_blackList_Click);
+            // 
             // FormRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -315,11 +294,10 @@
         private ePOSOne.btnProduct.Button_WOC button_modifyRoom;
         private ePOSOne.btnProduct.Button_WOC button_promo;
         private ePOSOne.btnProduct.Button_WOC button_accManager;
-        private ePOSOne.btnProduct.Button_WOC button_customers;
-        private ePOSOne.btnProduct.Button_WOC button_blackList;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private ePOSOne.btnProduct.Button_WOC button_blackList;
 
     }
 }

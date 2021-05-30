@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HotelManagement_FireBase
 {
     public class Bill
-    {    
+    {
         private string address;
         public string Address
         {
@@ -22,25 +22,32 @@ namespace HotelManagement_FireBase
             set { cMND = value; }
         }
 
+        private string cardExpDate;
+        public string CardExpDate
+        {
+            get { return cardExpDate; }
+            set { cardExpDate = value; }
+        }
+
+        private string contact;
+        public string Contact
+        {
+            get { return contact; }
+            set { contact = value; }
+        }
+
+        private string creditCardID;
+        public string CreditCardID
+        {
+            get { return creditCardID; }
+            set { creditCardID = value; }
+        }
+
         private string cusName;
         public string CusName
         {
             get { return cusName; }
             set { cusName = value; }
-        }
-
-        private string billID;
-        public string BillID
-        {
-            get { return billID; }
-            set { billID = value; }
-        }
-
-        private string status;
-        public string Status
-        {
-            get { return status; }
-            set { status = value; }
         }
 
         private string dCheckIn;
@@ -57,18 +64,11 @@ namespace HotelManagement_FireBase
             set { dCheckOut = value; }
         }
 
-        private string roomID;
-        public string RoomID
+        private string payment;
+        public string Payment
         {
-            get { return roomID; }
-            set { roomID = value; }
-        }
-
-        private string contact;
-        public string Contact
-        {
-            get { return contact; }
-            set { contact = value; }
+            get { return payment; }
+            set { payment = value; }
         }
 
         private string reservationType;
@@ -78,26 +78,18 @@ namespace HotelManagement_FireBase
             set { reservationType = value; }
         }
 
-        private string payment;
-        public string Payment
+        private string total;
+        public string Total
         {
-            get { return payment; }
-            set { payment = value; }
+            get { return total; }
+            set { total = value; }
         }
 
-        private string creditCardID;
-        public string CreditCardID
+        private string voucherUsed;
+        public string VoucherUsed
         {
-            get { return creditCardID; }
-            set { creditCardID = value; }
+            get { return voucherUsed; }
+            set { voucherUsed = value; }
         }
-
-        private string cardExpDate;
-        public string CardExpDate
-        {
-            get { return cardExpDate; }
-            set { cardExpDate = value; }
-        }
-
     }
 }
